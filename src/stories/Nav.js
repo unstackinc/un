@@ -12,6 +12,7 @@ import {
 
 const UnNav = styled.aside`
   position: fixed;
+  left: 0;
   height: 100vh;
   width: 16rem;
   background-color: ${color.grey5};

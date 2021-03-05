@@ -13,9 +13,14 @@ export const HeaderLeft = Template.bind({});
 HeaderLeft.args = {
   align: 'left',
 };
+HeaderLeft.parameters = {
+  layout: 'fullscreen',
+}
 
 export const HeaderRight = Template.bind({});
 HeaderRight.args = {
   align: 'right',
 };
-
+HeaderRight.parameters = {
+  layout: 'fullscreen',
+}

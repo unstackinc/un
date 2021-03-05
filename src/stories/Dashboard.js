@@ -17,36 +17,48 @@ export const Dashboard = ({ ...props }) => (
   <UnDashboard>
       <Header align="left"><Search label={`Search Unstack`} size="large"></Search></Header>
       <Nav>
-        <Tab label="Analytics" icon={<IoAnalytics />}>
-          <Link label="Activity"></Link>
-          <Link label="Test results"></Link>
-          <Link label="Conversions"></Link>
-          <Link label="UTMs"></Link>
-          <Link label="Google Search Console"></Link>
-        </Tab>
-        <Tab label="Content" icon={<IoBrowsersOutline />} active>
-          <Link label="Website"></Link>
-          <Link label="Landing pages"></Link>
-          <Link label="Blog"></Link>
-          <Link label="Media"></Link>
-        </Tab>
-        <Tab label="Customers" icon={<IoPeople />}>
-          <Link label="Contacts"></Link>
-        </Tab>
-        <Tab label="Design" icon={<IoEyedrop />}>
-          <Link label="Header &amp; Footer"></Link>
-          <Link label="Styles"></Link>
-        </Tab>
-        <Tab label="Setup" icon={<IoCog />}>
-          <Link label="Integrations"></Link>
-          <Link label="Payments"></Link>
-          <Link label="Settings"></Link>
-        </Tab>
+        {props.nav}
       </Nav>
       <Page>
         {props.page}
       </Page>
   </UnDashboard>
+);
+
+
+export const DashboardExample = ({ ...props }) => (
+  <Dashboard
+    nav={
+      <div>
+        <Tab label="Analytics" icon={<IoAnalytics />}>
+          <Link label="Activity" link="example"></Link>
+          <Link label="Test results" link="example"></Link>
+          <Link label="Conversions" link="example"></Link>
+          <Link label="UTMs" link="example"></Link>
+          <Link label="Google Search Console" link="example"></Link>
+        </Tab>
+        <Tab label="Content" icon={<IoBrowsersOutline />} active>
+          <Link label="Website" link="example"></Link>
+          <Link label="Landing pages" link="example"></Link>
+          <Link label="Blog" link="example"></Link>
+          <Link label="Media" link="example"></Link>
+        </Tab>
+        <Tab label="Customers" icon={<IoPeople />}>
+          <Link label="Contacts" link="example"></Link>
+        </Tab>
+        <Tab label="Design" icon={<IoEyedrop />}>
+          <Link label="Header &amp; Footer" link="example"></Link>
+          <Link label="Styles" link="example"></Link>
+        </Tab>
+        <Tab label="Setup" icon={<IoCog />}>
+          <Link label="Integrations" link="example"></Link>
+          <Link label="Payments" link="example"></Link>
+          <Link label="Settings" link="example"></Link>
+        </Tab>
+      </div>
+    }
+    page={props.page}>
+  </Dashboard>
 );
 
 export default Dashboard;

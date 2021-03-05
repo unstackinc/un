@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Dashboard } from './Dashboard';
+import { Dashboard, DashboardExample } from './Dashboard';
 
 export default {
   title: 'Templates/Dashboard',
@@ -8,5 +8,14 @@ export default {
 };
 
 const Template = (args) => <Dashboard {...args} />;
+const TemplateExample = (args) => <DashboardExample {...args} />;
 
-export const PrimaryDashboard = Template.bind({});
+export const TemplateDashboard = Template.bind({});
+TemplateDashboard.parameters = {
+  layout: 'fullscreen',
+}
+
+export const ExampleDashboard = TemplateExample.bind({});
+ExampleDashboard.parameters = {
+  layout: 'fullscreen',
+}

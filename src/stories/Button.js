@@ -72,7 +72,7 @@ const UnButton = styled.button`
  * Buttons are used to initialize an action. Button labels express what action will occur when the user interacts with it.
  */
 
-export const Button = ({ type, size, background, disabled, label, props }) => {
+export const Button = ({ type, size, background, disabled, label, ...props }) => {
   return (
     <UnButton
       type="button"
@@ -81,7 +81,9 @@ export const Button = ({ type, size, background, disabled, label, props }) => {
       disabled={disabled}
       {...props}
     >
+      {props.before}
       {label}
+      {props.after}
     </UnButton>
   );
 };

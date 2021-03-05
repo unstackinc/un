@@ -11,16 +11,19 @@ const TemplateNav = (args) => <Nav {...args} />;
 const TemplateTab = (args) => <Tab {...args} />;
 const TemplateLink = (args) => <Link {...args} />;
 
-export const PrimaryNavigation = TemplateNav.bind({});
+export const NavContainer = TemplateNav.bind({});
+NavContainer.parameters = {
+  layout: 'fullscreen',
+}
 
-export const PrimaryTab = TemplateTab.bind({});
-PrimaryTab.args = {
+export const NavTab = TemplateTab.bind({});
+NavTab.args = {
   active: false,
   label: 'Tab',
 };
 
-export const PrimaryLink = TemplateLink.bind({});
-PrimaryLink.args = {
+export const NavLink = TemplateLink.bind({});
+NavLink.args = {
   link: 'link',
   label: 'Link',
   active: false,

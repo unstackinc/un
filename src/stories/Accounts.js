@@ -1,14 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/*import React from "react";
+import PropTypes from "prop-types";
 
 import styled from "styled-components";
 import { IoSearch } from "react-icons/io5";
 
-import {
-  color, opacity,
-  space,
-  d1,
-} from "../utils";
+import { color, opacity, space, d1 } from "../utils";
 
 const UnSearch = styled.label`
   position: relative;
@@ -62,35 +58,28 @@ const UnSearch = styled.label`
  * Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation.
  */
 
-export const Search = ({size, expand, disabled, label, ...props }) => {
+export const Accounts = ({ size, expand, disabled, label, ...props }) => {
   return (
-    <UnSearch
-    className={[size, expand, disabled ? `disabled` : []].join(' ')}
-  >
-    <IoSearch />
-    <input
-      type="search"
-      placeholder={label}
-      disabled={disabled}
-      {...props}
-    />
+    <UnSearch className={[size, expand, disabled ? `disabled` : []].join(" ")}>
+      <IoSearch />
+      <input type="search" placeholder={label} disabled={disabled} {...props} />
     </UnSearch>
   );
 };
 
-Search.propTypes = {
-  size: PropTypes.oneOf(['default', 'large']),
-  expand: PropTypes.oneOf(['block', 'full']),
+Accounts.propTypes = {
+  size: PropTypes.oneOf(["default", "large"]),
+  expand: PropTypes.oneOf(["block", "full"]),
   disabled: PropTypes.bool,
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };
 
-Search.defaultProps = {
-  size: 'default',
-  expand: 'block',
+Accounts.defaultProps = {
+  size: "default",
+  expand: "block",
   disabled: false,
   onClick: undefined,
 };
 
-export default Search;
+export default Accounts;

@@ -25,20 +25,20 @@ export default {
 
 const Template = (args) => <Fab {...args} />;
 
-export const SmallFab = Template.bind({});
-SmallFab.args = {
+export const Small = Template.bind({});
+Small.args = {
   variant: 'small',
   children: <FiPlus />,
 };
 
-export const MediumFab = Template.bind({});
-MediumFab.args = {
+export const Medium = Template.bind({});
+Medium.args = {
   variant: 'medium',
   children: <FiPlus />,
 };
 
-export const LargeFab = Template.bind({});
-LargeFab.args = {
+export const Large = Template.bind({});
+Large.args = {
   variant: 'large',
   children: <FiPlus />,
 };

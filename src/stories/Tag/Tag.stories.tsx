@@ -24,14 +24,14 @@ export default {
 
 const Template = (args) => <Tag {...args} />;
 
-export const PrimaryTag = Template.bind({});
-PrimaryTag.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   variant: 'primary',
   children: 'Tag',
 };
 
-export const OutlineTag = Template.bind({});
-OutlineTag.args = {
+export const Outline = Template.bind({});
+Outline.args = {
   variant: 'outline',
   children: 'Tag',
 };

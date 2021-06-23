@@ -33,44 +33,44 @@ export default {
 
 const Template = (args) => <Button {...args} />;
 
-export const PrimaryButton = Template.bind({});
-PrimaryButton.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   variant: 'primary',
   children: 'Button',
 };
 
-export const SecondaryButton = Template.bind({});
-SecondaryButton.args = {
+export const Secondary = Template.bind({});
+Secondary.args = {
   variant: 'secondary',
   children: 'Button',
 };
 
-export const TertiaryButton = Template.bind({});
-TertiaryButton.args = {
+export const Tertiary = Template.bind({});
+Tertiary.args = {
   variant: 'tertiary',
   children: 'Button',
 };
 
-export const OutlineButton = Template.bind({});
-OutlineButton.args = {
+export const Outline = Template.bind({});
+Outline.args = {
   variant: 'outline',
   children: 'Button',
 };
 
-export const WarningButton = Template.bind({});
-WarningButton.args = {
+export const Warning = Template.bind({});
+Warning.args = {
   variant: 'warning',
   children: 'Button',
 };
 
-export const LargeButton = Template.bind({});
-LargeButton.args = {
+export const Large = Template.bind({});
+Large.args = {
   large: true,
   children: 'Button',
 };
 
-export const FullButton = Template.bind({});
-FullButton.args = {
+export const Full = Template.bind({});
+Full.args = {
   large: true,
   full: true,
   children: 'Button',

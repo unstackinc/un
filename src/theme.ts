@@ -2,8 +2,8 @@
 
 import { color, typography, space, fluid } from './utils';
 
-const base = 0.8;
-const scale = 1.25;
+const base = 0.64;
+const scale = 1.2;
 const type = {
   X0: base,
   X1: base * Math.pow(scale, 1),

@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 // Button.tsx
 
 import * as React from 'react';
@@ -6,7 +7,7 @@ import { css } from '@emotion/react';
 import { UnButton } from './Button.styles';
 
 interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'outline' | 'warning';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'outline' | 'warning';
   color?: string;
   background?: string;
   large?: boolean;
@@ -17,8 +18,6 @@ interface ButtonProps {
   children: React.ReactNode;
   after: React.ReactNode;
 }
-
-/* FIX: Color and background not setting properly */
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
   variant,
@@ -38,8 +37,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       className={[large ? 'large' : '', full ? 'full' : ''].join(' ')}
       disabled={disabled}
       css={css`
-        background-color: ${background};
-        color: ${color};
+        background: ${background} !important;
+        color: ${color} !important;
       `}
       {...props}
     >

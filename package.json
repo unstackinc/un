@@ -1,6 +1,6 @@
 {
-  "name": "unstack",
-  "version": "0.4.0-aplha",
+  "name": "un",
+  "version": "0.5.0-aplha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,6 @@
     "@reach/tabs": "^0.15.0",
     "@reach/tooltip": "^0.15.0",
     "@reach/visually-hidden": "^0.15.0",
-    "@styled-system/css": "^5.1.5",
     "@tippyjs/react": "^4.2.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -53,7 +52,6 @@
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "@types/styled-system": "^5.1.11",
-    "@types/styled-system__css": "^5.0.15",
     "babel-loader": "^8.2.2",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",

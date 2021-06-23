@@ -10,7 +10,7 @@ export default {
   component: Button,
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'outline', 'warning'],
+      options: ['primary', 'secondary', 'tertiary', 'outline', 'warning'],
       control: { type: 'radio' },
     },
     color: {
@@ -42,6 +42,12 @@ PrimaryButton.args = {
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = {
   variant: 'secondary',
+  children: 'Button',
+};
+
+export const TertiaryButton = Template.bind({});
+TertiaryButton.args = {
+  variant: 'tertiary',
   children: 'Button',
 };
 

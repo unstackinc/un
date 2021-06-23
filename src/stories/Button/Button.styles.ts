@@ -1,4 +1,4 @@
-// Button.styles.tsx
+// Button.styles.ts
 
 import styled from '@emotion/styled';
 import { variant } from 'styled-system';
@@ -9,10 +9,10 @@ import { fontSizes } from '../../theme';
 const { colors, opacity, margin, padding, fonts, fontWeights } = theme;
 
 const ButtonStyles = styled.button`
-  ${fontSizes[0]};
+  ${fontSizes[1]};
   -webkit-appearance: none;
   &.large {
-    ${fontSizes[1]};
+    ${fontSizes[2]};
   }
 `;
 
@@ -22,7 +22,7 @@ export const UnButton = styled(ButtonStyles)(
     fontFamily: fonts.body,
     fontWeight: fontWeights[1],
     border: '2px solid rgba( 0, 0, 0, 0.1 )',
-    borderRadius: '.25em',
+    borderRadius: '0.25em',
     boxSizing: 'border-box',
     padding: `${padding.xxs} ${padding.xs}`,
     display: 'flex',
@@ -30,7 +30,8 @@ export const UnButton = styled(ButtonStyles)(
     alignItems: 'center',
     gap: margin.xxs,
     cursor: 'pointer',
-    transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+    transition:
+      'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
     ':hover': {
       opacity: opacity[75],
     },
@@ -58,7 +59,8 @@ export const UnButton = styled(ButtonStyles)(
     variants: {
       primary: {
         color: colors.text.reversed,
-        bg: colors.button.background.primary,
+        backgroundColor: colors.button.background.primary,
+        background: colors.button.background.primaryEdge,
         ':focus': {
           boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.button.background.primary}`,
         },
@@ -70,11 +72,23 @@ export const UnButton = styled(ButtonStyles)(
           boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.button.background.secondary}`,
         },
       },
+      tertiary: {
+        color: colors.button.background.primary,
+        bg: colors.button.background.tertiary,
+        borderColor: colors.button.background.tertiary,
+        ':hover': {
+          opacity: 1,
+          bg: colors.button.background.tertiaryHover,
+        },
+        ':focus': {
+          boxShadow: `0 0 0 2px ${colors.button.background.primary}`,
+        },
+      },
       outline: {
         color: colors.button.background.primary,
         border: '2px solid',
         borderColor: colors.button.background.primary,
-        bg: colors.background,
+        bg: colors.button.background.outline,
         ':focus': {
           boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px currentColor`,
         },

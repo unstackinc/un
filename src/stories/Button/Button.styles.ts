@@ -4,19 +4,10 @@ import styled from '@emotion/styled';
 import { variant } from 'styled-system';
 
 import theme from '../../theme';
-import { fontSizes } from '../../theme';
 
 const { colors, opacity, margin, padding, fonts, fontWeights } = theme;
 
-const ButtonStyles = styled.button`
-  ${fontSizes[1]};
-  -webkit-appearance: none;
-  &.large {
-    ${fontSizes[2]};
-  }
-`;
-
-export const UnButton = styled(ButtonStyles)(
+export const UnButton = styled.button(
   {
     appearance: 'none',
     fontFamily: fonts.body,
@@ -67,7 +58,8 @@ export const UnButton = styled(ButtonStyles)(
       },
       secondary: {
         color: colors.text.reversed,
-        bg: colors.button.background.secondary,
+        backgroundColor: colors.button.background.secondary,
+        background: colors.button.background.secondaryEdge,
         ':focus': {
           boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.button.background.secondary}`,
         },
@@ -87,7 +79,7 @@ export const UnButton = styled(ButtonStyles)(
       outline: {
         color: colors.button.background.primary,
         border: '2px solid',
-        borderColor: colors.button.background.primary,
+        borderColor: 'currentColor',
         bg: colors.button.background.outline,
         ':focus': {
           boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px currentColor`,

@@ -4,15 +4,10 @@ import styled from '@emotion/styled';
 import { variant } from 'styled-system';
 
 import theme from '../../theme';
-import { fontSizes } from '../../theme';
 
 const { colors, margin, padding, fonts, fontWeights } = theme;
 
-const TagStyles = styled.span`
-  ${fontSizes[0]};
-`;
-
-export const UnTag = styled(TagStyles)(
+export const UnTag = styled.span(
   {
     fontFamily: fonts.body,
     fontWeight: fontWeights[1],

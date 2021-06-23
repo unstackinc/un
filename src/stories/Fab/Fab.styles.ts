@@ -3,20 +3,10 @@
 import styled from '@emotion/styled';
 
 import theme from '../../theme';
-import { fontSizes } from '../../theme';
 
 const { colors, opacity, fonts, fontWeights } = theme;
 
-const FabStyles = styled.button`
-  ${fontSizes[2]};
-  -webkit-appearance: none;
-  &.medium,
-  &.large {
-    ${fontSizes[3]};
-  }
-`;
-
-export const UnFab = styled(FabStyles)({
+export const UnFab = styled.button({
   appearance: 'none',
   fontFamily: fonts.body,
   fontWeight: fontWeights[1],

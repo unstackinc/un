@@ -5,6 +5,7 @@ import * as React from 'react';
 import { css } from '@emotion/react';
 
 import { UnButton } from './Button.styles';
+import { fontSizes } from '../../theme';
 
 interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'outline' | 'warning';
@@ -39,6 +40,11 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       css={css`
         background: ${background} !important;
         color: ${color} !important;
+        ${fontSizes[1]};
+        -webkit-appearance: none;
+        &.large {
+          ${fontSizes[2]};
+        }
       `}
       {...props}
     >

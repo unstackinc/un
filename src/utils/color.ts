@@ -27,6 +27,7 @@ export const color = {
         primary: un.primary,
         primaryEdge: un.primaryEdge,
         secondary: un.greyLight,
+        secondaryEdge: 'linear-gradient(180deg, #8499C2 0%, #647FB4 100%)',
         tertiary: un.transparent,
         tertiaryHover: un[5],
         outline: un.transparent,

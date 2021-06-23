@@ -5,6 +5,7 @@ import * as React from 'react';
 import { css } from '@emotion/react';
 
 import { UnFab } from './Fab.styles';
+import { fontSizes } from '../../theme';
 
 interface FabProps {
   variant?: 'small' | 'medium' | 'large';
@@ -26,6 +27,12 @@ export const Fab: React.FunctionComponent<FabProps> = ({
       className={variant}
       disabled={disabled}
       css={css`
+        ${fontSizes[2]};
+        -webkit-appearance: none;
+        &.medium,
+        &.large {
+          ${fontSizes[3]};
+        }
         svg {
           stroke: ${color};
         }

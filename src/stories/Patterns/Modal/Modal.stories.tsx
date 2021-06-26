@@ -30,12 +30,10 @@ const Template = (args) => {
       </Button>
       <Modal
         actions={[
-          <Button key={0} variant="outline" onClick={close}>
+          <Button variant="outline" onClick={close}>
             Cancel
           </Button>,
-          <Button key={1} onClick={close}>
-            Okay
-          </Button>,
+          <Button onClick={close}>Okay</Button>,
         ]}
         showModal={showModal}
         setShowModal={setShowModal}

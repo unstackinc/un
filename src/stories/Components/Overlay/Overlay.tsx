@@ -12,7 +12,7 @@ interface OverlayProps {
   setShowOverlay?: any;
   background?: string;
   children: React.ReactNode;
-  onClick: any;
+  onClick?: any;
 }
 
 export const Overlay = ({

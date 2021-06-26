@@ -3,7 +3,7 @@
 import styled from '@emotion/styled';
 import { variant } from 'styled-system';
 
-import theme from '../../theme';
+import theme from '../../../theme';
 
 const { colors, margin, padding, fonts, fontWeights } = theme;
 

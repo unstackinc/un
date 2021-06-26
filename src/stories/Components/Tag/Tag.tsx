@@ -5,7 +5,7 @@ import * as React from 'react';
 import { css } from '@emotion/react';
 
 import { UnTag } from './Tag.styles';
-import { fontSizes } from '../../theme';
+import { fontSizes } from '../../../theme';
 
 interface TagProps {
   variant?: 'primary' | 'yellow' | 'green' | 'outline' | 'outlineBlue';

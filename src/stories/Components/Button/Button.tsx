@@ -6,7 +6,7 @@ import { css } from '@emotion/react';
 import { animated, useSpring, config } from 'react-spring';
 
 import { UnButton } from './Button.styles';
-import { fontSizes } from '../../theme';
+import { fontSizes } from '../../../theme';
 
 interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'outline' | 'warning';

@@ -6,7 +6,7 @@ import { Meta } from '@storybook/react';
 import { css } from '@emotion/react';
 
 import { Modal } from './Modal';
-import { Button, H0, P1 } from '../';
+import { Button, H0, P1 } from '../..';
 
 export default {
   title: 'Patterns/Modal',

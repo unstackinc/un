@@ -3,7 +3,7 @@
 import styled from '@emotion/styled';
 import { Dialog } from '@reach/dialog';
 
-import theme from '../../theme';
+import theme from '../../../theme';
 
 const { margin, padding, colors, radii } = theme;
 

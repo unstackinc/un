@@ -2,7 +2,7 @@
 
 import styled from '@emotion/styled';
 
-import theme, { fontSizes } from '../../theme';
+import theme, { fontSizes } from '../../../theme';
 
 const { colors, fonts, fontWeights } = theme;
 

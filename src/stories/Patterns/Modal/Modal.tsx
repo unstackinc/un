@@ -12,8 +12,8 @@ import {
   UnModalBody,
   UnModalFooter,
 } from './Modal.styles';
-import { Fab, Overlay, H3 } from '../';
-import { escape } from '../../utils';
+import { Fab, Overlay, H3 } from '../..';
+import { escape } from '../../../utils';
 
 interface ModalProps {
   showModal?: boolean;

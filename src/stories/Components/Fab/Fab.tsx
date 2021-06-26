@@ -6,7 +6,7 @@ import { css } from '@emotion/react';
 import { animated, useSpring, config } from 'react-spring';
 
 import { UnFab } from './Fab.styles';
-import { fontSizes } from '../../theme';
+import { fontSizes } from '../../../theme';
 
 interface FabProps {
   variant?: 'small' | 'medium' | 'large';

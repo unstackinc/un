@@ -13,11 +13,11 @@ export const space = {
   padding: {
     xxs: '0.375rem',
     xs: '0.75rem',
-    sm: '1.5rem',
-    md: '2.25rem',
-    lg: '3rem',
-    xl: '3.75rem',
-    xxl: '6rem',
+    sm: '1.25rem',
+    md: '1.5rem',
+    lg: '2.25rem',
+    xl: '3rem',
+    xxl: '3.75rem',
   },
 };
 

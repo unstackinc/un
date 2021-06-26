@@ -28,7 +28,7 @@ export const P3 = ({
         ' ',
       )}
       css={css`
-        color: ${color};
+        color: ${color} !important;
       `}
       {...props}
     >
@@ -58,7 +58,7 @@ export const P2: React.FunctionComponent<PProps> = ({
         ' ',
       )}
       css={css`
-        color: ${color};
+        color: ${color} !important;
       `}
       {...props}
     >
@@ -88,7 +88,7 @@ export const P1: React.FunctionComponent<PProps> = ({
         ' ',
       )}
       css={css`
-        color: ${color};
+        color: ${color} !important;
       `}
       {...props}
     >
@@ -118,7 +118,7 @@ export const P0: React.FunctionComponent<PProps> = ({
         ' ',
       )}
       css={css`
-        color: ${color};
+        color: ${color} !important;
       `}
       {...props}
     >

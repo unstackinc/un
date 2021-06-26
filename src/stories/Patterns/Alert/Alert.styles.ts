@@ -10,7 +10,7 @@ const { margin, padding, colors, radii } = theme;
 export const UnAlert = styled(Dialog)({
   maxWidth: '37.5rem',
   boxShadow: '0 5px 16px rgba(0, 0, 0, 0.2)',
-  background: colors.modal,
+  background: colors.card,
   position: 'relative',
   borderRadius: radii.md,
   margin: '10vh auto',

@@ -36,7 +36,12 @@ export const UnButton = styled.button(
     ':disabled': {
       userSelect: 'none',
       cursor: 'not-allowed',
-      opacity: opacity[25],
+      color: colors.text.secondary,
+      background: colors.button.background.disabled,
+      borderColor: 'transparent',
+    },
+    ':disabled:active': {
+      transform: 'none',
     },
     '&.large': {
       padding: `${padding.xs} ${padding.md}`,

@@ -5,14 +5,16 @@ const un = {
   black: '#000',
   greyDark: '#14213D',
   grey: '#434D64',
-  greyLight: '#8F97BF',
+  greyLight: '#7D8FB2',
   whiteOff: '#F8FAFE',
   white: '#FFF',
-  blue: '#1495CD',
-  green: '#3EC4B6',
+  blue: '#148FCD',
+  green: '#3DCCB4',
   red: '#E51739',
-  yellow: '#F3AC5B',
+  yellow: '#FFA64D',
   transparent: 'rgba(0, 0, 0, 0)',
+  border: '#E7EDF3',
+  disabled: '#E6EAF1',
   25: 'rgba(220, 228, 242, .25)',
   5: 'rgba(220, 228, 242, .5)',
   75: 'rgba(220, 228, 242, .75)',
@@ -22,8 +24,8 @@ export const color = {
   colors: {
     background: un.whiteOff,
     overlay: un.greyDark,
-    modal: un.white,
-    border: '#DEE4F3',
+    card: un.white,
+    border: un.border,
     button: {
       background: {
         primary: un.primary,
@@ -32,6 +34,7 @@ export const color = {
         tertiaryHover: un[5],
         outline: un.transparent,
         warning: un.red,
+        disabled: un.disabled,
       },
     },
     tag: {
@@ -44,6 +47,18 @@ export const color = {
         background: un.transparent,
         default: un.greyLight,
         blue: un.blue,
+      },
+    },
+    input: {
+      background: {
+        default: un.whiteOff,
+        focus: un.white,
+        disabled: un.border,
+      },
+      border: {
+        default: un.border,
+        focus: un.blue,
+        warning: un.red,
       },
     },
     text: {

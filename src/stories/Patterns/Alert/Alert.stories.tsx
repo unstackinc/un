@@ -29,7 +29,7 @@ const Template = (args) => {
         `}
         onClick={open}
       >
-        Open modal
+        Open alert
       </Button>
       <Alert
         actions={[

@@ -32,6 +32,9 @@ export const UnFab = styled.button({
   ':hover': {
     color: colors.text.bold,
   },
+  '&:active': {
+    transform: 'scale(0.95)',
+  },
   ':focus': {
     outline: 'none',
     boxShadow: `0 0 0 2px ${colors.button.background.primary}`,

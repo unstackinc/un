@@ -3,6 +3,7 @@
 
 import * as React from 'react';
 import { css } from '@emotion/react';
+import { animated, useSpring, config } from 'react-spring';
 
 import { UnFab } from './Fab.styles';
 import { fontSizes } from '../../theme';
@@ -15,15 +16,20 @@ interface FabProps {
   children: React.ReactNode;
 }
 
-export const Fab: React.FunctionComponent<FabProps> = ({
+export const Fab = ({
   variant,
   color,
   disabled,
   children,
   ...props
-}) => {
+}: FabProps) => {
+  const AnimatedUnFab = animated(UnFab);
+  const [{ transform }, setTransform] = useSpring(() => ({
+    transform: 'scale(1)',
+    config: config.wobbly,
+  }));
   return (
-    <UnFab
+    <AnimatedUnFab
       className={variant}
       disabled={disabled}
       css={css`
@@ -37,10 +43,13 @@ export const Fab: React.FunctionComponent<FabProps> = ({
           stroke: ${color};
         }
       `}
+      style={{ transform }}
+      onMouseDown={() => setTransform({ transform: 'scale(0.9)' })}
+      onMouseUp={() => setTransform({ transform: 'scale(1)' })}
       {...props}
     >
       {children}
-    </UnFab>
+    </AnimatedUnFab>
   );
 };
 

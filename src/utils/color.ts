@@ -1,12 +1,11 @@
 // color.ts
 
 const un = {
-  primary: '#6F7FE2',
-  primaryEdge: 'linear-gradient(180deg, #6F88E2 0%, #6F75E2 100%)',
+  primary: '#7373E5',
   black: '#000',
   greyDark: '#14213D',
   grey: '#434D64',
-  greyLight: '#647FB4',
+  greyLight: '#8F97BF',
   whiteOff: '#F8FAFE',
   white: '#FFF',
   blue: '#1495CD',
@@ -22,12 +21,13 @@ const un = {
 export const color = {
   colors: {
     background: un.whiteOff,
+    overlay: un.greyDark,
+    modal: un.white,
+    border: '#DEE4F3',
     button: {
       background: {
         primary: un.primary,
-        primaryEdge: un.primaryEdge,
         secondary: un.greyLight,
-        secondaryEdge: 'linear-gradient(180deg, #8499C2 0%, #647FB4 100%)',
         tertiary: un.transparent,
         tertiaryHover: un[5],
         outline: un.transparent,
@@ -52,10 +52,6 @@ export const color = {
       bold: un.greyDark,
       link: un.blue,
       reversed: un.white,
-    },
-    border: {
-      dark: 'rgba(0, 0, 0, .1)',
-      light: 'rgba(255, 255, 255, .1)',
     },
   },
   opacity: {

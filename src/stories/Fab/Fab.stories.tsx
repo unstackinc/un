@@ -28,17 +28,20 @@ const Template = (args) => <Fab {...args} />;
 export const Small = Template.bind({});
 Small.args = {
   variant: 'small',
+  disabled: false,
   children: <FiPlus />,
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   variant: 'medium',
+  disabled: false,
   children: <FiPlus />,
 };
 
 export const Large = Template.bind({});
 Large.args = {
   variant: 'large',
+  disabled: false,
   children: <FiPlus />,
 };

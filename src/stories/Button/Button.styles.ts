@@ -30,16 +30,13 @@ export const UnButton = styled.button(
       outline: 'none',
       boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px currentColor`,
     },
-    ':active': {
-      transform: 'scale(0.95)',
-    },
     ':disabled': {
       userSelect: 'none',
       cursor: 'not-allowed',
       opacity: opacity[25],
     },
     '&.large': {
-      padding: `${padding.xs} ${padding.sm}`,
+      padding: `${padding.xs} ${padding.md}`,
       gap: margin.xs,
     },
     '&.full': {
@@ -50,16 +47,14 @@ export const UnButton = styled.button(
     variants: {
       primary: {
         color: colors.text.reversed,
-        backgroundColor: colors.button.background.primary,
-        background: colors.button.background.primaryEdge,
+        bg: colors.button.background.primary,
         ':focus': {
           boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.button.background.primary}`,
         },
       },
       secondary: {
         color: colors.text.reversed,
-        backgroundColor: colors.button.background.secondary,
-        background: colors.button.background.secondaryEdge,
+        bg: colors.button.background.secondary,
         ':focus': {
           boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.button.background.secondary}`,
         },

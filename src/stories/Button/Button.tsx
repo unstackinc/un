@@ -3,6 +3,7 @@
 
 import * as React from 'react';
 import { css } from '@emotion/react';
+import { animated, useSpring, config } from 'react-spring';
 
 import { UnButton } from './Button.styles';
 import { fontSizes } from '../../theme';
@@ -14,13 +15,20 @@ interface ButtonProps {
   large?: boolean;
   full?: boolean;
   disabled?: boolean;
-  onClick?: any;
-  before: React.ReactNode;
+  before?: React.ReactNode;
   children: React.ReactNode;
-  after: React.ReactNode;
+  after?: React.ReactNode;
+  onClick?: any;
 }
 
-export const Button: React.FunctionComponent<ButtonProps> = ({
+const getAnimation = (active) => {
+  return {
+    opacity: active ? 1 : 0,
+    transform: active ? `translateY(0)` : `translateY(-200%)`,
+  };
+};
+
+export const Button = ({
   variant,
   color,
   background,
@@ -31,9 +39,14 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   after,
   ...props
-}) => {
+}: ButtonProps) => {
+  const AnimatedUnButton = animated(UnButton);
+  const [{ transform }, setTransform] = useSpring(() => ({
+    transform: 'scale(1)',
+    config: config.wobbly,
+  }));
   return (
-    <UnButton
+    <AnimatedUnButton
       variant={variant}
       className={[large ? 'large' : '', full ? 'full' : ''].join(' ')}
       disabled={disabled}
@@ -46,12 +59,15 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
           ${fontSizes[2]};
         }
       `}
+      style={{ transform }}
+      onMouseDown={() => setTransform({ transform: 'scale(0.9)' })}
+      onMouseUp={() => setTransform({ transform: 'scale(1)' })}
       {...props}
     >
       {before}
       {children}
       {after}
-    </UnButton>
+    </AnimatedUnButton>
   );
 };
 

@@ -37,7 +37,6 @@ export const UnFab = styled.button({
     boxShadow: `0 0 0 2px ${colors.button.background.primary}`,
   },
   ':active': {
-    transform: 'scale(0.95)',
     backgroundColor: colors.button.background.tertiaryHover,
   },
   ':disabled': {

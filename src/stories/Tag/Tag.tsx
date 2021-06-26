@@ -14,13 +14,13 @@ interface TagProps {
   children: React.ReactNode;
 }
 
-export const Tag: React.FunctionComponent<TagProps> = ({
+export const Tag = ({
   variant,
   color,
   background,
   children,
   ...props
-}) => {
+}: TagProps) => {
   return (
     <UnTag
       variant={variant}

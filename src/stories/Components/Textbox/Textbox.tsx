@@ -10,6 +10,7 @@ import { fontSizes } from '../../../theme';
 
 interface TextboxProps {
   label?: string;
+  name: string;
   warningText?: string;
   helpText?: string;
   placeholder: string;
@@ -21,6 +22,7 @@ interface TextboxProps {
 
 export const Textbox = ({
   label,
+  name,
   warningText,
   helpText,
   placeholder,
@@ -30,7 +32,7 @@ export const Textbox = ({
   ...props
 }: TextboxProps) => {
   return (
-    <Label full={full}>
+    <Label name={name} full={full}>
       {label && (
         <div
           className="label-text"
@@ -45,6 +47,8 @@ export const Textbox = ({
         </div>
       )}
       <UnTextbox
+        name={name}
+        id={name}
         className={[full ? 'full' : '', warning ? 'warning' : ''].join(' ')}
         placeholder={placeholder}
         disabled={disabled}

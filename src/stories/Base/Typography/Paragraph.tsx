@@ -134,18 +134,20 @@ P0.defaultProps = {
   color: 'null',
 };
 
-interface PProps {
+interface LabelProps {
+  name: string;
   full?: boolean;
   children: React.ReactNode;
 }
 
-export const Label: React.FunctionComponent<PProps> = ({
+export const Label: React.FunctionComponent<LabelProps> = ({
+  name,
   full,
   children,
   ...props
 }) => {
   return (
-    <UnLabel className={full && 'full'} {...props}>
+    <UnLabel htmlFor={name} className={full && 'full'} {...props}>
       {children}
     </UnLabel>
   );

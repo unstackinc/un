@@ -13,6 +13,7 @@ const { colors } = theme;
 interface DropdownProps {
   options: any;
   label?: string;
+  name: string;
   warningText?: string;
   helpText?: string;
   placeholder: string;
@@ -25,6 +26,7 @@ interface DropdownProps {
 export const Dropdown = ({
   options,
   label,
+  name,
   warningText,
   helpText,
   placeholder,
@@ -34,7 +36,7 @@ export const Dropdown = ({
   ...props
 }: DropdownProps) => {
   return (
-    <Label full={full}>
+    <Label name={name} full={full}>
       {label && (
         <div
           className="label-text"
@@ -49,6 +51,8 @@ export const Dropdown = ({
         </div>
       )}
       <UnDropdown
+        name={name}
+        id={name}
         className={full && 'full'}
         css={css`
           ${fontSizes[2]};

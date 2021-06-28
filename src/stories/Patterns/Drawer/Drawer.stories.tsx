@@ -49,36 +49,40 @@ const Template = (args) => {
       >
         <Textbox
           label="Unstack name"
+          name="name"
           helpText="This will be used in your Unstack portal only."
           full
         />
         <Textbox
           label="Title"
+          name="title"
           helpText="This will be used in the browser tab and should be 65 characters or less."
           full
         />
         <Textbox
           label="URL"
+          name="url"
           helpText="The home page URL cannot be changed."
           full
           disabled
         />
         <Textbox
           label="Canonical URL"
+          name="canonical_url"
           helpText="Leave blank if you want it to be prefilled with page's URL."
           full
         />
-        <Textbox label="Meta Keywords" full />
-        <Textarea label="Meta Description" full />
+        <Textbox label="Meta Keywords" name="keywords" full />
+        <Textarea label="Meta Description" name="description" full />
         <Dropdown
           label="Designate this as premium content?"
+          name="premium"
           options={[
             <DropdownOption value="no">No</DropdownOption>,
             <DropdownOption value="yes">Yes</DropdownOption>,
           ]}
           full
         />
-        <Textbox label="Label" full />
       </Drawer>
     </>
   );

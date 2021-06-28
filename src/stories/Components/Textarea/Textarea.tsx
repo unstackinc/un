@@ -10,6 +10,7 @@ import { fontSizes } from '../../../theme';
 
 interface TextareaProps {
   label?: string;
+  name: string;
   warningText?: string;
   helpText?: string;
   placeholder: string;
@@ -21,6 +22,7 @@ interface TextareaProps {
 
 export const Textarea = ({
   label,
+  name,
   warningText,
   helpText,
   placeholder,
@@ -30,7 +32,7 @@ export const Textarea = ({
   ...props
 }: TextareaProps) => {
   return (
-    <Label full={full}>
+    <Label name={name} full={full}>
       {label && (
         <div
           className="label-text"

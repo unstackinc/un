@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { css } from '@emotion/react';
 
-import { UnP0, UnP1, UnP2, UnP3 } from './Typography.styles';
+import { UnP0, UnP1, UnP2, UnP3, UnLabel } from './Typography.styles';
 
 interface PProps {
   weight?: 'normal' | 'medium' | 'bold';
@@ -132,4 +132,25 @@ P0.defaultProps = {
   link: false,
   display: false,
   color: 'null',
+};
+
+interface PProps {
+  full?: boolean;
+  children: React.ReactNode;
+}
+
+export const Label: React.FunctionComponent<PProps> = ({
+  full,
+  children,
+  ...props
+}) => {
+  return (
+    <UnLabel className={full && 'full'} {...props}>
+      {children}
+    </UnLabel>
+  );
+};
+
+Label.defaultProps = {
+  full: false,
 };

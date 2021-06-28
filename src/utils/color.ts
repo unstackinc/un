@@ -10,11 +10,11 @@ const un = {
   white: '#FFF',
   blue: '#148FCD',
   green: '#3DCCB4',
-  red: '#E51739',
+  red: '#C8549F',
   yellow: '#FFA64D',
   transparent: 'rgba(0, 0, 0, 0)',
   border: '#E7EDF3',
-  disabled: '#E6EAF1',
+  disabled: '#DAE2F2',
   25: 'rgba(220, 228, 242, .25)',
   5: 'rgba(220, 228, 242, .5)',
   75: 'rgba(220, 228, 242, .75)',
@@ -26,6 +26,8 @@ export const color = {
     overlay: un.greyDark,
     card: un.white,
     border: un.border,
+    disabled: un.disabled,
+    warning: un.red,
     button: {
       background: {
         primary: un.primary,
@@ -33,7 +35,6 @@ export const color = {
         tertiary: un.transparent,
         tertiaryHover: un[5],
         outline: un.transparent,
-        warning: un.red,
         disabled: un.disabled,
       },
     },
@@ -52,13 +53,13 @@ export const color = {
     input: {
       background: {
         default: un.whiteOff,
+        light: un.white,
         focus: un.white,
-        disabled: un.border,
+        disabled: un.disabled,
       },
       border: {
         default: un.border,
         focus: un.blue,
-        warning: un.red,
       },
     },
     text: {

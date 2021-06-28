@@ -37,7 +37,7 @@ export const UnButton = styled.button(
       userSelect: 'none',
       cursor: 'not-allowed',
       color: colors.text.secondary,
-      background: colors.button.background.disabled,
+      background: colors.disabled,
       borderColor: 'transparent',
     },
     ':disabled:active': {
@@ -90,9 +90,9 @@ export const UnButton = styled.button(
       },
       warning: {
         color: colors.text.reversed,
-        bg: colors.button.background.warning,
+        bg: colors.warning,
         ':focus': {
-          boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.button.background.warning}`,
+          boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.warning}`,
         },
       },
     },

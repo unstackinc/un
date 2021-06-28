@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 import theme, { fontSizes } from '../../../theme';
 
-const { colors, fonts, fontWeights } = theme;
+const { colors, fonts, fontWeights, margin } = theme;
 
 const p = `
   font-family: ${fonts.body};
@@ -78,3 +78,29 @@ export const UnH3 = styled.h3`
   font-size: ${fontSizes[2]};
   font-weight: ${fontWeights[1]};
 `;
+
+export const UnLabel = styled.label({
+  fontFamily: fonts.body,
+  fontWeight: fontWeights[1],
+  color: colors.text.secondary,
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  width: '16rem',
+  '&.full': {
+    width: '100%',
+  },
+  '.label-text': {
+    cursor: 'pointer',
+  },
+  '.label-text,.warning-text,.help-text': {
+    marginBottom: margin.xs,
+  },
+  '.warning-text,.help-text': {
+    marginTop: margin.xs,
+    fontWeight: fontWeights[0],
+  },
+  '.warning-text': {
+    color: colors.warning,
+  },
+});

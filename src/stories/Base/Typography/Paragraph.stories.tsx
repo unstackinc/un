@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 
-import { P0, P1, P2, P3 } from './Paragraph';
+import { P0, P1, P2, P3, Label } from './Paragraph';
 
 export default {
   title: 'Base/Typography/Paragraph',
@@ -60,4 +60,11 @@ Paragraph3.args = {
   display: true,
   link: false,
   children: 'Paragraph 3',
+};
+
+const TemplateLabel = (args) => <Label {...args} />;
+
+export const LabelExample = TemplateLabel.bind({});
+LabelExample.args = {
+  children: 'Label',
 };

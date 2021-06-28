@@ -41,15 +41,15 @@ export const UnDropdown = styled.select({
     height: '1.25em',
     transform: `translateX(100%)`,
   },
-  '&:hover': {
+  ':hover': {
     color: colors.text.bold,
   },
-  '&:focus': {
+  ':focus': {
     outline: 'none',
     boxShadow: `0 0 0 2px ${colors.input.border.focus}`,
     background: colors.input.background.focus,
   },
-  '&:active': {
+  ':active': {
     color: colors.text.default,
   },
 });
@@ -67,7 +67,7 @@ export const UnDropdownOption = styled.option({
   cursor: 'pointer',
   transition:
     'color 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-  '&:not(:last-child)': {
+  ':not(:last-child)': {
     borderBottom: `1px solid ${colors.border}`,
   },
 });

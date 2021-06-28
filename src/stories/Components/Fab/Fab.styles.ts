@@ -32,15 +32,13 @@ export const UnFab = styled.button({
   ':hover': {
     color: colors.text.bold,
   },
-  '&:active': {
+  ':active': {
     transform: 'scale(0.95)',
+    backgroundColor: colors.button.background.tertiaryHover,
   },
   ':focus': {
     outline: 'none',
     boxShadow: `0 0 0 2px ${colors.button.background.primary}`,
-  },
-  ':active': {
-    backgroundColor: colors.button.background.tertiaryHover,
   },
   ':disabled': {
     userSelect: 'none',

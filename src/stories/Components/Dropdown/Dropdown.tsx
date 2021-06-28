@@ -59,7 +59,7 @@ export const Dropdown = ({
           ${warning &&
           css`
             box-shadow: 0 0 0 2px ${colors.warning} !important;
-            &:focus {
+            :focus {
               box-shadow: 0 0 0 2px ${colors.warning} !important;
             }
           `}
@@ -69,7 +69,7 @@ export const Dropdown = ({
             border-color: ${colors.disabled} !important;
             user-select: none !important;
             cursor: not-allowed !important;
-            &:hover {
+            :hover {
               color: inherit !important;
             }
           `}

@@ -30,7 +30,7 @@ export const UnButton = styled.button(
       outline: 'none',
       boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px currentColor`,
     },
-    '&:active': {
+    ':active': {
       transform: 'scale(0.95)',
     },
     ':disabled': {

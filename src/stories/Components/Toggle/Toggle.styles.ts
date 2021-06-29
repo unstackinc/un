@@ -15,8 +15,7 @@ export const UnToggle = styled(Label)`
     &:checked ~ label .control {
       background-color: ${colors.toggle.border.active};
       border-color: transparent;
-      box-shadow: 0 0 0 2px ${colors.background}00,
-        inset 0 1px 4px ${colors.toggle.border.default}00;
+      box-shadow: inset 0 1px 4px ${colors.toggle.border.default}00;
     }
     &:checked:hover ~ label .control {
       background-color: ${colors.toggle.border.active};
@@ -62,8 +61,7 @@ export const UnToggle = styled(Label)`
     background-color: ${colors.toggle.background.default};
     padding: ${padding.xxxs};
     border-radius: ${margin.xxl};
-    box-shadow: 0 0 0 2px ${colors.background},
-      inset 0 1px 4px ${colors.toggle.border.default};
+    box-shadow: inset 0 1px 4px ${colors.toggle.border.default};
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),

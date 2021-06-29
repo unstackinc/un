@@ -14,9 +14,12 @@ export const UnRadio = styled(Label)`
     cursor: pointer;
     &:checked ~ label .control {
       background-color: ${colors.toggle.background.active};
-      box-shadow: 0 0 0 2px ${colors.background},
-        inset 0 0 0 ${padding.xxs} ${colors.toggle.border.active};
+      box-shadow: inset 0 1px 4px ${colors.toggle.border.default}00;
       border-color: transparent;
+    }
+    &:checked ~ label .control::after {
+      opacity: 1;
+      box-shadow: inset 0 0 0 ${padding.xxs} ${colors.toggle.border.active};
     }
     &:checked:hover ~ label .control {
       background-color: ${colors.toggle.background.active};
@@ -50,14 +53,14 @@ export const UnRadio = styled(Label)`
     cursor: pointer;
     border: 1px solid ${colors.toggle.border.default};
     background-color: ${colors.toggle.background.default};
-    box-shadow: 0 0 0 2px ${colors.background},
-      inset 0 1px 4px ${colors.toggle.border.default};
+    box-shadow: inset 0 1px 4px ${colors.toggle.border.default};
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+      box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
-    &::before {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       top: 0;
@@ -67,9 +70,18 @@ export const UnRadio = styled(Label)`
       border-radius: 50%;
       outline: none;
       opacity: 0;
+    }
+
+    &::before {
       box-shadow: 0 0 0 2px ${colors.background},
         0 0 2px 4px ${colors.toggle.border.focus};
       transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    &::after {
+      box-shadow: inset 0 0 0 ${colors.toggle.border.active};
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.3s cubic-bezier(0.87, 0, 0.13, 1);
     }
   }
 `;

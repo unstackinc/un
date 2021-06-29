@@ -6,15 +6,7 @@ import { Meta } from '@storybook/react';
 import { css } from '@emotion/react';
 
 import { Drawer } from './Drawer';
-import {
-  Button,
-  Textarea,
-  Textbox,
-  Dropdown,
-  DropdownOption,
-  H0,
-  P1,
-} from '../..';
+import { Button, Textarea, Textbox, Dropdown, DropdownOption } from '../..';
 
 export default {
   title: 'Patterns/Drawer',

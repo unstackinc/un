@@ -15,8 +15,7 @@ export const UnCheckbox = styled(Label)`
     &:checked ~ label .control {
       background-color: ${colors.toggle.border.active};
       border-color: transparent;
-      box-shadow: 0 0 0 2px ${colors.background}00,
-        inset 0 1px 4px ${colors.toggle.border.default}00;
+      box-shadow: inset 0 1px 4px ${colors.toggle.border.default}00;
     }
     & ~ label svg {
       display: none;
@@ -59,8 +58,7 @@ export const UnCheckbox = styled(Label)`
     position: relative;
     cursor: pointer;
     border: 1px solid ${colors.toggle.border.default};
-    box-shadow: 0 0 0 2px ${colors.background},
-      inset 0 1px 4px ${colors.toggle.border.default};
+    box-shadow: inset 0 1px 4px ${colors.toggle.border.default};
     background-color: ${colors.toggle.background.default};
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
       border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),

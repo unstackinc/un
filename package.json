@@ -1,6 +1,6 @@
 {
   "name": "un",
-  "version": "0.10.0-aplha",
+  "version": "0.10.1-aplha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -40,6 +40,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0",
     "react-spring": "^9.2.3",
     "react-use": "^17.2.4",
     "styled-system": "^5.1.5"

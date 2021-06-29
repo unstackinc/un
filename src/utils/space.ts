@@ -11,6 +11,7 @@ export const space = {
     xxl: '16rem',
   },
   padding: {
+    xxxs: '0.25rem',
     xxs: '0.375rem',
     xs: '0.75rem',
     sm: '1.25rem',

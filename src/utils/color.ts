@@ -2,12 +2,12 @@
 
 const un = {
   primary: '#7373E5',
-  black: '#000',
+  black: '#000000',
   greyDark: '#14213D',
   grey: '#434D64',
   greyLight: '#7D8FB2',
   whiteOff: '#F8FAFE',
-  white: '#FFF',
+  white: '#FFFFFF',
   blue: '#148FCD',
   green: '#3DCCB4',
   red: '#C8549F',
@@ -15,6 +15,7 @@ const un = {
   transparent: 'rgba(0, 0, 0, 0)',
   border: '#E7EDF3',
   disabled: '#DAE2F2',
+  toggle: '#B8C7E5',
   25: 'rgba(220, 228, 242, .25)',
   5: 'rgba(220, 228, 242, .5)',
   75: 'rgba(220, 228, 242, .75)',
@@ -60,6 +61,19 @@ export const color = {
       border: {
         default: un.border,
         focus: un.blue,
+      },
+    },
+    toggle: {
+      background: {
+        default: un.border,
+        hover: un.disabled,
+        active: un.white,
+        disabled: un.disabled,
+      },
+      border: {
+        default: un.toggle,
+        focus: `${un.blue}88`,
+        active: un.blue,
       },
     },
     text: {

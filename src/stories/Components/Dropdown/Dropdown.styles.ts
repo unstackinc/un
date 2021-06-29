@@ -1,8 +1,9 @@
 // Dropdown.styles.ts
 
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-import theme from '../../../theme';
+import theme, { fontSizes } from '../../../theme';
 
 const { colors, fonts, fontWeights, padding, radii } = theme;
 
@@ -71,3 +72,28 @@ export const UnDropdownOption = styled.option({
     borderBottom: `1px solid ${colors.border}`,
   },
 });
+
+export const DropdownStyles = css`
+  ${fontSizes[2]};
+`;
+
+export const WarningStyles = css`
+  box-shadow: 0 0 0 2px ${colors.warning} !important;
+  :focus {
+    box-shadow: 0 0 0 2px ${colors.warning} !important;
+  }
+`;
+
+export const DisabledStyles = css`
+  background: ${colors.disabled} !important;
+  border-color: ${colors.disabled} !important;
+  user-select: none !important;
+  cursor: not-allowed !important;
+  :hover {
+    color: inherit !important;
+  }
+`;
+
+export const OptionStyles = css`
+  ${fontSizes[2]};
+`;

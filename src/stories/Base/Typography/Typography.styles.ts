@@ -1,6 +1,7 @@
 // Typography.styles.ts
 
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 import theme, { fontSizes } from '../../../theme';
 
@@ -79,28 +80,54 @@ export const UnH3 = styled.h3`
   font-weight: ${fontWeights[1]};
 `;
 
-export const UnLabel = styled.label({
-  fontFamily: fonts.body,
-  fontWeight: fontWeights[1],
-  color: colors.text.secondary,
-  position: 'relative',
-  display: 'flex',
-  flexDirection: 'column',
-  width: '16rem',
-  '&.full': {
-    width: '100%',
-  },
-  '.label-text': {
-    cursor: 'pointer',
-  },
-  '.label-text,.warning-text,.help-text': {
-    marginBottom: margin.xs,
-  },
-  '.warning-text,.help-text': {
-    marginTop: margin.xs,
-    fontWeight: fontWeights[0],
-  },
-  '.warning-text': {
-    color: colors.warning,
-  },
-});
+export const LabelStyles = css`
+  font-family: ${fonts.body};
+  font-weight: ${fontWeights[1]};
+  color: ${colors.text.secondary};
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: ${margin.xs};
+  width: 16rem;
+  .label-text {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+  }
+  .warning-text,
+  .help-text {
+    font-weight: ${fontWeights[0]};
+  }
+  .warning-text {
+    color: ${colors.warning};
+  }
+`;
+
+export const FullStyles = css`
+  width: 100%;
+`;
+
+export const InlineStyles = css`
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: ${margin.xs};
+  .label-text {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: ${margin.xs};
+    margin-bottom: 0;
+  }
+`;
+
+export const DisabledStyles = css`
+  cursor: auto !important;
+`;
+
+export const BeforeStyles = css`
+  .label-text {
+    justify-content: space-between !important;
+  }
+`;

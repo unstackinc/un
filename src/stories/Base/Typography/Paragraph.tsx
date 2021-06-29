@@ -4,7 +4,17 @@
 import * as React from 'react';
 import { css } from '@emotion/react';
 
-import { UnP0, UnP1, UnP2, UnP3, UnLabel } from './Typography.styles';
+import {
+  UnP0,
+  UnP1,
+  UnP2,
+  UnP3,
+  LabelStyles,
+  FullStyles,
+  InlineStyles,
+  BeforeStyles,
+  DisabledStyles,
+} from './Typography.styles';
 
 interface PProps {
   weight?: 'normal' | 'medium' | 'bold';
@@ -135,24 +145,62 @@ P0.defaultProps = {
 };
 
 interface LabelProps {
-  name: string;
+  label?: string;
+  id: string;
   full?: boolean;
-  children: React.ReactNode;
+  inline?: boolean;
+  before?: boolean;
+  after?: boolean;
+  disabled?: boolean;
+  control?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const Label: React.FunctionComponent<LabelProps> = ({
-  name,
+  label,
+  id,
   full,
+  inline,
+  before,
+  after,
+  disabled,
+  control,
   children,
   ...props
 }) => {
   return (
-    <UnLabel htmlFor={name} className={full && 'full'} {...props}>
-      {children}
-    </UnLabel>
+    <div
+      css={[
+        LabelStyles,
+        full && FullStyles,
+        inline && InlineStyles,
+        before && BeforeStyles,
+      ]}
+      {...props}
+    >
+      {(after || before) && children}
+
+      {label && (
+        <label
+          htmlFor={id}
+          className="label-text"
+          css={disabled && DisabledStyles}
+        >
+          {after && control}
+          {label}
+          {!after && control}
+        </label>
+      )}
+
+      {!after && !before && children}
+    </div>
   );
 };
 
 Label.defaultProps = {
   full: false,
+  inline: false,
+  before: false,
+  after: false,
+  disabled: false,
 };

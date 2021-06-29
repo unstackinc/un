@@ -10,6 +10,7 @@ import { fontSizes } from '../../../theme';
 
 interface TextareaProps {
   label?: string;
+  id: string;
   name: string;
   warningText?: string;
   helpText?: string;
@@ -22,6 +23,7 @@ interface TextareaProps {
 
 export const Textarea = ({
   label,
+  id,
   name,
   warningText,
   helpText,
@@ -32,22 +34,11 @@ export const Textarea = ({
   ...props
 }: TextareaProps) => {
   return (
-    <Label name={name} full={full}>
-      {label && (
-        <div
-          className="label-text"
-          css={css`
-            ${disabled &&
-            css`
-              cursor: auto !important;
-            `}
-          `}
-        >
-          {label}
-        </div>
-      )}
+    <Label id={id} label={label} disabled={disabled} full={full}>
       <UnTextarea
-        className={[full ? 'full' : '', warning ? 'warning' : ''].join(' ')}
+        id={id}
+        name={name}
+        className={[full && 'full', warning && 'warning'].join(' ')}
         placeholder={placeholder}
         disabled={disabled}
         css={css`

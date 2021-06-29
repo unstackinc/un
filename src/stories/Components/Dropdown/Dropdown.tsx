@@ -2,17 +2,21 @@
 // Dropdown.tsx
 
 import * as React from 'react';
-import { css } from '@emotion/react';
 
 import { Label } from '../../';
-import { UnDropdown, UnDropdownOption } from './Dropdown.styles';
-import theme, { fontSizes } from '../../../theme';
-
-const { colors } = theme;
+import {
+  UnDropdown,
+  UnDropdownOption,
+  DropdownStyles,
+  WarningStyles,
+  DisabledStyles,
+  OptionStyles,
+} from './Dropdown.styles';
 
 interface DropdownProps {
   options: any;
   label?: string;
+  id: string;
   name: string;
   warningText?: string;
   helpText?: string;
@@ -26,6 +30,7 @@ interface DropdownProps {
 export const Dropdown = ({
   options,
   label,
+  id,
   name,
   warningText,
   helpText,
@@ -36,44 +41,16 @@ export const Dropdown = ({
   ...props
 }: DropdownProps) => {
   return (
-    <Label name={name} full={full}>
-      {label && (
-        <div
-          className="label-text"
-          css={css`
-            ${disabled &&
-            css`
-              cursor: auto !important;
-            `}
-          `}
-        >
-          {label}
-        </div>
-      )}
+    <Label id={id} label={label} disabled={disabled} full={full}>
       <UnDropdown
+        id={id}
         name={name}
-        id={name}
         className={full && 'full'}
-        css={css`
-          ${fontSizes[2]};
-          ${warning &&
-          css`
-            box-shadow: 0 0 0 2px ${colors.warning} !important;
-            :focus {
-              box-shadow: 0 0 0 2px ${colors.warning} !important;
-            }
-          `}
-          ${disabled &&
-          css`
-            background: ${colors.disabled} !important;
-            border-color: ${colors.disabled} !important;
-            user-select: none !important;
-            cursor: not-allowed !important;
-            :hover {
-              color: inherit !important;
-            }
-          `}
-        `}
+        css={[
+          DropdownStyles,
+          warning && WarningStyles,
+          disabled && DisabledStyles,
+        ]}
         placeholder={placeholder}
         disabled={disabled}
         {...props}
@@ -106,13 +83,7 @@ interface OptionProps {
 
 export const DropdownOption = ({ value, children, ...props }: OptionProps) => {
   return (
-    <UnDropdownOption
-      value={value}
-      css={css`
-        ${fontSizes[2]};
-      `}
-      {...props}
-    >
+    <UnDropdownOption value={value} css={OptionStyles} {...props}>
       {children}
     </UnDropdownOption>
   );

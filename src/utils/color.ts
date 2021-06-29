@@ -6,7 +6,7 @@ const un = {
   greyDark: '#14213D',
   grey: '#434D64',
   greyLight: '#7D8FB2',
-  whiteOff: '#F8FAFE',
+  whiteOff: '#F4F8FA',
   white: '#FFFFFF',
   blue: '#148FCD',
   green: '#3DCCB4',
@@ -82,6 +82,7 @@ export const color = {
       bold: un.greyDark,
       link: un.blue,
       reversed: un.white,
+      primary: un.primary,
     },
   },
   opacity: {

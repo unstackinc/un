@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 
 import theme, { fontSizes } from '../../../theme';
 
-const { colors, fonts, fontWeights, padding, radii } = theme;
+const { colors, fonts, fontWeights, padding, radii, shadows } = theme;
 
 export const UnDropdown = styled.select({
   cursor: 'pointer',
@@ -47,7 +47,7 @@ export const UnDropdown = styled.select({
   },
   ':focus': {
     outline: 'none',
-    boxShadow: `0 0 0 2px ${colors.input.border.focus}`,
+    boxShadow: shadows.focus.input.default,
     background: colors.input.background.focus,
   },
   ':active': {
@@ -78,9 +78,9 @@ export const DropdownStyles = css`
 `;
 
 export const WarningStyles = css`
-  box-shadow: 0 0 0 2px ${colors.warning} !important;
+  box-shadow: ${shadows.focus.input.warning} !important;
   :focus {
-    box-shadow: 0 0 0 2px ${colors.warning} !important;
+    box-shadow: ${shadows.focus.input.warning} !important;
   }
 `;
 

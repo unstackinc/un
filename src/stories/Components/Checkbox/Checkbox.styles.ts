@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { Label } from '../..';
 import theme from '../../../theme';
 
-const { colors, opacity, margin, padding } = theme;
+const { colors, opacity, margin, padding, shadows } = theme;
 
 export const UnCheckbox = styled(Label)`
   input {
@@ -15,7 +15,7 @@ export const UnCheckbox = styled(Label)`
     &:checked ~ label .control {
       background-color: ${colors.toggle.border.active};
       border-color: transparent;
-      box-shadow: inset 0 1px 4px ${colors.toggle.border.default}00;
+      box-shadow: ${shadows.inset.active};
     }
     & ~ label svg {
       display: none;
@@ -39,8 +39,7 @@ export const UnCheckbox = styled(Label)`
     &:disabled ~ label .control {
       cursor: not-allowed;
       background-color: ${colors.toggle.background.disabled};
-      box-shadow: 0 0 0 0 ${colors.background}00,
-        inset 0 0 0 0 ${colors.toggle.background.active}00;
+      box-shadow: ${shadows.inset.disabled};
     }
     &:disabled:active ~ label .control::before {
       opacity: 0;
@@ -58,7 +57,7 @@ export const UnCheckbox = styled(Label)`
     position: relative;
     cursor: pointer;
     border: 1px solid ${colors.toggle.border.default};
-    box-shadow: inset 0 1px 4px ${colors.toggle.border.default};
+    box-shadow: ${shadows.inset.default};
     background-color: ${colors.toggle.background.default};
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
       border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -74,8 +73,7 @@ export const UnCheckbox = styled(Label)`
       border-radius: ${margin.xxs};
       outline: none;
       opacity: 0;
-      box-shadow: 0 0 0 2px ${colors.background},
-        0 0 2px 4px ${colors.toggle.border.focus};
+      box-shadow: ${shadows.focus.default};
       transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
   }

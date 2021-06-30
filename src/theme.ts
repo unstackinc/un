@@ -1,6 +1,6 @@
 // theme.ts
 
-import { space, color, typography, border, fluid } from './utils';
+import { space, color, typography, border, shadows, fluid } from './utils';
 
 const base = 0.64;
 const scale = 1.2;
@@ -60,6 +60,7 @@ export default {
   ...color,
   ...typography,
   ...border,
+  shadows,
   sizes,
   breakpoints,
   mediaQueries,

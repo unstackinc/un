@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { Label } from '../..';
 import theme from '../../../theme';
 
-const { colors, opacity, margin, padding } = theme;
+const { colors, opacity, margin, padding, shadows } = theme;
 
 export const UnToggle = styled(Label)`
   input {
@@ -15,7 +15,7 @@ export const UnToggle = styled(Label)`
     &:checked ~ label .control {
       background-color: ${colors.toggle.border.active};
       border-color: transparent;
-      box-shadow: inset 0 1px 4px ${colors.toggle.border.default}00;
+      box-shadow: ${shadows.inset.active};
     }
     &:checked:hover ~ label .control {
       background-color: ${colors.toggle.border.active};
@@ -35,18 +35,15 @@ export const UnToggle = styled(Label)`
     &:disabled ~ label .control {
       cursor: not-allowed;
       background-color: ${colors.toggle.background.disabled};
-      box-shadow: 0 0 0 0 ${colors.background}00,
-        inset 0 0 0 0 ${colors.toggle.background.active}00;
+      box-shadow: ${shadows.inset.disabled};
       border-color: transparent;
-    }
-    &:disabled ~ label .control::after {
-      box-shadow: 0 3px 6px ${colors.toggle.border.default}00;
     }
     &:disabled:active ~ label .control::before {
       opacity: 0;
     }
+    &:disabled ~ label .control::after,
     &:disabled:active ~ label .control::after {
-      box-shadow: 0 3px 6px ${colors.toggle.border.default}00;
+      box-shadow: ${shadows.disabled};
     }
   }
 
@@ -61,7 +58,7 @@ export const UnToggle = styled(Label)`
     background-color: ${colors.toggle.background.default};
     padding: ${padding.xxxs};
     border-radius: ${margin.xxl};
-    box-shadow: inset 0 1px 4px ${colors.toggle.border.default};
+    box-shadow: ${shadows.inset.default};
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
@@ -77,15 +74,14 @@ export const UnToggle = styled(Label)`
       border-radius: ${margin.xxl};
       outline: none;
       opacity: 0;
-      box-shadow: 0 0 0 2px ${colors.background},
-        0 0 2px 4px ${colors.toggle.border.focus};
+      box-shadow: ${shadows.focus.default};
       transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     &::after {
       content: '';
       transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       border-radius: 50%;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: ${shadows.sm};
       background-color: ${colors.toggle.background.active};
       width: ${padding.md};
       height: ${padding.md};

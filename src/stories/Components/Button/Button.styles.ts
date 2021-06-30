@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { variant } from 'styled-system';
 
 import theme from '../../../theme';
+import { shadows } from '../../../utils';
 
 const { colors, opacity, margin, padding, fonts, fontWeights } = theme;
 
@@ -28,7 +29,7 @@ export const UnButton = styled.button(
     },
     ':focus': {
       outline: 'none',
-      boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px currentColor`,
+      boxShadow: shadows.focus.color,
     },
     ':active': {
       transform: 'scale(0.95)',
@@ -57,14 +58,14 @@ export const UnButton = styled.button(
         color: colors.text.reversed,
         bg: colors.button.background.primary,
         ':focus': {
-          boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.button.background.primary}`,
+          boxShadow: shadows.focus.primary,
         },
       },
       secondary: {
         color: colors.text.reversed,
         bg: colors.button.background.secondary,
         ':focus': {
-          boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.button.background.secondary}`,
+          boxShadow: shadows.focus.secondary,
         },
       },
       tertiary: {
@@ -76,7 +77,7 @@ export const UnButton = styled.button(
           bg: colors.button.background.tertiaryHover,
         },
         ':focus': {
-          boxShadow: `0 0 0 2px ${colors.button.background.primary}`,
+          boxShadow: shadows.focus.tertiary,
         },
       },
       outline: {
@@ -85,14 +86,14 @@ export const UnButton = styled.button(
         borderColor: 'currentColor',
         bg: colors.button.background.outline,
         ':focus': {
-          boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px currentColor`,
+          boxShadow: shadows.focus.color,
         },
       },
       warning: {
         color: colors.text.reversed,
         bg: colors.warning,
         ':focus': {
-          boxShadow: `0 0 0 2px ${colors.background}, 0 0 0 4px ${colors.warning}`,
+          boxShadow: shadows.focus.warning,
         },
       },
     },

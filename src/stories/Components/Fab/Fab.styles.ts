@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 import theme from '../../../theme';
 
-const { colors, opacity, fonts, fontWeights } = theme;
+const { colors, opacity, fonts, fontWeights, shadows } = theme;
 
 export const UnFab = styled.button({
   appearance: 'none',
@@ -38,7 +38,7 @@ export const UnFab = styled.button({
   },
   ':focus': {
     outline: 'none',
-    boxShadow: `0 0 0 2px ${colors.button.background.primary}`,
+    boxShadow: shadows.focus.tertiary,
   },
   ':disabled': {
     userSelect: 'none',

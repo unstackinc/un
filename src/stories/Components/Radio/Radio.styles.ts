@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { Label } from '../../';
 import theme from '../../../theme';
 
-const { colors, opacity, padding } = theme;
+const { colors, opacity, padding, shadows } = theme;
 
 export const UnRadio = styled(Label)`
   input {
@@ -14,7 +14,7 @@ export const UnRadio = styled(Label)`
     cursor: pointer;
     &:checked ~ label .control {
       background-color: ${colors.toggle.background.active};
-      box-shadow: inset 0 1px 4px ${colors.toggle.border.default}00;
+      box-shadow: ${shadows.inset.active};
       border-color: transparent;
     }
     &:checked ~ label .control::after {
@@ -36,8 +36,7 @@ export const UnRadio = styled(Label)`
     &:disabled ~ label .control {
       cursor: not-allowed;
       background-color: ${colors.toggle.background.disabled};
-      box-shadow: 0 0 0 0 ${colors.background}00,
-        inset 0 0 0 0 ${colors.toggle.background.active}00;
+      box-shadow: ${shadows.inset.disabled};
     }
     &:disabled:active ~ label .control::before {
       opacity: 0;
@@ -53,7 +52,7 @@ export const UnRadio = styled(Label)`
     cursor: pointer;
     border: 1px solid ${colors.toggle.border.default};
     background-color: ${colors.toggle.background.default};
-    box-shadow: inset 0 1px 4px ${colors.toggle.border.default};
+    box-shadow: ${shadows.inset.default};
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
@@ -73,8 +72,7 @@ export const UnRadio = styled(Label)`
     }
 
     &::before {
-      box-shadow: 0 0 0 2px ${colors.background},
-        0 0 2px 4px ${colors.toggle.border.focus};
+      box-shadow: ${shadows.focus.default};
       transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 

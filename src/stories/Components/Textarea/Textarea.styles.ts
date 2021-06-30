@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 import theme from '../../../theme';
 
-const { colors, fonts, fontWeights, padding, radii } = theme;
+const { colors, fonts, fontWeights, padding, radii, shadows } = theme;
 
 export const UnTextarea = styled.textarea({
   background: colors.input.background.default,
@@ -27,10 +27,10 @@ export const UnTextarea = styled.textarea({
     flexGrow: 1,
   },
   '&.warning': {
-    boxShadow: `0 0 0 2px ${colors.warning}`,
+    boxShadow: shadows.focus.input.warning,
   },
   '&.warning:focus': {
-    boxShadow: `0 0 0 2px ${colors.warning}`,
+    boxShadow: shadows.focus.input.warning,
   },
   ':hover': {
     color: colors.text.bold,
@@ -38,7 +38,7 @@ export const UnTextarea = styled.textarea({
   ':focus': {
     color: colors.text.default,
     outline: 'none',
-    boxShadow: `0 0 0 2px ${colors.input.border.focus}`,
+    boxShadow: shadows.focus.input.default,
     background: colors.input.background.focus,
   },
   ':active': {

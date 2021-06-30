@@ -5,11 +5,11 @@ import { Dialog } from '@reach/dialog';
 
 import theme from '../../../theme';
 
-const { margin, padding, colors, radii } = theme;
+const { margin, padding, colors, radii, shadows } = theme;
 
 export const UnModal = styled(Dialog)({
   maxWidth: '37.5rem',
-  boxShadow: '0 5px 16px rgba(0, 0, 0, 0.2)',
+  boxShadow: shadows.lg,
   background: colors.card,
   position: 'relative',
   borderRadius: radii.md,

@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 import theme from '../../../theme';
 
-const { colors, fonts, fontWeights, padding, radii } = theme;
+const { colors, fonts, fontWeights, padding, radii, shadows } = theme;
 
 export const UnTextbox = styled.input({
   background: colors.input.background.default,
@@ -23,10 +23,10 @@ export const UnTextbox = styled.input({
     flexGrow: 1,
   },
   '&.warning': {
-    boxShadow: `0 0 0 2px ${colors.warning}`,
+    boxShadow: shadows.focus.input.warning,
   },
   '&.warning:focus': {
-    boxShadow: `0 0 0 2px ${colors.warning}`,
+    boxShadow: shadows.focus.input.warning,
   },
   ':hover': {
     color: colors.text.bold,
@@ -34,7 +34,7 @@ export const UnTextbox = styled.input({
   ':focus': {
     color: colors.text.default,
     outline: 'none',
-    boxShadow: `0 0 0 2px ${colors.input.border.focus}`,
+    boxShadow: shadows.focus.input.default,
     background: colors.input.background.focus,
   },
   ':active': {

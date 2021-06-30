@@ -5,13 +5,13 @@ import { Dialog } from '@reach/dialog';
 
 import theme from '../../../theme';
 
-const { margin, padding, colors, radii } = theme;
+const { margin, padding, colors, radii, shadows } = theme;
 
 export const UnDrawer = styled(Dialog)({
   width: '25rem',
   maxWidth: `calc( 100% - ${margin.xs} * 2)`,
   height: `calc( 100vh - ${margin.xs} * 2)`,
-  boxShadow: '0 5px 16px rgba(0, 0, 0, 0.2)',
+  boxShadow: shadows.lg,
   background: colors.card,
   position: 'fixed',
   top: 0,

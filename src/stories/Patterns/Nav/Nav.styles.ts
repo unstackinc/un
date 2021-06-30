@@ -64,7 +64,7 @@ export const UnNavSection = styled.ul`
     ${fontSizes[2]}
     font-weight: ${fontWeights[1]};
     padding: ${padding.xxs};
-    border-radius: ${margin.xxs};
+    border-radius: ${radii.xs};
     display: inline-flex;
     color: ${colors.text.default};
     flex-direction: row;

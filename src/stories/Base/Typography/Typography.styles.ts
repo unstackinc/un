@@ -113,6 +113,7 @@ export const InlineStyles = css`
   align-items: center;
   gap: ${margin.xs};
   .label-text {
+    color: ${colors.text.default};
     display: flex !important;
     flex-direction: row !important;
     justify-content: flex-start !important;

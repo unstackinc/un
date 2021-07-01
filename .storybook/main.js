@@ -12,6 +12,10 @@ module.exports = {
       },
     },
   ],
+  reactOptions: {
+    fastRefresh: true,
+    strictMode: true,
+  },
   typescript: {
     check: false,
     checkOptions: {},

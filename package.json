@@ -1,6 +1,6 @@
 {
   "name": "un",
-  "version": "0.12.1-aplha",
+  "version": "0.12.2-aplha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -48,11 +48,11 @@
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@emotion/babel-plugin": "^11.3.0",
-    "@storybook/addon-actions": "^6.3.0",
-    "@storybook/addon-docs": "^6.3.0",
-    "@storybook/addon-essentials": "^6.3.0",
-    "@storybook/addon-links": "^6.3.0",
-    "@storybook/react": "^6.3.0",
+    "@storybook/addon-actions": "^6.3.2",
+    "@storybook/addon-docs": "^6.3.2",
+    "@storybook/addon-essentials": "^6.3.2",
+    "@storybook/addon-links": "^6.3.2",
+    "@storybook/react": "^6.3.2",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "@types/styled-system": "^5.1.11",

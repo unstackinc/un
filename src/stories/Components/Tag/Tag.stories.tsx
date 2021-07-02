@@ -19,6 +19,9 @@ export default {
     background: {
       control: { type: 'color' },
     },
+    small: {
+      control: { type: 'boolean' },
+    },
   },
 } as Meta;
 
@@ -27,11 +30,13 @@ const Template = (args) => <Tag {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
+  small: false,
   children: 'Tag',
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
   variant: 'outline',
+  small: false,
   children: 'Tag',
 };

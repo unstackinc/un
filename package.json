@@ -1,6 +1,6 @@
 {
   "name": "un",
-  "version": "0.12.4-alpha",
+  "version": "0.13.0-alpha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {

@@ -3,8 +3,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { NavLink } from 'react-router-dom';
-
 import theme, { fontSizes } from '../../../theme';
 
 const { margin, padding, fonts, fontWeights, colors, radii } = theme;
@@ -13,13 +11,17 @@ export const UnNav = styled.nav({
   width: '20rem',
   maxWidth: '100%',
   height: '100%',
-  backgroundColor: colors.background,
+  overflowY: 'scroll',
+  display: 'flex',
   position: 'fixed',
   top: 0,
   left: 0,
-  overflow: 'hidden',
-  display: 'flex',
+  background: colors.background,
   flexDirection: 'column',
+  scrollbarWidth: 'none',
+  '::-webkit-scrollbar': {
+    width: '0',
+  },
 });
 
 export const UnNavHeading = styled.div({
@@ -40,12 +42,12 @@ export const UnNavHeading = styled.div({
 
 export const UnNavBody = styled.div({
   height: '100%',
-  padding: padding.lg,
+  padding: padding.md,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'flex-start',
-  gap: margin.sm,
+  gap: margin.xs,
   overflowY: 'scroll',
   scrollbarWidth: 'none',
   '::-webkit-scrollbar': {
@@ -59,57 +61,63 @@ export const UnNavSection = styled.ul`
   margin: 0;
   padding: 0;
   color: ${colors.text.bold};
+`;
 
-  span {
-    ${fontSizes[2]}
+export const PushStyles = css`
+  margin-top: ${margin.sm};
+`;
+
+export const NavLinkStyles = css`
+  ${fontSizes[1]}
+  font-family: ${fonts.body};
+  font-weight: ${fontWeights[0]};
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: ${margin.xs};
+  text-decoration: none;
+  color: ${colors.text.secondary};
+  transition: color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.active {
+    color: ${colors.text.primary};
     font-weight: ${fontWeights[1]};
-    padding: ${padding.xxs};
-    border-radius: ${radii.xs};
-    display: inline-flex;
-    color: ${colors.text.default};
-    flex-direction: row;
-    align-items: center;
-    user-select: none;
-    cursor: pointer;
-    gap: ${margin.sm};
-    transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    &:hover {
-      background-color: ${colors.border};
-    }
-    &.active {
-      color: ${colors.text.primary};
-      svg {
-        opacity: 1;
-      }
+    svg {
+      opacity: 1;
     }
   }
 
   svg {
     opacity: 0.5;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1em;
+    height: 1em;
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 `;
 
-export const UnNavLink = styled(NavLink)`
-  ${fontSizes[1]}
-  font-family: ${fonts.body};
-  font-weight: ${fontWeights[0]};
-  user-select: none;
-  display: block;
-  text-decoration: none;
-  color: ${colors.text.default};
+export const NoIconStyles = css`
   padding: ${padding.xxs} 0;
-  margin-left: calc(${margin.sm} + ${padding.xxs} + 1.25rem);
-  &.active {
-    font-weight: ${fontWeights[1]};
-    color: ${colors.text.primary};
-  }
+  margin-left: calc(${margin.xs} + ${padding.xxs} + 1em);
+
   &:last-of-type {
-    padding-bottom: ${padding.sm};
+    padding-bottom: ${padding.xs};
+  }
+`;
+
+export const IconStyles = css`
+  font-weight: ${fontWeights[1]};
+  color: ${colors.text.default};
+  padding: ${padding.xxs};
+  border-radius: ${radii.xs};
+  display: inline-flex;
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    background-color: ${colors.border};
+  }
+  &.active {
+    background-color: ${colors.text.primary}22;
   }
 `;
 
@@ -122,7 +130,7 @@ export const UnNavPanel = styled.div`
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: ${padding.sm};
+    height: ${padding.xs};
     background: linear-gradient(
       180deg,
       ${colors.background}00 0%,
@@ -145,3 +153,7 @@ export const UnNavFooter = styled.div({
   borderTop: '1px solid',
   borderColor: colors.border,
 });
+
+export const UnNavSpacer = styled.div`
+  padding: ${padding.xxs};
+`;

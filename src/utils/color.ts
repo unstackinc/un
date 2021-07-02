@@ -6,7 +6,7 @@ const un = {
   greyDark: '#14213D',
   grey: '#434D64',
   greyLight: '#7D8FB2',
-  whiteOff: '#F4F8FA',
+  whiteOff: '#FAFCFC',
   white: '#FFFFFF',
   blue: '#148FCD',
   green: '#3DCCB4',

@@ -1,28 +1,34 @@
+/** @jsxImportSource @emotion/react */
 // Nav.tsx
 
 import * as React from 'react';
+import { ReactNode } from 'react';
 import { useState, useEffect, useCallback } from 'react';
 import { useMeasure } from 'react-use';
-import { animated, useSpring, config } from 'react-spring';
-import { css } from '@emotion/react';
+import { animated, useSpring } from 'react-spring';
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  NavLink,
+  useLocation,
+} from 'react-router-dom';
 
+import { Tag } from '../../';
 import {
   UnNav,
   UnNavHeading,
   UnNavBody,
   UnNavSection,
-  UnNavLink,
   UnNavFooter,
   UnNavPanel,
+  NavLinkStyles,
+  PushStyles,
+  NoIconStyles,
+  IconStyles,
 } from './Nav.styles';
-import theme, { fontSizes } from '../../../theme';
-
-const { margin, padding, fonts, fontWeights, colors, radii } = theme;
 
 interface NavProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const Nav = ({ children, ...props }: NavProps) => {
@@ -32,6 +38,7 @@ export const Nav = ({ children, ...props }: NavProps) => {
         <UnNavHeading></UnNavHeading>
 
         <UnNavBody>{children}</UnNavBody>
+
         <UnNavFooter></UnNavFooter>
       </Router>
     </UnNav>
@@ -39,17 +46,32 @@ export const Nav = ({ children, ...props }: NavProps) => {
 };
 
 interface SectionProps {
+  icon: ReactNode;
   label: string;
-  icon: React.ReactNode;
-  children: React.ReactNode;
+  to: string;
+  tag?: ReactNode;
+  links?: LinksProps[];
+  push?: boolean;
+  children?: ReactNode;
+}
+
+interface LinksProps {
+  name: string;
+  to: string;
+  tag?: string;
 }
 
 export const NavSection = ({
-  label,
   icon,
+  label,
+  to,
+  tag,
+  links,
+  push,
   children,
   ...props
 }: SectionProps) => {
+  /* Animate height */
   const defaultHeight = 0;
   const [showSection, setShowSection] = useState(false);
   const [contentHeight, setContentHeight] = useState(defaultHeight);
@@ -75,37 +97,52 @@ export const NavSection = ({
     return () => document.removeEventListener('resize', resize);
   }, [height]);
 
+  /* Track location */
+  const linkSet = [`/${to}`];
+  let location = useLocation();
+
+  useEffect(() => {
+    let { pathname } = location;
+    linkSet.includes(pathname)!! ? setShowSection(true) : setShowSection(false);
+  }, [location]);
+
   return (
-    <UnNavSection {...props}>
-      <span
-        className={showSection && 'active'}
-        onClick={() => setShowSection((prev) => !prev)}
+    <UnNavSection css={push && PushStyles} {...props}>
+      <NavLink
+        to={to}
+        css={[NavLinkStyles, IconStyles]}
+        activeClassName="active"
       >
         {icon}
         {label}
-      </span>
+        {tag && <Tag small>{tag}</Tag>}
+      </NavLink>
       <AnimatedUnNavPanel style={styles}>
-        <div ref={ref}>{children}</div>
+        <div ref={ref}>
+          {links &&
+            links.map((link, index) => {
+              const { name, to, tag } = link;
+              linkSet.push(`/${to}`);
+              return (
+                <NavLink
+                  to={to}
+                  css={[NavLinkStyles, NoIconStyles]}
+                  activeClassName="active"
+                  key={`${link.toString()}-${index}`}
+                >
+                  {name}
+                  {tag && <Tag small>{tag}</Tag>}
+                </NavLink>
+              );
+            })}
+          {children}
+        </div>
       </AnimatedUnNavPanel>
     </UnNavSection>
   );
 };
 
-interface LinkProps {
-  to: string;
-  children: React.ReactNode;
-}
-
-export const NavLink = ({ to, children, ...props }: LinkProps) => {
-  return (
-    <UnNavLink to={to} activeClassName="active" {...props}>
-      {children}
-    </UnNavLink>
-  );
-};
-
 Nav.defaultProps = {
-  showNav: false,
   title: 'Title',
 };
 

@@ -64,7 +64,7 @@ export const UnNavSection = styled.ul`
 `;
 
 export const PushStyles = css`
-  margin-top: ${margin.sm};
+  margin-top: ${margin.sm} !important;
 `;
 
 export const NavLinkStyles = css`

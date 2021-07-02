@@ -26,7 +26,7 @@ const Template = (args) => {
       <NavSection
         icon={<IoStar />}
         label="Quickstart"
-        to="/quickstart"
+        to="quickstart"
         tag="3"
       ></NavSection>
       <NavSection

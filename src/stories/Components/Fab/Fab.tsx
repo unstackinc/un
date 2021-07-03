@@ -2,12 +2,13 @@
 // Fab.tsx
 
 import * as React from 'react';
+import { forwardRef } from 'react';
 import { css } from '@emotion/react';
 
 import { UnFab } from './Fab.styles';
 import { fontSizes } from '../../../theme';
 
-interface FabProps {
+interface Props {
   variant?: 'small' | 'medium' | 'large';
   color?: string;
   disabled?: boolean;
@@ -15,17 +16,14 @@ interface FabProps {
   children: React.ReactNode;
 }
 
-export const Fab = ({
-  variant,
-  color,
-  disabled,
-  children,
-  ...props
-}: FabProps) => {
+type Ref = HTMLButtonElement;
+
+export const Fab = forwardRef<Ref, Props>((props, ref) => {
   return (
     <UnFab
-      className={variant}
-      disabled={disabled}
+      ref={ref}
+      className={props.variant}
+      disabled={props.disabled}
       css={css`
         ${fontSizes[2]};
         -webkit-appearance: none;
@@ -34,15 +32,15 @@ export const Fab = ({
           ${fontSizes[3]};
         }
         svg {
-          stroke: ${color};
+          stroke: ${props.color};
         }
       `}
       {...props}
     >
-      {children}
+      {props.children}
     </UnFab>
   );
-};
+});
 
 Fab.defaultProps = {
   variant: 'small',

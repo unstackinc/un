@@ -1,57 +1,15 @@
 // Button.styles.ts
 
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { variant } from 'styled-system';
 
-import theme from '../../../theme';
+import theme, { fontSizes } from '../../../theme';
 import { shadows } from '../../../utils';
 
 const { colors, opacity, margin, padding, fonts, fontWeights } = theme;
 
 export const UnButton = styled.button(
-  {
-    appearance: 'none',
-    fontFamily: fonts.body,
-    fontWeight: fontWeights[1],
-    border: '2px solid rgba( 0, 0, 0, 0.1 )',
-    borderRadius: '0.25em',
-    boxSizing: 'border-box',
-    padding: `${padding.xxs} ${padding.xs}`,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: margin.xxs,
-    cursor: 'pointer',
-    transition:
-      'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-    ':hover': {
-      opacity: opacity[75],
-    },
-    ':focus': {
-      outline: 'none',
-      boxShadow: shadows.focus.color,
-    },
-    ':active': {
-      transform: 'scale(0.95)',
-    },
-    ':disabled': {
-      userSelect: 'none',
-      cursor: 'not-allowed',
-      color: colors.text.secondary,
-      background: colors.disabled,
-      borderColor: 'transparent',
-    },
-    ':disabled:active': {
-      transform: 'none',
-    },
-    '&.large': {
-      padding: `${padding.xs} ${padding.md}`,
-      gap: margin.xs,
-    },
-    '&.full': {
-      width: '100%',
-    },
-  },
   variant({
     variants: {
       primary: {
@@ -99,3 +57,56 @@ export const UnButton = styled.button(
     },
   }),
 );
+
+export const Styles = css`
+  appearance: none;
+  -webkit-appearance: none;
+  ${fontSizes[1]};
+  font-family: ${fonts.body};
+  font-weight: ${fontWeights[1]};
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  padding: ${padding.xxs} ${padding.xs};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${margin.xxs};
+  cursor: pointer;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  &.large {
+    ${fontSizes[2]};
+  }
+  :hover {
+    opacity: ${opacity[75]};
+  }
+  :focus {
+    outline: none;
+    box-shadow: ${shadows.focus.color};
+  }
+  :active {
+    transform: scale(0.95);
+  }
+  :disabled {
+    user-select: none;
+    cursor: not-allowed;
+    color: ${colors.text.secondary};
+    background: ${colors.disabled};
+    border-color: transparent;
+  }
+  :disabled:active {
+    transform: none;
+  }
+`;
+
+export const LargeStyles = css`
+  ${fontSizes[2]};
+  padding: ${padding.xs} ${padding.md};
+  gap: ${margin.xs};
+`;
+
+export const FullStyles = css`
+  width: 100%;
+`;

@@ -1,6 +1,6 @@
-// border.ts
+// borders.ts
 
-export const border = {
+export const borders = {
   borderWidths: {
     sm: '.063rem',
     md: '.125rem',

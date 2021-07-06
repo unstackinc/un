@@ -1,14 +1,18 @@
-/** @jsxImportSource @emotion/react */
 // Paragraph.tsx
 
 import * as React from 'react';
 import { css } from '@emotion/react';
 
 import {
-  UnP0,
-  UnP1,
-  UnP2,
-  UnP3,
+  DisplayStyles,
+  NormalStyles,
+  MediumStyles,
+  BoldStyles,
+  LinkStyles,
+  P0Styles,
+  P1Styles,
+  P2Styles,
+  P3Styles,
   LabelStyles,
   FullStyles,
   InlineStyles,
@@ -33,17 +37,22 @@ export const P3 = ({
   ...props
 }: PProps) => {
   return (
-    <UnP3
-      className={[weight, link ? 'link' : '', display ? 'display' : ''].join(
-        ' ',
-      )}
-      css={css`
-        color: ${color} !important;
-      `}
+    <p
+      css={[
+        P3Styles,
+        weight === 'normal' && NormalStyles,
+        weight === 'medium' && MediumStyles,
+        weight === 'bold' && BoldStyles,
+        display && DisplayStyles,
+        link && LinkStyles,
+        css`
+          color: ${color};
+        `,
+      ]}
       {...props}
     >
       {children}
-    </UnP3>
+    </p>
   );
 };
 
@@ -51,7 +60,6 @@ P3.defaultProps = {
   weight: 'normal',
   link: false,
   display: false,
-  color: 'null',
 };
 
 export const P2: React.FunctionComponent<PProps> = ({
@@ -63,17 +71,22 @@ export const P2: React.FunctionComponent<PProps> = ({
   ...props
 }) => {
   return (
-    <UnP2
-      className={[weight, link ? 'link' : '', display ? 'display' : ''].join(
-        ' ',
-      )}
-      css={css`
-        color: ${color} !important;
-      `}
+    <p
+      css={[
+        P2Styles,
+        weight === 'normal' && NormalStyles,
+        weight === 'medium' && MediumStyles,
+        weight === 'bold' && BoldStyles,
+        display && DisplayStyles,
+        link && LinkStyles,
+        css`
+          color: ${color};
+        `,
+      ]}
       {...props}
     >
       {children}
-    </UnP2>
+    </p>
   );
 };
 
@@ -81,7 +94,6 @@ P2.defaultProps = {
   weight: 'normal',
   link: false,
   display: false,
-  color: 'null',
 };
 
 export const P1: React.FunctionComponent<PProps> = ({
@@ -93,17 +105,22 @@ export const P1: React.FunctionComponent<PProps> = ({
   ...props
 }) => {
   return (
-    <UnP1
-      className={[weight, link ? 'link' : '', display ? 'display' : ''].join(
-        ' ',
-      )}
-      css={css`
-        color: ${color} !important;
-      `}
+    <p
+      css={[
+        P1Styles,
+        weight === 'normal' && NormalStyles,
+        weight === 'medium' && MediumStyles,
+        weight === 'bold' && BoldStyles,
+        display && DisplayStyles,
+        link && LinkStyles,
+        css`
+          color: ${color};
+        `,
+      ]}
       {...props}
     >
       {children}
-    </UnP1>
+    </p>
   );
 };
 
@@ -111,7 +128,6 @@ P1.defaultProps = {
   weight: 'normal',
   link: false,
   display: false,
-  color: 'null',
 };
 
 export const P0: React.FunctionComponent<PProps> = ({
@@ -123,17 +139,22 @@ export const P0: React.FunctionComponent<PProps> = ({
   ...props
 }) => {
   return (
-    <UnP0
-      className={[weight, link ? 'link' : '', display ? 'display' : ''].join(
-        ' ',
-      )}
-      css={css`
-        color: ${color} !important;
-      `}
+    <p
+      css={[
+        P0Styles,
+        weight === 'normal' && NormalStyles,
+        weight === 'medium' && MediumStyles,
+        weight === 'bold' && BoldStyles,
+        display && DisplayStyles,
+        link && LinkStyles,
+        css`
+          color: ${color};
+        `,
+      ]}
       {...props}
     >
       {children}
-    </UnP0>
+    </p>
   );
 };
 
@@ -141,7 +162,6 @@ P0.defaultProps = {
   weight: 'normal',
   link: false,
   display: false,
-  color: 'null',
 };
 
 interface LabelProps {
@@ -153,6 +173,7 @@ interface LabelProps {
   after?: boolean;
   disabled?: boolean;
   control?: React.ReactNode;
+  css?: any;
   children?: React.ReactNode;
 }
 
@@ -165,6 +186,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   after,
   disabled,
   control,
+  css,
   children,
   ...props
 }) => {
@@ -174,18 +196,16 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         LabelStyles,
         full && FullStyles,
         inline && InlineStyles,
+        disabled && DisabledStyles,
         before && BeforeStyles,
+        css,
       ]}
       {...props}
     >
       {(after || before) && children}
 
       {label && (
-        <label
-          htmlFor={id}
-          className="label-text"
-          css={disabled && DisabledStyles}
-        >
+        <label htmlFor={id} className="label-text">
           {after && control}
           {label}
           {!after && control}

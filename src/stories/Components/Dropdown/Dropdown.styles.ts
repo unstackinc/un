@@ -1,99 +1,91 @@
 // Dropdown.styles.ts
 
-import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 import theme, { fontSizes } from '../../../theme';
 
-const { colors, fonts, fontWeights, padding, radii, shadows } = theme;
-
-export const UnDropdown = styled.select({
-  cursor: 'pointer',
-  display: 'flex',
-  alignItems: 'center',
-  position: 'relative',
-  width: '16rem',
-  boxShadow: 'none',
-  background: colors.input.background.default,
-  fontFamily: fonts.body,
-  fontWeight: fontWeights[0],
-  border: `1px solid ${colors.border}`,
-  borderRadius: radii.xs,
-  padding: padding.xs,
-  justifyContent: 'space-between',
-  color: colors.text.secondary,
-  userSelect: 'none',
-  transition: `color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-    background 0.6s cubic-bezier(0.16, 1, 0.3, 1)`,
-
-  '&.full': {
-    maxWidth: '100%',
-    width: '100%',
-    svg: {
-      transform: `translateX(-100%)`,
-    },
-  },
-  svg: {
-    position: 'absolute',
-    userSelect: 'none',
-    pointerEvents: 'none',
-    right: 0,
-    width: '1.25em',
-    height: '1.25em',
-    transform: `translateX(100%)`,
-  },
-  ':hover': {
-    color: colors.text.bold,
-  },
-  ':focus': {
-    outline: 'none',
-    boxShadow: shadows.focus.input.default,
-    background: colors.input.background.focus,
-  },
-  ':active': {
-    color: colors.text.default,
-  },
-});
-
-export const UnDropdownOption = styled.option({
-  appearance: 'none',
-  background: colors.input.background.light,
-  fontFamily: fonts.body,
-  fontWeight: fontWeights[0],
-  padding: padding.xs,
-  display: 'flex',
-  justifyContent: 'flex-start',
-  alignItems: 'center',
-  color: colors.text.secondary,
-  cursor: 'pointer',
-  transition:
-    'color 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-  ':not(:last-child)': {
-    borderBottom: `1px solid ${colors.border}`,
-  },
-});
+const { colors, fonts, fontWeights, padding, radii, shadows, transitions } =
+  theme;
 
 export const DropdownStyles = css`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 16rem;
+  box-shadow: none;
+  background-color: ${colors.input.background.default};
   ${fontSizes[2]};
-`;
-
-export const WarningStyles = css`
-  box-shadow: ${shadows.focus.input.warning} !important;
-  :focus {
-    box-shadow: ${shadows.focus.input.warning} !important;
+  font-family: ${fonts.body};
+  font-weight: ${fontWeights[0]};
+  border: 1px solid ${colors.border};
+  border-radius: ${radii.xs};
+  padding: ${padding.xs};
+  justify-content: space-between;
+  color: ${colors.text.secondary};
+  user-select: none;
+  transition: color ${transitions[0]}, background-color ${transitions[0]};
+  svg {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    right: 0;
+    width: 1.25em;
+    height: 1.25em;
+    transform: translateX(100%);
   }
-`;
-
-export const DisabledStyles = css`
-  background: ${colors.disabled} !important;
-  border-color: ${colors.disabled} !important;
-  user-select: none !important;
-  cursor: not-allowed !important;
   :hover {
-    color: inherit !important;
+    color: ${colors.text.bold};
+  }
+  :focus {
+    outline: none;
+    box-shadow: ${shadows.focus.input.default};
+    background-color: ${colors.input.background.focus};
+  }
+  :active {
+    color: ${colors.text.default};
   }
 `;
 
 export const OptionStyles = css`
+  appearance: none;
+  background-color: ${colors.input.background.light};
   ${fontSizes[2]};
+  font-family: ${fonts.body};
+  font-weight: ${fontWeights[0]};
+  padding: ${padding.xs};
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: ${colors.text.secondary};
+  cursor: pointer;
+  transition: color ${transitions[0]}, background-color ${transitions[0]};
+  :not(:last-child) {
+    border-bottom: 1px solid ${colors.border};
+  }
+`;
+
+export const FullStyles = css`
+  max-width: 100%;
+  width: 100%;
+  svg {
+    transform: translateX(-100%);
+  }
+`;
+
+export const WarningStyles = css`
+  box-shadow: ${shadows.focus.input.warning};
+  :focus {
+    box-shadow: ${shadows.focus.input.warning};
+  }
+`;
+
+export const DisabledStyles = css`
+  background-color: ${colors.disabled};
+  border-color: ${colors.disabled};
+  user-select: none;
+  cursor: not-allowed;
+  :hover {
+    color: inherit;
+  }
 `;

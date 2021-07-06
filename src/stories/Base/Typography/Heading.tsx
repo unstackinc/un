@@ -1,10 +1,15 @@
-/** @jsxImportSource @emotion/react */
 // Heading.tsx
 
 import * as React from 'react';
 import { css } from '@emotion/react';
 
-import { UnH0, UnH1, UnH2, UnH3 } from './Typography.styles';
+import {
+  DisplayStyles,
+  H0Styles,
+  H1Styles,
+  H2Styles,
+  H3Styles,
+} from './Typography.styles';
 
 interface HProps {
   color?: string;
@@ -14,20 +19,22 @@ interface HProps {
 
 export const H3 = ({ color, display, children, ...props }: HProps) => {
   return (
-    <UnH3
-      className={display ? 'display' : ''}
-      css={css`
-        color: ${color} !important;
-      `}
+    <h3
+      css={[
+        H3Styles,
+        display && DisplayStyles,
+        css`
+          color: ${color};
+        `,
+      ]}
       {...props}
     >
       {children}
-    </UnH3>
+    </h3>
   );
 };
 
 H3.defaultProps = {
-  color: 'null',
   display: false,
 };
 
@@ -38,20 +45,22 @@ export const H2: React.FunctionComponent<HProps> = ({
   ...props
 }) => {
   return (
-    <UnH2
-      className={display ? 'display' : ''}
-      css={css`
-        color: ${color} !important;
-      `}
+    <h2
+      css={[
+        H2Styles,
+        display && DisplayStyles,
+        css`
+          color: ${color};
+        `,
+      ]}
       {...props}
     >
       {children}
-    </UnH2>
+    </h2>
   );
 };
 
 H2.defaultProps = {
-  color: 'null',
   display: false,
 };
 
@@ -62,20 +71,22 @@ export const H1: React.FunctionComponent<HProps> = ({
   ...props
 }) => {
   return (
-    <UnH1
-      className={display ? 'display' : ''}
-      css={css`
-        color: ${color} !important;
-      `}
+    <h1
+      css={[
+        H1Styles,
+        display && DisplayStyles,
+        css`
+          color: ${color};
+        `,
+      ]}
       {...props}
     >
       {children}
-    </UnH1>
+    </h1>
   );
 };
 
 H1.defaultProps = {
-  color: 'null',
   display: false,
 };
 
@@ -86,20 +97,22 @@ export const H0: React.FunctionComponent<HProps> = ({
   ...props
 }) => {
   return (
-    <UnH0
-      className={display ? 'display' : ''}
-      css={css`
-        color: ${color} !important;
-      `}
+    <h1
+      css={[
+        H0Styles,
+        display && DisplayStyles,
+        css`
+          color: ${color};
+        `,
+      ]}
       {...props}
     >
       {children}
-    </UnH0>
+    </h1>
   );
 };
 
 H0.defaultProps = {
-  color: 'null',
   display: false,
 };
 

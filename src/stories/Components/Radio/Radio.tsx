@@ -1,9 +1,9 @@
-/** @jsxImportSource @emotion/react */
 // Radio.tsx
 
 import * as React from 'react';
 
-import { UnRadio } from './Radio.styles';
+import { Label } from '../../';
+import { Styles } from './Radio.styles';
 
 interface RadioProps {
   label?: string;
@@ -27,7 +27,7 @@ export const Radio = ({
   ...props
 }: RadioProps) => {
   return (
-    <UnRadio
+    <Label
       id={id}
       label={label}
       disabled={disabled}
@@ -35,6 +35,7 @@ export const Radio = ({
       inline
       after
       control={<span className="control"></span>}
+      css={Styles}
     >
       <input
         type="radio"
@@ -44,7 +45,7 @@ export const Radio = ({
         disabled={disabled}
         {...props}
       />
-    </UnRadio>
+    </Label>
   );
 };
 

@@ -3,14 +3,15 @@
 import * as React from 'react';
 import { animated, useTransition, config } from 'react-spring';
 
+import { Dialog } from '@reach/dialog';
 import VisuallyHidden from '@reach/visually-hidden';
 import { FiX } from 'react-icons/fi';
 
 import {
-  UnDrawer,
-  UnDrawerHeading,
-  UnDrawerBody,
-  UnDrawerFooter,
+  Styles,
+  HeadingStyles,
+  BodyStyles,
+  FooterStyles,
 } from './Drawer.styles';
 import { Fab, Overlay, H3 } from '../..';
 import { escape } from '../../../utils';
@@ -24,6 +25,9 @@ interface DrawerProps {
   aria: string;
 }
 
+/* FIX: Animations are janky after composition refactor */
+/* FIX: Escape key not working */
+
 export const Drawer = ({
   showDrawer,
   setShowDrawer,
@@ -34,7 +38,7 @@ export const Drawer = ({
   ...props
 }: DrawerProps) => {
   escape(showDrawer, setShowDrawer);
-  const AnimatedUnDrawer = animated(UnDrawer);
+  const AnimatedDialog = animated(Dialog);
   const transitions = useTransition(showDrawer, {
     from: {
       transform: 'translateX(110%)',
@@ -51,7 +55,7 @@ export const Drawer = ({
   return (
     <>
       {transitions(
-        (styles, item) =>
+        (animation, item) =>
           item && (
             <>
               <Overlay
@@ -59,8 +63,13 @@ export const Drawer = ({
                 setShowOverlay={setShowDrawer}
                 onClick={() => setShowDrawer(false)}
               >
-                <AnimatedUnDrawer style={styles} aria-label={aria} {...props}>
-                  <UnDrawerHeading>
+                <AnimatedDialog
+                  css={Styles}
+                  style={animation}
+                  aria-label={aria}
+                  {...props}
+                >
+                  <div css={HeadingStyles}>
                     <H3 display>{title}</H3>
                     <Fab
                       aria-label="Close modal"
@@ -69,9 +78,9 @@ export const Drawer = ({
                       <VisuallyHidden>Close</VisuallyHidden>
                       <FiX aria-hidden />
                     </Fab>
-                  </UnDrawerHeading>
-                  <UnDrawerBody>{children}</UnDrawerBody>
-                  <UnDrawerFooter>
+                  </div>
+                  <div css={BodyStyles}>{children}</div>
+                  <div css={FooterStyles}>
                     {actions.map((action, index) => {
                       return (
                         <React.Fragment key={`${action.toString()}-${index}`}>
@@ -79,8 +88,8 @@ export const Drawer = ({
                         </React.Fragment>
                       );
                     })}
-                  </UnDrawerFooter>
-                </AnimatedUnDrawer>
+                  </div>
+                </AnimatedDialog>
               </Overlay>
             </>
           ),

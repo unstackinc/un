@@ -1,14 +1,15 @@
-/** @jsxImportSource @emotion/react */
 // Search.tsx
 
 import * as React from 'react';
-import { css } from '@emotion/react';
 
 import { FiSearch } from 'react-icons/fi';
 
-import { Label } from '../..';
-import { UnSearchWrapper, UnSearch } from './Search.styles';
-import { fontSizes } from '../../../theme';
+import {
+  LabelStyles,
+  InputStyles,
+  FullStyles,
+  WarningStyles,
+} from './Search.styles';
 
 interface SearchProps {
   label?: string;
@@ -36,21 +37,18 @@ export const Search = ({
   ...props
 }: SearchProps) => {
   return (
-    <UnSearchWrapper id={id}>
+    <label id={id} css={[LabelStyles, full && FullStyles]}>
       <FiSearch />
-      <UnSearch
+      <input
         type="text"
         id={id}
         name={name}
-        className={[full ? 'full' : '', warning ? 'warning' : ''].join(' ')}
         placeholder={placeholder}
         disabled={disabled}
-        css={css`
-          ${fontSizes[2]};
-        `}
+        css={[InputStyles, full && FullStyles, warning && WarningStyles]}
         {...props}
       />
-    </UnSearchWrapper>
+    </label>
   );
 };
 

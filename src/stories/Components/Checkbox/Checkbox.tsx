@@ -1,11 +1,11 @@
-/** @jsxImportSource @emotion/react */
 // Checkbox.tsx
 
 import * as React from 'react';
 
 import { FiCheck } from 'react-icons/fi';
 
-import { UnCheckbox } from './Checkbox.styles';
+import { Label } from '../..';
+import { Styles } from './Checkbox.styles';
 
 interface CheckboxProps {
   label?: string;
@@ -29,7 +29,7 @@ export const Checkbox = ({
   ...props
 }: CheckboxProps) => {
   return (
-    <UnCheckbox
+    <Label
       id={id}
       label={label}
       disabled={disabled}
@@ -41,6 +41,7 @@ export const Checkbox = ({
           <FiCheck />
         </span>
       }
+      css={Styles}
     >
       <input
         type="checkbox"
@@ -50,7 +51,7 @@ export const Checkbox = ({
         disabled={disabled}
         {...props}
       />
-    </UnCheckbox>
+    </Label>
   );
 };
 

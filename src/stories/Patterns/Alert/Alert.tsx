@@ -3,7 +3,9 @@
 import * as React from 'react';
 import { animated, useTransition } from 'react-spring';
 
-import { UnAlert, UnAlertBody, UnAlertFooter } from './Alert.styles';
+import { Dialog } from '@reach/dialog';
+
+import { Styles, BodyStyles, FooterStyles } from './Alert.styles';
 import { Overlay } from '../..';
 import { escape } from '../../../utils';
 
@@ -16,6 +18,8 @@ interface AlertProps {
   aria: string;
 }
 
+/* FIX: Escape key not working */
+
 export const Alert = ({
   showAlert,
   setShowAlert,
@@ -26,7 +30,7 @@ export const Alert = ({
   ...props
 }: AlertProps) => {
   escape(showAlert, setShowAlert);
-  const AnimatedUnAlert = animated(UnAlert);
+  const AnimatedAlert = animated(Dialog);
   const transitions = useTransition(showAlert, {
     from: {
       opacity: 0,
@@ -49,9 +53,14 @@ export const Alert = ({
           item && (
             <>
               <Overlay showOverlay={showAlert} setShowOverlay={setShowAlert}>
-                <AnimatedUnAlert style={styles} aria-label={aria} {...props}>
-                  <UnAlertBody>{children}</UnAlertBody>
-                  <UnAlertFooter>
+                <AnimatedAlert
+                  style={styles}
+                  css={Styles}
+                  aria-label={aria}
+                  {...props}
+                >
+                  <div css={BodyStyles}>{children}</div>
+                  <div css={FooterStyles}>
                     {actions.map((action, index) => {
                       return (
                         <React.Fragment key={`${action.toString()}-${index}`}>
@@ -59,8 +68,8 @@ export const Alert = ({
                         </React.Fragment>
                       );
                     })}
-                  </UnAlertFooter>
-                </AnimatedUnAlert>
+                  </div>
+                </AnimatedAlert>
               </Overlay>
             </>
           ),

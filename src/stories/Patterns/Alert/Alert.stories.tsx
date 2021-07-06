@@ -33,10 +33,8 @@ const Template = (args) => {
       </Button>
       <Alert
         actions={[
-          <Button variant="outline" onClick={close}>
-            Nevermind, don't delete
-          </Button>,
-          <Button variant="warning" onClick={close}>
+          <Button onClick={close}>Nevermind, don't delete</Button>,
+          <Button variant="outline" onClick={close} warning>
             Yes, delete
           </Button>,
         ]}

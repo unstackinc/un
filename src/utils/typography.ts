@@ -6,8 +6,7 @@ export const typography = {
     heading:
       'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
   },
-
-  fontWeights: [400, 500, 600, 700],
+  fontWeights: [400, 500, 600],
   lineHeights: {
     display: '100%',
     title: '120%',
@@ -20,12 +19,6 @@ export const typography = {
     tight: '-0.05em',
     mega: '0.25em',
   },
-  webkit: `
-    font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  `,
 };
 
 export default typography;

@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 // Nav.tsx
 
 import * as React from 'react';
@@ -15,12 +14,12 @@ import {
 
 import { Tag } from '../../';
 import {
-  UnNav,
-  UnNavHeading,
-  UnNavBody,
-  UnNavSection,
-  UnNavFooter,
-  UnNavPanel,
+  Styles,
+  HeadingStyles,
+  BodyStyles,
+  SectionStyles,
+  FooterStyles,
+  PanelStyles,
   NavLinkStyles,
   PushStyles,
   NoIconStyles,
@@ -28,20 +27,20 @@ import {
 } from './Nav.styles';
 
 interface NavProps {
+  heading: ReactNode;
+  footer: ReactNode;
   children: ReactNode;
 }
 
 export const Nav = ({ children, ...props }: NavProps) => {
   return (
-    <UnNav {...props}>
+    <nav css={Styles} {...props}>
       <Router>
-        <UnNavHeading></UnNavHeading>
-
-        <UnNavBody>{children}</UnNavBody>
-
-        <UnNavFooter></UnNavFooter>
+        <div css={HeadingStyles}></div>
+        <div css={BodyStyles}>{children}</div>
+        <div css={FooterStyles}></div>
       </Router>
-    </UnNav>
+    </nav>
   );
 };
 
@@ -77,7 +76,6 @@ export const NavSection = ({
   const [contentHeight, setContentHeight] = useState(defaultHeight);
   const [ref, { height }] = useMeasure();
 
-  const AnimatedUnNavPanel = animated(UnNavPanel);
   const styles = useSpring({
     height: showSection ? `${contentHeight}px` : `${defaultHeight}px`,
   });
@@ -98,16 +96,18 @@ export const NavSection = ({
   }, [height]);
 
   /* Track location */
-  const linkSet = [`/${to}`];
+  const locations = [`/${to}`];
   let location = useLocation();
 
   useEffect(() => {
     let { pathname } = location;
-    linkSet.includes(pathname)!! ? setShowSection(true) : setShowSection(false);
+    locations.includes(pathname)!!
+      ? setShowSection(true)
+      : setShowSection(false);
   }, [location]);
 
   return (
-    <UnNavSection css={push && PushStyles} {...props}>
+    <ul css={[SectionStyles, push && PushStyles]} {...props}>
       <NavLink
         to={to}
         css={[NavLinkStyles, IconStyles]}
@@ -117,12 +117,12 @@ export const NavSection = ({
         {label}
         {tag && <Tag small>{tag}</Tag>}
       </NavLink>
-      <AnimatedUnNavPanel style={styles}>
+      <animated.div style={styles} css={PanelStyles}>
         <div ref={ref}>
           {links &&
             links.map((link, index) => {
               const { name, to, tag } = link;
-              linkSet.push(`/${to}`);
+              locations.push(`/${to}`);
               return (
                 <NavLink
                   to={to}
@@ -137,8 +137,8 @@ export const NavSection = ({
             })}
           {children}
         </div>
-      </AnimatedUnNavPanel>
-    </UnNavSection>
+      </animated.div>
+    </ul>
   );
 };
 

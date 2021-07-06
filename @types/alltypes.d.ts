@@ -1,2 +1,2 @@
-declare module 'styled-system';
+/// <reference types="@emotion/react/types/css-prop" />
 declare module '*.svg';

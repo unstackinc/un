@@ -1,12 +1,10 @@
-/** @jsxImportSource @emotion/react */
 // Fab.tsx
 
 import * as React from 'react';
 import { forwardRef } from 'react';
 import { css } from '@emotion/react';
 
-import { UnFab } from './Fab.styles';
-import { fontSizes } from '../../../theme';
+import { Styles, MediumStyles, LargeStyles } from './Fab.styles';
 
 interface Props {
   variant?: 'small' | 'medium' | 'large';
@@ -20,25 +18,23 @@ type Ref = HTMLButtonElement;
 
 export const Fab = forwardRef<Ref, Props>((props, ref) => {
   return (
-    <UnFab
+    <button
       ref={ref}
-      className={props.variant}
       disabled={props.disabled}
-      css={css`
-        ${fontSizes[2]};
-        -webkit-appearance: none;
-        &.medium,
-        &.large {
-          ${fontSizes[3]};
-        }
-        svg {
-          stroke: ${props.color};
-        }
-      `}
+      css={[
+        Styles,
+        props.variant === 'medium' && MediumStyles,
+        props.variant === 'large' && LargeStyles,
+        css`
+          svg {
+            stroke: ${props.color};
+          }
+        `,
+      ]}
       {...props}
     >
       {props.children}
-    </UnFab>
+    </button>
   );
 });
 

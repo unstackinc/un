@@ -1,12 +1,9 @@
-/** @jsxImportSource @emotion/react */
 // Textarea.tsx
 
 import * as React from 'react';
-import { css } from '@emotion/react';
 
 import { Label } from '../../';
-import { UnTextarea } from './Textarea.styles';
-import { fontSizes } from '../../../theme';
+import { Styles, FullStyles, WarningStyles } from './Textarea.styles';
 
 interface TextareaProps {
   label?: string;
@@ -35,37 +32,16 @@ export const Textarea = ({
 }: TextareaProps) => {
   return (
     <Label id={id} label={label} disabled={disabled} full={full}>
-      <UnTextarea
+      <textarea
         id={id}
         name={name}
-        className={[full && 'full', warning && 'warning'].join(' ')}
         placeholder={placeholder}
         disabled={disabled}
-        css={css`
-          ${fontSizes[2]};
-        `}
+        css={[Styles, full && FullStyles, warning && WarningStyles]}
         {...props}
-      ></UnTextarea>
-      {warningText && (
-        <div
-          className="warning-text"
-          css={css`
-            ${fontSizes[1]};
-          `}
-        >
-          {warningText}
-        </div>
-      )}
-      {helpText && (
-        <div
-          className="help-text"
-          css={css`
-            ${fontSizes[1]};
-          `}
-        >
-          {helpText}
-        </div>
-      )}
+      ></textarea>
+      {warningText && <div className="warning-text">{warningText}</div>}
+      {helpText && <div className="help-text">{helpText}</div>}
     </Label>
   );
 };

@@ -1,6 +1,19 @@
 // theme.ts
 
-import { space, color, typography, border, shadows, fluid } from './utils';
+import {
+  borders,
+  breakpoints,
+  colors,
+  fluid,
+  opacities,
+  radii,
+  shadows,
+  sizes,
+  space,
+  styles,
+  transitions,
+  typography,
+} from './utils';
 
 const base = 0.64;
 const scale = 1.2;
@@ -41,27 +54,21 @@ export const fontSizes = [
   fluid(type.X14, type.X15),
 ];
 
-const breakpoints = ['30rem', '60rem', '90rem'];
-const mediaQueries = {
-  small: `@media screen and (min-width: ${breakpoints[0]})`,
-  medium: `@media screen and (min-width: ${breakpoints[1]})`,
-  large: `@media screen and (min-width: ${breakpoints[2]})`,
-};
-
-const sizes = {
-  default: '45rem',
-  card: '20rem',
-  wide: '82rem',
-  grid: '90rem',
-};
-
-export default {
-  ...space,
-  ...color,
-  ...typography,
-  ...border,
+const theme = {
+  config: {
+    useLocalStorage: false,
+  },
+  ...borders,
+  ...breakpoints,
+  ...colors,
+  ...opacities,
+  radii,
   shadows,
   sizes,
-  breakpoints,
-  mediaQueries,
+  ...space,
+  styles,
+  ...transitions,
+  ...typography,
 };
+
+export default theme;

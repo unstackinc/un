@@ -10,7 +10,7 @@ export default {
   component: Button,
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'tertiary', 'outline', 'warning'],
+      options: ['primary', 'secondary', 'tertiary', 'outline'],
       control: { type: 'radio' },
     },
     color: {
@@ -23,6 +23,9 @@ export default {
       control: { type: 'boolean' },
     },
     full: {
+      control: { type: 'boolean' },
+    },
+    warning: {
       control: { type: 'boolean' },
     },
     disabled: {
@@ -38,6 +41,7 @@ Primary.args = {
   variant: 'primary',
   large: false,
   full: false,
+  warning: false,
   disabled: false,
   children: 'Button',
 };
@@ -47,6 +51,7 @@ Secondary.args = {
   variant: 'secondary',
   large: false,
   full: false,
+  warning: false,
   disabled: false,
   children: 'Button',
 };
@@ -56,6 +61,7 @@ Tertiary.args = {
   variant: 'tertiary',
   large: false,
   full: false,
+  warning: false,
   disabled: false,
   children: 'Button',
 };
@@ -65,15 +71,7 @@ Outline.args = {
   variant: 'outline',
   large: false,
   full: false,
-  disabled: false,
-  children: 'Button',
-};
-
-export const Warning = Template.bind({});
-Warning.args = {
-  variant: 'warning',
-  large: false,
-  full: false,
+  warning: false,
   disabled: false,
   children: 'Button',
 };
@@ -82,6 +80,7 @@ export const Large = Template.bind({});
 Large.args = {
   large: true,
   full: false,
+  warning: false,
   disabled: false,
   children: 'Button',
 };
@@ -90,6 +89,7 @@ export const Full = Template.bind({});
 Full.args = {
   large: true,
   full: true,
+  warning: false,
   disabled: false,
   children: 'Button',
 };

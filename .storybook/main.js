@@ -1,16 +1,16 @@
 // .storybook/main.js
 
 module.exports = {
-  stories: ['../src/stories/**/*.stories.(ts|tsx|js|jsx|mdx)'],
+  stories: ['../src/stories/**/*.stories.@(ts|tsx|js|jsx|mdx)'],
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
     {
       name: '@storybook/addon-docs',
       options: {
         configureJSX: true,
       },
     },
+    '@storybook/addon-essentials',
+    '@storybook/addon-links',
   ],
   reactOptions: {
     fastRefresh: true,
@@ -21,6 +21,10 @@ module.exports = {
     checkOptions: {},
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        jsx: 'preserve',
+        jsxImportSource: '@emotion/react',
+      },
       shouldExtractLiteralValuesFromEnum: true,
       propFilter: (prop) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,

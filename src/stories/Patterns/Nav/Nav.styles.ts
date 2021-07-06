@@ -1,61 +1,61 @@
 // Nav.styles.ts
 
-import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 import theme, { fontSizes } from '../../../theme';
 
-const { margin, padding, fonts, fontWeights, colors, radii } = theme;
+const { margin, padding, fonts, fontWeights, colors, radii, transitions } =
+  theme;
 
-export const UnNav = styled.nav({
-  width: '20rem',
-  maxWidth: '100%',
-  height: '100%',
-  overflowY: 'scroll',
-  display: 'flex',
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  background: colors.background,
-  flexDirection: 'column',
-  scrollbarWidth: 'none',
-  '::-webkit-scrollbar': {
-    width: '0',
-  },
-});
+export const Styles = css`
+  width: 20rem;
+  max-width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: ${colors.background};
+  flex-direction: column;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+`;
 
-export const UnNavHeading = styled.div({
-  display: 'none',
-  background: colors.background,
-  width: '100%',
-  padding: `${padding.xxs}`,
-  paddingLeft: padding.sm,
-  boxSizing: 'border-box',
-  // display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  position: 'relative',
-  borderBottom: '1px solid',
-  borderColor: colors.border,
-});
+export const HeadingStyles = css`
+  background-color: ${colors.background};
+  width: 100%;
+  padding: ${padding.xxs};
+  padding-left: ${padding.sm};
+  box-sizing: border-box;
+  /* display: flex; */
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: ${colors.border};
+`;
 
-export const UnNavBody = styled.div({
-  height: '100%',
-  padding: padding.md,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'flex-start',
-  alignItems: 'flex-start',
-  gap: margin.xs,
-  overflowY: 'scroll',
-  scrollbarWidth: 'none',
-  '::-webkit-scrollbar': {
-    width: '0',
-  },
-});
+export const BodyStyles = css`
+  height: 100%;
+  padding: ${padding.md};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: ${margin.xs};
+  overflow-y: scroll;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+`;
 
-export const UnNavSection = styled.ul`
+export const SectionStyles = css`
   font-family: ${fonts.body};
   display: block;
   margin: 0;
@@ -64,7 +64,7 @@ export const UnNavSection = styled.ul`
 `;
 
 export const PushStyles = css`
-  margin-top: ${margin.sm} !important;
+  margin-top: ${margin.sm};
 `;
 
 export const NavLinkStyles = css`
@@ -78,7 +78,7 @@ export const NavLinkStyles = css`
   gap: ${margin.xs};
   text-decoration: none;
   color: ${colors.text.secondary};
-  transition: color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color ${transitions[0]};
 
   &.active {
     color: ${colors.text.primary};
@@ -92,7 +92,7 @@ export const NavLinkStyles = css`
     opacity: 0.5;
     width: 1em;
     height: 1em;
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity ${transitions[0]};
   }
 `;
 
@@ -100,7 +100,7 @@ export const NoIconStyles = css`
   padding: ${padding.xxs} 0;
   margin-left: calc(${margin.xs} + ${padding.xxs} + 1em);
 
-  &:last-of-type {
+  :last-of-type {
     padding-bottom: ${padding.xs};
   }
 `;
@@ -111,9 +111,8 @@ export const IconStyles = css`
   padding: ${padding.xxs};
   border-radius: ${radii.xs};
   display: inline-flex;
-  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-    color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  &:hover {
+  transition: background-color ${transitions[0]}, color ${transitions[0]};
+  :hover {
     background-color: ${colors.border};
   }
   &.active {
@@ -121,10 +120,10 @@ export const IconStyles = css`
   }
 `;
 
-export const UnNavPanel = styled.div`
+export const PanelStyles = css`
   overflow: hidden;
   position: relative;
-  &::after {
+  ::after {
     content: '';
     display: block;
     position: absolute;
@@ -139,21 +138,17 @@ export const UnNavPanel = styled.div`
   }
 `;
 
-export const UnNavFooter = styled.div({
-  display: 'none',
-  width: '100%',
-  padding: padding.xs,
-  boxSizing: 'border-box',
-  // display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-  gap: margin.xs,
-  position: 'relative',
-  borderTop: '1px solid',
-  borderColor: colors.border,
-});
-
-export const UnNavSpacer = styled.div`
-  padding: ${padding.xxs};
+export const FooterStyles = css`
+  width: 100%;
+  padding: ${padding.xs};
+  box-sizing: border-box;
+  /* display: flex; */
+  display: none;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: ${margin.xs};
+  position: relative;
+  border-top: 1px solid;
+  border-color: ${colors.border};
 `;

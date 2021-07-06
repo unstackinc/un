@@ -1,10 +1,16 @@
-/** @jsxImportSource @emotion/react */
 // Tag.tsx
 
 import * as React from 'react';
 import { css } from '@emotion/react';
 
-import { UnTag, TagStyles, SmallStyles } from './Tag.styles';
+import {
+  PrimaryVariant,
+  YellowVariant,
+  GreenVariant,
+  OutlineVariant,
+  OutlineBlueVariant,
+} from './Tag.variants';
+import { Styles, SmallStyles } from './Tag.styles';
 
 interface TagProps {
   variant?: 'primary' | 'yellow' | 'green' | 'outline' | 'outlineBlue';
@@ -22,21 +28,43 @@ export const Tag = ({
   children,
   ...props
 }: TagProps) => {
+  let Variant;
+  switch (variant) {
+    case 'primary':
+      Variant = PrimaryVariant;
+      break;
+    case 'yellow':
+      Variant = YellowVariant;
+      break;
+    case 'green':
+      Variant = GreenVariant;
+      break;
+    case 'outline':
+      Variant = OutlineVariant;
+      break;
+    case 'outlineBlue':
+      Variant = OutlineBlueVariant;
+      break;
+    default:
+      Variant = PrimaryVariant;
+  }
+
   return (
-    <UnTag
-      variant={variant}
+    <span
+      // variant={variant}
       css={[
-        TagStyles,
+        Styles,
+        Variant,
         small && SmallStyles,
         css`
-          background: ${background} !important;
-          color: ${color} !important;
+          background-color: ${background};
+          color: ${color};
         `,
       ]}
       {...props}
     >
       {children}
-    </UnTag>
+    </span>
   );
 };
 

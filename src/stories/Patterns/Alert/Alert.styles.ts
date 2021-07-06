@@ -1,40 +1,39 @@
 // Alert.styles.ts
 
-import styled from '@emotion/styled';
-import { Dialog } from '@reach/dialog';
+import { css } from '@emotion/react';
 
 import theme from '../../../theme';
 
 const { margin, padding, colors, radii, shadows } = theme;
 
-export const UnAlert = styled(Dialog)({
-  maxWidth: '37.5rem',
-  boxShadow: shadows.lg,
-  background: colors.card,
-  position: 'relative',
-  borderRadius: radii.md,
-  margin: '10vh auto',
-});
+export const Styles = css`
+  max-width: 37.5rem;
+  box-shadow: ${shadows.lg};
+  background: ${colors.card};
+  position: relative;
+  border-radius: ${radii.md};
+  margin: 10vh auto;
+`;
 
-export const UnAlertBody = styled.div({
-  padding: padding.sm,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  '*': {
-    textAlign: 'center',
-  },
-});
+export const BodyStyles = css`
+  padding: ${padding.sm};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  * {
+    text-align: center;
+  }
+`;
 
-export const UnAlertFooter = styled.div({
-  width: '100%',
-  padding: padding.sm,
-  boxSizing: 'border-box',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  gap: margin.sm,
-  position: 'relative',
-});
+export const FooterStyles = css`
+  width: 100%;
+  padding: ${padding.sm};
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: ${margin.sm};
+  position: relative;
+`;

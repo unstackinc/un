@@ -1,57 +1,109 @@
-/** @jsxImportSource @emotion/react */
 // Button.tsx
 
 import * as React from 'react';
 import { forwardRef } from 'react';
 import { css } from '@emotion/react';
 
-import { UnButton, Styles, LargeStyles, FullStyles } from './Button.styles';
+import {
+  PrimaryVariant,
+  SecondaryVariant,
+  TertiaryVariant,
+  OutlineVariant,
+} from './Button.variants';
+import {
+  Styles,
+  LargeStyles,
+  FullStyles,
+  WarningStyles,
+  WarningTertiaryStyles,
+  WarningOutlineStyles,
+} from './Button.styles';
 
 interface Props {
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'outline' | 'warning';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'outline';
   color?: string;
   background?: string;
   large?: boolean;
   full?: boolean;
+  warning?: boolean;
   disabled?: boolean;
   before?: React.ReactNode;
   children: React.ReactNode;
   after?: React.ReactNode;
-  onClick?: Function;
+  onClick?: any;
 }
 
 type Ref = HTMLButtonElement;
 
+/* FIX: Causing problems when used due to forwarded refs, could be affecting spring animations */
+
 export const Button = forwardRef<Ref, Props>((props, ref) => {
+  const {
+    variant,
+    color,
+    background,
+    large,
+    full,
+    warning,
+    disabled,
+    before,
+    children,
+    after,
+    onClick,
+  } = props;
+  let Variant;
+  let Warning;
+
+  switch (variant) {
+    case 'primary':
+      Variant = PrimaryVariant;
+      Warning = WarningStyles;
+      break;
+    case 'secondary':
+      Variant = SecondaryVariant;
+      Warning = WarningStyles;
+      break;
+    case 'tertiary':
+      Variant = TertiaryVariant;
+      Warning = WarningTertiaryStyles;
+      break;
+    case 'outline':
+      Variant = OutlineVariant;
+      Warning = WarningOutlineStyles;
+      break;
+    default:
+      Variant = PrimaryVariant;
+      Warning = WarningStyles;
+  }
+
   return (
-    <UnButton
+    <button
       ref={ref}
-      variant={props.variant}
-      disabled={props.disabled}
+      variant={variant}
+      disabled={disabled}
       css={[
         Styles,
-        props.large && LargeStyles,
-        props.full && FullStyles,
+        Variant,
+        large && LargeStyles,
+        full && FullStyles,
+        warning && Warning,
         css`
-          background: ${props.background} !important;
-          color: ${props.color} !important;
+          background-color: ${background};
+          color: ${color};
         `,
       ]}
+      onClick={onClick}
       {...props}
     >
-      {props.before}
-      {props.children}
-      {props.after}
-    </UnButton>
+      {before}
+      {children}
+      {after}
+    </button>
   );
 });
 
 Button.defaultProps = {
   variant: 'primary',
-  color: 'null',
-  background: 'null',
-  large: false,
-  full: false,
   disabled: false,
   onClick: undefined,
 };

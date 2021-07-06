@@ -1,51 +1,53 @@
 // Modal.styles.ts
 
-import styled from '@emotion/styled';
-import { Dialog } from '@reach/dialog';
+import { css } from '@emotion/react';
 
 import theme from '../../../theme';
 
 const { margin, padding, colors, radii, shadows } = theme;
 
-export const UnModal = styled(Dialog)({
-  maxWidth: '37.5rem',
-  boxShadow: shadows.lg,
-  background: colors.card,
-  position: 'relative',
-  borderRadius: radii.md,
-  margin: '10vh auto',
-});
+export const Styles = css`
+  max-width: 37.5rem;
+  box-shadow: ${shadows.lg};
+  background: ${colors.card};
+  position: relative;
+  border-radius: ${radii.md};
+  margin: 10vh auto;
+`;
 
-export const UnModalHeading = styled.div({
-  width: '100%',
-  padding: padding.sm,
-  paddingLeft: padding.md,
-  boxSizing: 'border-box',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  position: 'relative',
-  borderBottom: '1px solid',
-  borderColor: colors.border,
-});
+export const HeadingStyles = css`
+  width: 100%;
+  padding: ${padding.sm};
+  padding-left: ${padding.md};
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: ${colors.border};
+`;
 
-export const UnModalBody = styled.div({
-  padding: padding.sm,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'flex-start',
-});
+export const BodyStyles = css`
+  padding: ${padding.sm};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  * {
+    text-align: center;
+  }
+`;
 
-export const UnModalFooter = styled.div({
-  width: '100%',
-  padding: padding.sm,
-  boxSizing: 'border-box',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-  gap: margin.sm,
-  position: 'relative',
-});
+export const FooterStyles = css`
+  width: 100%;
+  padding: ${padding.sm};
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: ${margin.sm};
+  position: relative;
+`;

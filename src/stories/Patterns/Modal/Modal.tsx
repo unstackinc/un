@@ -3,14 +3,15 @@
 import * as React from 'react';
 import { animated, useTransition, config } from 'react-spring';
 
+import { Dialog } from '@reach/dialog';
 import VisuallyHidden from '@reach/visually-hidden';
 import { FiX } from 'react-icons/fi';
 
 import {
-  UnModal,
-  UnModalHeading,
-  UnModalBody,
-  UnModalFooter,
+  Styles,
+  HeadingStyles,
+  BodyStyles,
+  FooterStyles,
 } from './Modal.styles';
 import { Fab, Overlay, H3 } from '../..';
 import { escape } from '../../../utils';
@@ -24,6 +25,8 @@ interface ModalProps {
   aria: string;
 }
 
+/* FIX: Escape key not working */
+
 export const Modal = ({
   showModal,
   setShowModal,
@@ -34,7 +37,7 @@ export const Modal = ({
   ...props
 }: ModalProps) => {
   escape(showModal, setShowModal);
-  const AnimatedUnModal = animated(UnModal);
+  const AnimatedUnModal = animated(Dialog);
   const transitions = useTransition(showModal, {
     from: {
       opacity: 0,
@@ -62,8 +65,13 @@ export const Modal = ({
                 setShowOverlay={setShowModal}
                 onClick={() => setShowModal(false)}
               >
-                <AnimatedUnModal style={styles} aria-label={aria} {...props}>
-                  <UnModalHeading>
+                <AnimatedUnModal
+                  css={Styles}
+                  style={styles}
+                  aria-label={aria}
+                  {...props}
+                >
+                  <div css={HeadingStyles}>
                     <H3 display>{title}</H3>
                     <Fab
                       aria-label="Close modal"
@@ -72,9 +80,9 @@ export const Modal = ({
                       <VisuallyHidden>Close</VisuallyHidden>
                       <FiX aria-hidden />
                     </Fab>
-                  </UnModalHeading>
-                  <UnModalBody>{children}</UnModalBody>
-                  <UnModalFooter>
+                  </div>
+                  <div css={BodyStyles}>{children}</div>
+                  <div css={FooterStyles}>
                     {actions.map((action, index) => {
                       return (
                         <React.Fragment key={`${action.toString()}-${index}`}>
@@ -82,7 +90,7 @@ export const Modal = ({
                         </React.Fragment>
                       );
                     })}
-                  </UnModalFooter>
+                  </div>
                 </AnimatedUnModal>
               </Overlay>
             </>

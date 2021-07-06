@@ -1,11 +1,10 @@
-/** @jsxImportSource @emotion/react */
 // Overlay.tsx
 
 import * as React from 'react';
 import { css } from '@emotion/react';
 import { animated, useTransition } from 'react-spring';
 
-import { UnOverlay } from './Overlay.styles';
+import { Styles } from './Overlay.styles';
 
 interface OverlayProps {
   showOverlay?: boolean;
@@ -22,8 +21,6 @@ export const Overlay = ({
   children,
   ...props
 }: OverlayProps) => {
-  const AnimatedUnOverlay = animated(UnOverlay);
-
   const transitions = useTransition(showOverlay, {
     from: { opacity: 0 },
     enter: { opacity: 0.8 },
@@ -33,15 +30,18 @@ export const Overlay = ({
   return transitions(
     (styles, item) =>
       item && (
-        <AnimatedUnOverlay
+        <animated.div
           style={styles}
-          css={css`
-            background: ${background} !important;
-          `}
+          css={[
+            Styles,
+            css`
+              background-color: ${background};
+            `,
+          ]}
           {...props}
         >
           {children}
-        </AnimatedUnOverlay>
+        </animated.div>
       ),
   );
 };

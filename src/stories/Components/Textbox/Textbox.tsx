@@ -1,12 +1,9 @@
-/** @jsxImportSource @emotion/react */
 // Textbox.tsx
 
 import * as React from 'react';
-import { css } from '@emotion/react';
 
 import { Label } from '../../';
-import { UnTextbox } from './Textbox.styles';
-import { fontSizes } from '../../../theme';
+import { Styles, FullStyles, WarningStyles } from './Textbox.styles';
 
 interface TextboxProps {
   label?: string;
@@ -35,38 +32,17 @@ export const Textbox = ({
 }: TextboxProps) => {
   return (
     <Label id={id} label={label} disabled={disabled} full={full}>
-      <UnTextbox
+      <input
         type="text"
         id={id}
         name={name}
-        className={[full ? 'full' : '', warning ? 'warning' : ''].join(' ')}
         placeholder={placeholder}
         disabled={disabled}
-        css={css`
-          ${fontSizes[2]};
-        `}
+        css={[Styles, full && FullStyles, warning && WarningStyles]}
         {...props}
-      ></UnTextbox>
-      {warningText && (
-        <div
-          className="warning-text"
-          css={css`
-            ${fontSizes[1]};
-          `}
-        >
-          {warningText}
-        </div>
-      )}
-      {helpText && (
-        <div
-          className="help-text"
-          css={css`
-            ${fontSizes[1]};
-          `}
-        >
-          {helpText}
-        </div>
-      )}
+      ></input>
+      {warningText && <div className="warning-text">{warningText}</div>}
+      {helpText && <div className="help-text">{helpText}</div>}
     </Label>
   );
 };

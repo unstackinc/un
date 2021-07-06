@@ -21,9 +21,15 @@ const un = {
   75: 'rgba(220, 228, 242, .75)',
 };
 
-export const color = {
+export const colors = {
   colors: {
+    texts: un.grey,
     background: un.whiteOff,
+    primary: un.primary,
+    secondary: un.greyLight,
+    accent: un.blue,
+    highlight: un.yellow,
+    muted: un.border,
     overlay: un.greyDark,
     card: un.white,
     border: un.border,
@@ -85,11 +91,6 @@ export const color = {
       primary: un.primary,
     },
   },
-  opacity: {
-    25: '.25',
-    5: '.5',
-    75: '.75',
-  },
 };
 
-export default color;
+export default colors;

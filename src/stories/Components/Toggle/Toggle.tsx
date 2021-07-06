@@ -1,11 +1,9 @@
-/** @jsxImportSource @emotion/react */
 // Toggle.tsx
 
 import * as React from 'react';
 
-import { FiCheck } from 'react-icons/fi';
-
-import { UnToggle } from './Toggle.styles';
+import { Label } from '../..';
+import { Styles } from './Toggle.styles';
 
 interface ToggleProps {
   label?: string;
@@ -29,7 +27,7 @@ export const Toggle = ({
   ...props
 }: ToggleProps) => {
   return (
-    <UnToggle
+    <Label
       id={id}
       label={label}
       disabled={disabled}
@@ -39,6 +37,7 @@ export const Toggle = ({
       control={
         <span className="control" role="presentation" aria-hidden="true"></span>
       }
+      css={Styles}
     >
       <input
         type="checkbox"
@@ -48,7 +47,7 @@ export const Toggle = ({
         disabled={disabled}
         {...props}
       />
-    </UnToggle>
+    </Label>
   );
 };
 

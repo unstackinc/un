@@ -1,16 +1,14 @@
-/** @jsxImportSource @emotion/react */
 // Dropdown.tsx
 
 import * as React from 'react';
 
 import { Label } from '../../';
 import {
-  UnDropdown,
-  UnDropdownOption,
   DropdownStyles,
+  OptionStyles,
+  FullStyles,
   WarningStyles,
   DisabledStyles,
-  OptionStyles,
 } from './Dropdown.styles';
 
 interface DropdownProps {
@@ -42,12 +40,12 @@ export const Dropdown = ({
 }: DropdownProps) => {
   return (
     <Label id={id} label={label} disabled={disabled} full={full}>
-      <UnDropdown
+      <select
         id={id}
         name={name}
-        className={full && 'full'}
         css={[
           DropdownStyles,
+          full && FullStyles,
           warning && WarningStyles,
           disabled && DisabledStyles,
         ]}
@@ -62,7 +60,7 @@ export const Dropdown = ({
             </React.Fragment>
           );
         })}
-      </UnDropdown>
+      </select>
       {warningText && <div className="warning-text">{warningText}</div>}
       {helpText && <div className="help-text">{helpText}</div>}
     </Label>
@@ -83,17 +81,14 @@ interface OptionProps {
 
 export const DropdownOption = ({ value, children, ...props }: OptionProps) => {
   return (
-    <UnDropdownOption value={value} css={OptionStyles} {...props}>
+    <option value={value} css={OptionStyles} {...props}>
       {children}
-    </UnDropdownOption>
+    </option>
   );
 };
 
 DropdownOption.defaultProps = {
-  placeholder: 'Placeholder',
-  warning: false,
-  disabled: false,
-  onClick: undefined,
+  value: 'Placeholder',
 };
 
 export default Dropdown;

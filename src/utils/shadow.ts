@@ -1,5 +1,5 @@
 // shadow.ts
-import color from './color';
+import color from './colors';
 
 const { colors } = color;
 

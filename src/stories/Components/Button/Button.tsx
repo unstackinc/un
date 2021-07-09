@@ -1,7 +1,7 @@
 // Button.tsx
 
 import * as React from 'react';
-import { forwardRef } from 'react';
+
 import { css } from '@emotion/react';
 
 import {
@@ -33,24 +33,20 @@ interface Props {
   onClick?: any;
 }
 
-type Ref = HTMLButtonElement;
-
-/* FIX: Causing problems when used due to forwarded refs, could be affecting spring animations */
-
-export const Button = forwardRef<Ref, Props>((props, ref) => {
-  const {
-    variant,
-    color,
-    background,
-    large,
-    full,
-    warning,
-    disabled,
-    before,
-    children,
-    after,
-    onClick,
-  } = props;
+export const Button = ({
+  variant,
+  color,
+  background,
+  large,
+  full,
+  warning,
+  disabled,
+  before,
+  children,
+  after,
+  onClick,
+  ...props
+}: Props) => {
   let Variant;
   let Warning;
 
@@ -78,8 +74,7 @@ export const Button = forwardRef<Ref, Props>((props, ref) => {
 
   return (
     <button
-      ref={ref}
-      variant={variant}
+      // variant={variant}
       disabled={disabled}
       css={[
         Styles,
@@ -100,7 +95,7 @@ export const Button = forwardRef<Ref, Props>((props, ref) => {
       {after}
     </button>
   );
-});
+};
 
 Button.defaultProps = {
   variant: 'primary',

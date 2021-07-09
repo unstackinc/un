@@ -1,7 +1,6 @@
 // Fab.tsx
 
 import * as React from 'react';
-import { forwardRef } from 'react';
 import { css } from '@emotion/react';
 
 import { Styles, MediumStyles, LargeStyles } from './Fab.styles';
@@ -14,29 +13,33 @@ interface Props {
   children: React.ReactNode;
 }
 
-type Ref = HTMLButtonElement;
-
-export const Fab = forwardRef<Ref, Props>((props, ref) => {
+export const Fab = ({
+  variant,
+  color,
+  disabled,
+  onClick,
+  children,
+  ...props
+}: Props) => {
   return (
     <button
-      ref={ref}
-      disabled={props.disabled}
+      disabled={disabled}
       css={[
         Styles,
-        props.variant === 'medium' && MediumStyles,
-        props.variant === 'large' && LargeStyles,
+        variant === 'medium' && MediumStyles,
+        variant === 'large' && LargeStyles,
         css`
           svg {
-            stroke: ${props.color};
+            stroke: ${color};
           }
         `,
       ]}
       {...props}
     >
-      {props.children}
+      {children}
     </button>
   );
-});
+};
 
 Fab.defaultProps = {
   variant: 'small',

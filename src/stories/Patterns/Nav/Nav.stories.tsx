@@ -32,7 +32,6 @@ const Template = (args) => {
       <NavSection
         icon={<IoHome />}
         label="Home"
-        to="home"
         links={[
           {
             name: 'Pages',
@@ -56,7 +55,6 @@ const Template = (args) => {
       <NavSection
         icon={<IoPieChart />}
         label="Insights"
-        to="insights"
         links={[
           {
             name: 'Reports',
@@ -69,9 +67,8 @@ const Template = (args) => {
         ]}
       />
       <NavSection
-        label="CRM"
+        label="Contacts"
         icon={<IoPeople />}
-        to="crm"
         links={[
           {
             name: 'People',
@@ -91,7 +88,6 @@ const Template = (args) => {
       <NavSection
         icon={<IoExtensionPuzzle />}
         label="Design"
-        to="design"
         links={[
           {
             name: 'Branding',
@@ -116,7 +112,6 @@ const Template = (args) => {
       <NavSection
         icon={<IoSettingsSharp />}
         label="Settings"
-        to="settings"
         links={[
           {
             name: 'General',

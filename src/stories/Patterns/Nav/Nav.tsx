@@ -9,6 +9,7 @@ import { animated, useSpring } from 'react-spring';
 import {
   BrowserRouter as Router,
   NavLink,
+  useHistory,
   useLocation,
 } from 'react-router-dom';
 
@@ -47,7 +48,7 @@ export const Nav = ({ children, ...props }: NavProps) => {
 interface SectionProps {
   icon: ReactNode;
   label: string;
-  to: string;
+  to?: string;
   tag?: ReactNode;
   links?: LinksProps[];
   push?: boolean;
@@ -96,33 +97,55 @@ export const NavSection = ({
   }, [height]);
 
   /* Track location */
-  const locations = [`/${to}`];
+  const locations = [to];
   let location = useLocation();
 
   useEffect(() => {
     let { pathname } = location;
-    locations.includes(pathname)!!
+    const allLocations = locations.map((i) => `/${i}`);
+    allLocations.includes(pathname)
       ? setShowSection(true)
       : setShowSection(false);
   }, [location]);
 
+  /* Use history */
+  let history = useHistory();
+
   return (
     <ul css={[SectionStyles, push && PushStyles]} {...props}>
-      <NavLink
-        to={to}
-        css={[NavLinkStyles, IconStyles]}
-        activeClassName="active"
+      {to!! ? (
+        <NavLink
+          to={to}
+          css={[NavLinkStyles, IconStyles]}
+          className={showSection && 'open'}
+          activeClassName="active"
+        >
+          {icon}
+          {label}
+          {tag && <Tag small>{tag}</Tag>}
+        </NavLink>
+      ) : (
+        <div
+          css={[NavLinkStyles, IconStyles]}
+          className={showSection && 'open'}
+          onClick={() => history.push(locations[1])}
+        >
+          {icon}
+          {label}
+          {tag && <Tag small>{tag}</Tag>}
+        </div>
+      )}
+
+      <animated.div
+        style={styles}
+        css={PanelStyles}
+        className={showSection && links && 'active'}
       >
-        {icon}
-        {label}
-        {tag && <Tag small>{tag}</Tag>}
-      </NavLink>
-      <animated.div style={styles} css={PanelStyles}>
         <div ref={ref}>
           {links &&
             links.map((link, index) => {
               const { name, to, tag } = link;
-              locations.push(`/${to}`);
+              locations.push(to);
               return (
                 <NavLink
                   to={to}

@@ -8,7 +8,7 @@ const { margin, padding, fonts, fontWeights, colors, radii, transitions } =
   theme;
 
 export const Styles = css`
-  width: 20rem;
+  width: 16rem;
   max-width: 100%;
   height: 100%;
   overflow-y: scroll;
@@ -57,6 +57,7 @@ export const BodyStyles = css`
 
 export const SectionStyles = css`
   font-family: ${fonts.body};
+  width: 100%;
   display: block;
   margin: 0;
   padding: 0;
@@ -73,56 +74,85 @@ export const NavLinkStyles = css`
   font-weight: ${fontWeights[0]};
   user-select: none;
   display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
   flex-direction: row;
   align-items: center;
   gap: ${margin.xs};
+  cursor: pointer;
   text-decoration: none;
-  color: ${colors.text.secondary};
-  transition: color ${transitions[0]};
-
-  &.active {
-    color: ${colors.text.primary};
-    font-weight: ${fontWeights[1]};
-    svg {
-      opacity: 1;
-    }
-  }
-
-  svg {
-    opacity: 0.5;
-    width: 1em;
-    height: 1em;
-    transition: opacity ${transitions[0]};
-  }
-`;
-
-export const NoIconStyles = css`
-  padding: ${padding.xxs} 0;
-  margin-left: calc(${margin.xs} + ${padding.xxs} + 1em);
-
-  :last-of-type {
-    padding-bottom: ${padding.xs};
-  }
-`;
-
-export const IconStyles = css`
-  font-weight: ${fontWeights[1]};
-  color: ${colors.text.default};
   padding: ${padding.xxs};
   border-radius: ${radii.xs};
-  display: inline-flex;
   transition: background-color ${transitions[0]}, color ${transitions[0]};
   :hover {
     background-color: ${colors.border};
   }
   &.active {
     background-color: ${colors.text.primary}22;
+    color: ${colors.text.primary};
+    font-weight: ${fontWeights[1]};
+    svg {
+      opacity: 1;
+    }
+  }
+  svg {
+    opacity: 0.5;
+    width: 1em;
+    height: 1em;
+    transition: opacity ${transitions[0]}, color ${transitions[0]};
+  }
+`;
+
+export const NoIconStyles = css`
+  color: ${colors.text.secondary};
+  padding-left: calc(${margin.xs} + ${padding.xxs} + 1em);
+  &.active {
+    font-weight: ${fontWeights[1]};
+    ::before {
+      content: '';
+      position: absolute;
+      width: ${padding.xxs};
+      height: ${padding.xxs};
+      background-color: ${colors.primary};
+      border-radius: ${radii.lg};
+      transform: translateX(calc(-100% - ${margin.xs}));
+    }
+  }
+  :first-of-type {
+    margin-top: ${margin.xxs};
+  }
+`;
+
+export const IconStyles = css`
+  font-weight: ${fontWeights[1]};
+  color: ${colors.text.default};
+  &.open svg {
+    color: ${colors.primary};
+    opacity: 1;
   }
 `;
 
 export const PanelStyles = css`
   overflow: hidden;
   position: relative;
+  width: 100%;
+  display: block;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: ${margin.xxs};
+    ::after {
+      content: '';
+      display: block;
+      transform: scaleY(0%);
+      transition: transform ${transitions[0]};
+    }
+  }
+  &.active > div::after {
+    height: ${padding.xs};
+    transform: scaleY(100%);
+  }
   ::after {
     content: '';
     display: block;

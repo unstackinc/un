@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { FiSearch } from 'react-icons/fi';
+import { IoSearch } from 'react-icons/io5';
 
 import {
   LabelStyles,
@@ -38,7 +38,7 @@ export const Search = ({
 }: SearchProps) => {
   return (
     <label id={id} css={[LabelStyles, full && FullStyles]}>
-      <FiSearch />
+      <IoSearch />
       <input
         type="text"
         id={id}

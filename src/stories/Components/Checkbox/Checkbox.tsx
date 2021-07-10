@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { FiCheck } from 'react-icons/fi';
+import { IoCheckmark } from 'react-icons/io5';
 
 import { Label } from '../..';
 import { Styles } from './Checkbox.styles';
@@ -38,7 +38,7 @@ export const Checkbox = ({
       after
       control={
         <span className="control">
-          <FiCheck />
+          <IoCheckmark />
         </span>
       }
       css={Styles}

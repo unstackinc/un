@@ -5,7 +5,7 @@ import { animated, useTransition, config } from 'react-spring';
 
 import { Dialog } from '@reach/dialog';
 import VisuallyHidden from '@reach/visually-hidden';
-import { FiX } from 'react-icons/fi';
+import { IoClose } from 'react-icons/io5';
 
 import {
   Styles,
@@ -78,7 +78,7 @@ export const Modal = ({
                     onClick={() => setShowModal(false)}
                   >
                     <VisuallyHidden>Close</VisuallyHidden>
-                    <FiX aria-hidden />
+                    <IoClose aria-hidden />
                   </Fab>
                 </div>
                 <div css={BodyStyles}>{children}</div>

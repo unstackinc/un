@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 
-import { FiPlus } from 'react-icons/fi';
+import { IoAdd } from 'react-icons/io5';
 import { Fab } from './Fab';
 
 export default {
@@ -29,19 +29,19 @@ export const Small = Template.bind({});
 Small.args = {
   variant: 'small',
   disabled: false,
-  children: <FiPlus />,
+  children: <IoAdd />,
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   variant: 'medium',
   disabled: false,
-  children: <FiPlus />,
+  children: <IoAdd />,
 };
 
 export const Large = Template.bind({});
 Large.args = {
   variant: 'large',
   disabled: false,
-  children: <FiPlus />,
+  children: <IoAdd />,
 };

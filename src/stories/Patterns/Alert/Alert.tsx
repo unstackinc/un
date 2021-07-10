@@ -1,6 +1,7 @@
 // Alert.tsx
 
 import * as React from 'react';
+import { Fragment, ReactNode } from 'react';
 import { animated, useTransition } from 'react-spring';
 
 import { AlertDialog, AlertDialogLabel } from '@reach/alert-dialog';
@@ -14,8 +15,8 @@ interface AlertProps {
   showAlert?: boolean;
   setShowAlert?: any;
   title: string;
-  children: React.ReactNode;
-  actions?: React.ReactNode[];
+  children: ReactNode;
+  actions?: ReactNode[];
   leastDestructiveRef: any;
   aria: string;
 }
@@ -70,9 +71,9 @@ export const Alert = ({
                 <div css={FooterStyles}>
                   {actions.map((action, index) => {
                     return (
-                      <React.Fragment key={`${action.toString()}-${index}`}>
+                      <Fragment key={`${action.toString()}-${index}`}>
                         {action}
-                      </React.Fragment>
+                      </Fragment>
                     );
                   })}
                 </div>

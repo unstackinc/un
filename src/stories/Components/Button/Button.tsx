@@ -1,6 +1,7 @@
 // Button.tsx
 
 import * as React from 'react';
+import { ReactNode } from 'react';
 
 import { css } from '@emotion/react';
 
@@ -28,9 +29,9 @@ interface Props {
   full?: boolean;
   warning?: boolean;
   disabled?: boolean;
-  before?: React.ReactNode;
-  children: React.ReactNode;
-  after?: React.ReactNode;
+  before?: ReactNode;
+  children: ReactNode;
+  after?: ReactNode;
   onClick?: any;
 }
 

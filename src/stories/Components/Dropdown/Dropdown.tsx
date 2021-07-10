@@ -1,6 +1,7 @@
 // Dropdown.tsx
 
 import * as React from 'react';
+import { Fragment, ReactNode } from 'react';
 
 import { Label } from '../../';
 import {
@@ -55,9 +56,7 @@ export const Dropdown = ({
       >
         {options.map((option, index) => {
           return (
-            <React.Fragment key={`${option.toString()}-${index}`}>
-              {option}
-            </React.Fragment>
+            <Fragment key={`${option.toString()}-${index}`}>{option}</Fragment>
           );
         })}
       </select>
@@ -76,7 +75,7 @@ Dropdown.defaultProps = {
 
 interface OptionProps {
   value: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const DropdownOption = ({ value, children, ...props }: OptionProps) => {

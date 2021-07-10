@@ -1,6 +1,7 @@
 // Tag.tsx
 
 import * as React from 'react';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import {
@@ -17,7 +18,7 @@ interface TagProps {
   color?: string;
   background?: string;
   small?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const Tag = ({

@@ -1,6 +1,7 @@
 // Heading.tsx
 
 import * as React from 'react';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import {
@@ -14,7 +15,7 @@ import {
 interface HProps {
   color?: string;
   display?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const H3 = ({ color, display, children, ...props }: HProps) => {
@@ -38,12 +39,7 @@ H3.defaultProps = {
   display: false,
 };
 
-export const H2: React.FunctionComponent<HProps> = ({
-  color,
-  display,
-  children,
-  ...props
-}) => {
+export const H2 = ({ color, display, children, ...props }: HProps) => {
   return (
     <h2
       css={[
@@ -64,12 +60,7 @@ H2.defaultProps = {
   display: false,
 };
 
-export const H1: React.FunctionComponent<HProps> = ({
-  color,
-  display,
-  children,
-  ...props
-}) => {
+export const H1 = ({ color, display, children, ...props }: HProps) => {
   return (
     <h1
       css={[
@@ -90,12 +81,7 @@ H1.defaultProps = {
   display: false,
 };
 
-export const H0: React.FunctionComponent<HProps> = ({
-  color,
-  display,
-  children,
-  ...props
-}) => {
+export const H0 = ({ color, display, children, ...props }: HProps) => {
   return (
     <h1
       css={[

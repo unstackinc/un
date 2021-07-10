@@ -1,6 +1,7 @@
 // Modal.tsx
 
 import * as React from 'react';
+import { Fragment, ReactNode } from 'react';
 import { animated, useTransition, config } from 'react-spring';
 
 import { Dialog } from '@reach/dialog';
@@ -20,8 +21,8 @@ interface ModalProps {
   showModal?: boolean;
   setShowModal?: any;
   title: string;
-  children: React.ReactNode;
-  actions?: React.ReactNode[];
+  children: ReactNode;
+  actions?: ReactNode[];
   aria: string;
 }
 
@@ -85,9 +86,9 @@ export const Modal = ({
                 <div css={FooterStyles}>
                   {actions.map((action, index) => {
                     return (
-                      <React.Fragment key={`${action.toString()}-${index}`}>
+                      <Fragment key={`${action.toString()}-${index}`}>
                         {action}
-                      </React.Fragment>
+                      </Fragment>
                     );
                   })}
                 </div>

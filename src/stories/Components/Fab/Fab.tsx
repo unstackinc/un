@@ -1,6 +1,7 @@
 // Fab.tsx
 
 import * as React from 'react';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import { Styles, MediumStyles, LargeStyles } from './Fab.styles';
@@ -10,7 +11,7 @@ interface Props {
   color?: string;
   disabled?: boolean;
   onClick?: any;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const Fab = ({

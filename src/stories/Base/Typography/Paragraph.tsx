@@ -1,6 +1,7 @@
 // Paragraph.tsx
 
 import * as React from 'react';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import {
@@ -25,7 +26,7 @@ interface PProps {
   color?: string;
   link?: boolean;
   display?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const P3 = ({
@@ -62,14 +63,14 @@ P3.defaultProps = {
   display: false,
 };
 
-export const P2: React.FunctionComponent<PProps> = ({
+export const P2 = ({
   weight,
   color,
   link,
   display,
   children,
   ...props
-}) => {
+}: PProps) => {
   return (
     <p
       css={[
@@ -96,14 +97,14 @@ P2.defaultProps = {
   display: false,
 };
 
-export const P1: React.FunctionComponent<PProps> = ({
+export const P1 = ({
   weight,
   color,
   link,
   display,
   children,
   ...props
-}) => {
+}: PProps) => {
   return (
     <p
       css={[
@@ -130,14 +131,14 @@ P1.defaultProps = {
   display: false,
 };
 
-export const P0: React.FunctionComponent<PProps> = ({
+export const P0 = ({
   weight,
   color,
   link,
   display,
   children,
   ...props
-}) => {
+}: PProps) => {
   return (
     <p
       css={[
@@ -172,12 +173,12 @@ interface LabelProps {
   before?: boolean;
   after?: boolean;
   disabled?: boolean;
-  control?: React.ReactNode;
+  control?: ReactNode;
   css?: any;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const Label: React.FunctionComponent<LabelProps> = ({
+export const Label = ({
   label,
   id,
   full,
@@ -189,7 +190,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   css,
   children,
   ...props
-}) => {
+}: LabelProps) => {
   return (
     <div
       css={[

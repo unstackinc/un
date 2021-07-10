@@ -85,8 +85,10 @@ export const NavLinkStyles = css`
   padding: ${padding.xxs};
   border-radius: ${radii.xs};
   transition: background-color ${transitions[0]}, color ${transitions[0]};
-  :hover {
+  :hover,
+  :focus {
     background-color: ${colors.border};
+    outline: none;
   }
   &.active {
     background-color: ${colors.text.primary}22;

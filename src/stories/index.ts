@@ -1,4 +1,5 @@
 export * from './Base/Typography/Heading';
+export * from './Base/Typography/Label';
 export * from './Base/Typography/Paragraph';
 export * from './Components/Button/Button';
 export * from './Components/Checkbox/Checkbox';

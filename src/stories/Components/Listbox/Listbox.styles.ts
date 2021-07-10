@@ -1,4 +1,4 @@
-// Dropdown.styles.ts
+// Listbox.styles.ts
 
 import { css } from '@emotion/react';
 
@@ -7,7 +7,7 @@ import theme, { fontSizes } from '../../../theme';
 const { colors, fonts, fontWeights, padding, radii, shadows, transitions } =
   theme;
 
-export const DropdownStyles = css`
+export const ListboxStyles = css`
   cursor: pointer;
   display: flex;
   align-items: center;

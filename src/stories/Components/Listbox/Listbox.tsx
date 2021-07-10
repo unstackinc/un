@@ -1,18 +1,18 @@
-// Dropdown.tsx
+// Listbox.tsx
 
 import * as React from 'react';
 import { Fragment, ReactNode } from 'react';
 
-import { Label } from '../../';
+import { Label } from '../..';
 import {
-  DropdownStyles,
+  ListboxStyles,
   OptionStyles,
   FullStyles,
   WarningStyles,
   DisabledStyles,
-} from './Dropdown.styles';
+} from './Listbox.styles';
 
-interface DropdownProps {
+interface ListboxProps {
   options: any;
   label?: string;
   id: string;
@@ -26,7 +26,7 @@ interface DropdownProps {
   onClick?: any;
 }
 
-export const Dropdown = ({
+export const Listbox = ({
   options,
   label,
   id,
@@ -38,14 +38,14 @@ export const Dropdown = ({
   warning,
   disabled,
   ...props
-}: DropdownProps) => {
+}: ListboxProps) => {
   return (
     <Label id={id} label={label} disabled={disabled} full={full}>
       <select
         id={id}
         name={name}
         css={[
-          DropdownStyles,
+          ListboxStyles,
           full && FullStyles,
           warning && WarningStyles,
           disabled && DisabledStyles,
@@ -66,7 +66,7 @@ export const Dropdown = ({
   );
 };
 
-Dropdown.defaultProps = {
+Listbox.defaultProps = {
   placeholder: 'Placeholder',
   warning: false,
   disabled: false,
@@ -78,7 +78,7 @@ interface OptionProps {
   children: ReactNode;
 }
 
-export const DropdownOption = ({ value, children, ...props }: OptionProps) => {
+export const ListboxOption = ({ value, children, ...props }: OptionProps) => {
   return (
     <option value={value} css={OptionStyles} {...props}>
       {children}
@@ -86,8 +86,8 @@ export const DropdownOption = ({ value, children, ...props }: OptionProps) => {
   );
 };
 
-DropdownOption.defaultProps = {
+ListboxOption.defaultProps = {
   value: 'Placeholder',
 };
 
-export default Dropdown;
+export default Listbox;

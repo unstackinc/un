@@ -5,13 +5,13 @@ import * as React from 'react';
 import { IoSearch } from 'react-icons/io5';
 
 import {
-  LabelStyles,
+  Styles,
   InputStyles,
   FullStyles,
   WarningStyles,
 } from './Search.styles';
 
-interface SearchProps {
+interface Props {
   label?: string;
   id: string;
   name: string;
@@ -35,9 +35,9 @@ export const Search = ({
   warning,
   disabled,
   ...props
-}: SearchProps) => {
+}: Props) => {
   return (
-    <label id={id} css={[LabelStyles, full && FullStyles]}>
+    <label id={id} css={[Styles, full && FullStyles]}>
       <IoSearch />
       <input
         type="text"

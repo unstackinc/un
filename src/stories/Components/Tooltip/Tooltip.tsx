@@ -8,12 +8,12 @@ import 'tippy.js/dist/tippy.css';
 
 import { Styles } from './Tooltip.styles';
 
-interface TooltipProps {
+interface Props {
   content: ReactNode;
   children: ReactNode;
 }
 
-export const Tooltip = ({ content, children, ...props }: TooltipProps) => {
+export const Tooltip = ({ content, children, ...props }: Props) => {
   return (
     <Tippy content={content} css={Styles} {...props}>
       <span tabIndex={0}>{children}</span>

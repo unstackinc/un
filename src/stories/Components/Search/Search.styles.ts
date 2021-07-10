@@ -7,7 +7,7 @@ import theme, { fontSizes } from '../../../theme';
 const { colors, fonts, fontWeights, padding, radii, shadows, transitions } =
   theme;
 
-export const LabelStyles = css`
+export const Styles = css`
   border-radius: ${radii.lg};
   color: ${colors.text.secondary};
   transition: color ${transitions[0]};

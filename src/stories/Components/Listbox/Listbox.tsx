@@ -5,7 +5,7 @@ import { Fragment, ReactNode } from 'react';
 
 import { Label } from '../..';
 import {
-  ListboxStyles,
+  Styles,
   OptionStyles,
   FullStyles,
   WarningStyles,
@@ -45,7 +45,7 @@ export const Listbox = ({
         id={id}
         name={name}
         css={[
-          ListboxStyles,
+          Styles,
           full && FullStyles,
           warning && WarningStyles,
           disabled && DisabledStyles,

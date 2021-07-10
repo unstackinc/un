@@ -17,7 +17,7 @@ import {
 import { IconButton, Overlay, H3 } from '../..';
 import { escape } from '../../../utils';
 
-interface DrawerProps {
+interface Props {
   showDrawer?: boolean;
   setShowDrawer?: any;
   title: string;
@@ -37,7 +37,7 @@ export const Drawer = ({
   actions,
   aria,
   ...props
-}: DrawerProps) => {
+}: Props) => {
   escape(showDrawer, setShowDrawer);
   const AnimatedDialog = animated(Dialog);
   const transitions = useTransition(showDrawer, {

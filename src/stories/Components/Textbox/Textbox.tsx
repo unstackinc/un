@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Label } from '../../';
 import { Styles, FullStyles, WarningStyles } from './Textbox.styles';
 
-interface TextboxProps {
+interface Props {
   label?: string;
   id: string;
   name: string;
@@ -29,7 +29,7 @@ export const Textbox = ({
   warning,
   disabled,
   ...props
-}: TextboxProps) => {
+}: Props) => {
   return (
     <Label id={id} label={label} disabled={disabled} full={full}>
       <input

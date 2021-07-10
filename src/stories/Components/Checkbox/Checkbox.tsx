@@ -7,7 +7,7 @@ import { IoCheckmark } from 'react-icons/io5';
 import { Label } from '../..';
 import { Styles } from './Checkbox.styles';
 
-interface CheckboxProps {
+interface Props {
   label?: string;
   id: string;
   name: string;
@@ -27,7 +27,7 @@ export const Checkbox = ({
   full,
   disabled,
   ...props
-}: CheckboxProps) => {
+}: Props) => {
   return (
     <Label
       id={id}

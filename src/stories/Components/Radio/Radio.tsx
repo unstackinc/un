@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Label } from '../../';
 import { Styles } from './Radio.styles';
 
-interface RadioProps {
+interface Props {
   label?: string;
   id: string;
   name: string;
@@ -25,7 +25,7 @@ export const Radio = ({
   full,
   disabled,
   ...props
-}: RadioProps) => {
+}: Props) => {
   return (
     <Label
       id={id}

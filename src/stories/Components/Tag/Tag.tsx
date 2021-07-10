@@ -13,7 +13,7 @@ import {
 } from './Tag.variants';
 import { Styles, SmallStyles } from './Tag.styles';
 
-interface TagProps {
+interface Props {
   variant?: 'primary' | 'yellow' | 'green' | 'outline' | 'outlineBlue';
   color?: string;
   background?: string;
@@ -28,7 +28,7 @@ export const Tag = ({
   small,
   children,
   ...props
-}: TagProps) => {
+}: Props) => {
   let Variant;
   switch (variant) {
     case 'primary':

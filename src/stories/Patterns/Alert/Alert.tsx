@@ -11,7 +11,7 @@ import { Styles, BodyStyles, FooterStyles } from './Alert.styles';
 import { Overlay } from '../..';
 import { escape } from '../../../utils';
 
-interface AlertProps {
+interface Props {
   showAlert?: boolean;
   setShowAlert?: any;
   title: string;
@@ -32,7 +32,7 @@ export const Alert = ({
   leastDestructiveRef,
   aria,
   ...props
-}: AlertProps) => {
+}: Props) => {
   escape(showAlert, setShowAlert);
   const AnimatedAlert = animated(AlertDialog);
   const transitions = useTransition(showAlert, {

@@ -17,7 +17,7 @@ import {
 import { IconButton, Overlay, H3 } from '../..';
 import { escape } from '../../../utils';
 
-interface ModalProps {
+interface Props {
   showModal?: boolean;
   setShowModal?: any;
   title: string;
@@ -36,7 +36,7 @@ export const Modal = ({
   actions,
   aria,
   ...props
-}: ModalProps) => {
+}: Props) => {
   escape(showModal, setShowModal);
   const AnimatedUnModal = animated(Dialog);
   const transitions = useTransition(showModal, {

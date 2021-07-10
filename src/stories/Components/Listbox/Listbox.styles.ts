@@ -7,7 +7,7 @@ import theme, { fontSizes } from '../../../theme';
 const { colors, fonts, fontWeights, padding, radii, shadows, transitions } =
   theme;
 
-export const ListboxStyles = css`
+export const Styles = css`
   cursor: pointer;
   display: flex;
   align-items: center;

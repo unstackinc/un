@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Label } from '../..';
 import { Styles } from './Toggle.styles';
 
-interface ToggleProps {
+interface Props {
   label?: string;
   id: string;
   name: string;
@@ -25,7 +25,7 @@ export const Toggle = ({
   full,
   disabled,
   ...props
-}: ToggleProps) => {
+}: Props) => {
   return (
     <Label
       id={id}

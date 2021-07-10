@@ -21,7 +21,7 @@ import {
   DisabledStyles,
 } from './Typography.styles';
 
-interface PProps {
+interface Props {
   weight?: 'normal' | 'medium' | 'bold';
   color?: string;
   link?: boolean;
@@ -36,7 +36,7 @@ export const P3 = ({
   display,
   children,
   ...props
-}: PProps) => {
+}: Props) => {
   return (
     <p
       css={[
@@ -70,7 +70,7 @@ export const P2 = ({
   display,
   children,
   ...props
-}: PProps) => {
+}: Props) => {
   return (
     <p
       css={[
@@ -104,7 +104,7 @@ export const P1 = ({
   display,
   children,
   ...props
-}: PProps) => {
+}: Props) => {
   return (
     <p
       css={[
@@ -138,7 +138,7 @@ export const P0 = ({
   display,
   children,
   ...props
-}: PProps) => {
+}: Props) => {
   return (
     <p
       css={[

@@ -12,13 +12,13 @@ import {
   H3Styles,
 } from './Typography.styles';
 
-interface HProps {
+interface Props {
   color?: string;
   display?: boolean;
   children: ReactNode;
 }
 
-export const H3 = ({ color, display, children, ...props }: HProps) => {
+export const H3 = ({ color, display, children, ...props }: Props) => {
   return (
     <h3
       css={[
@@ -39,7 +39,7 @@ H3.defaultProps = {
   display: false,
 };
 
-export const H2 = ({ color, display, children, ...props }: HProps) => {
+export const H2 = ({ color, display, children, ...props }: Props) => {
   return (
     <h2
       css={[
@@ -60,7 +60,7 @@ H2.defaultProps = {
   display: false,
 };
 
-export const H1 = ({ color, display, children, ...props }: HProps) => {
+export const H1 = ({ color, display, children, ...props }: Props) => {
   return (
     <h1
       css={[
@@ -81,7 +81,7 @@ H1.defaultProps = {
   display: false,
 };
 
-export const H0 = ({ color, display, children, ...props }: HProps) => {
+export const H0 = ({ color, display, children, ...props }: Props) => {
   return (
     <h1
       css={[

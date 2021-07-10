@@ -44,7 +44,6 @@ export const IconButton = ({
 
 IconButton.defaultProps = {
   variant: 'small',
-  color: 'null',
   disabled: false,
   onClick: undefined,
 };

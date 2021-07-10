@@ -71,8 +71,6 @@ export const Tag = ({
 
 Tag.defaultProps = {
   variant: 'primary',
-  color: 'null',
-  background: 'null',
 };
 
 export default Tag;

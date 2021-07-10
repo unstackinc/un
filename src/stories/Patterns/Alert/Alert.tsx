@@ -3,7 +3,8 @@
 import * as React from 'react';
 import { animated, useTransition } from 'react-spring';
 
-import { Alert as unAlert } from '@reach/alert';
+import { AlertDialog, AlertDialogLabel } from '@reach/alert-dialog';
+import VisuallyHidden from '@reach/visually-hidden';
 
 import { Styles, BodyStyles, FooterStyles } from './Alert.styles';
 import { Overlay } from '../..';
@@ -15,6 +16,7 @@ interface AlertProps {
   title: string;
   children: React.ReactNode;
   actions?: React.ReactNode[];
+  leastDestructiveRef: any;
   aria: string;
 }
 
@@ -26,11 +28,12 @@ export const Alert = ({
   title,
   children,
   actions,
+  leastDestructiveRef,
   aria,
   ...props
 }: AlertProps) => {
   escape(showAlert, setShowAlert);
-  const AnimatedAlert = animated(unAlert);
+  const AnimatedAlert = animated(AlertDialog);
   const transitions = useTransition(showAlert, {
     from: {
       opacity: 0,
@@ -54,11 +57,15 @@ export const Alert = ({
             <>
               <Overlay showOverlay={showAlert} setShowOverlay={setShowAlert} />
               <AnimatedAlert
+                leastDestructiveRef={leastDestructiveRef}
                 style={styles}
                 css={Styles}
                 aria-label={aria}
                 {...props}
               >
+                <VisuallyHidden>
+                  <AlertDialogLabel>{title}</AlertDialogLabel>
+                </VisuallyHidden>
                 <div css={BodyStyles}>{children}</div>
                 <div css={FooterStyles}>
                   {actions.map((action, index) => {

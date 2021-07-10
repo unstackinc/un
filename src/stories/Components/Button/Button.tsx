@@ -20,6 +20,7 @@ import {
 } from './Button.styles';
 
 interface Props {
+  ref?: any;
   variant?: 'primary' | 'secondary' | 'tertiary' | 'outline';
   color?: string;
   background?: string;
@@ -34,6 +35,7 @@ interface Props {
 }
 
 export const Button = ({
+  ref,
   variant,
   color,
   background,
@@ -74,6 +76,7 @@ export const Button = ({
 
   return (
     <button
+      ref={ref}
       // variant={variant}
       disabled={disabled}
       css={[

@@ -1,7 +1,7 @@
 // Alert.stories.tsx
 
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Meta } from '@storybook/react';
 import { css } from '@emotion/react';
 
@@ -21,6 +21,8 @@ const Template = (args) => {
   const open = () => setShowAlert(true);
   const close = () => setShowAlert(false);
 
+  const cancelRef = useRef();
+
   return (
     <>
       <Button
@@ -32,14 +34,18 @@ const Template = (args) => {
         Open alert
       </Button>
       <Alert
+        title="Alert"
         actions={[
-          <Button onClick={close}>Nevermind, don't delete</Button>,
+          <Button ref={cancelRef} onClick={close}>
+            Nevermind, don't delete
+          </Button>,
           <Button variant="outline" onClick={close} warning>
             Yes, delete
           </Button>,
         ]}
         showAlert={showAlert}
         setShowAlert={setShowAlert}
+        leastDestructiveRef={cancelRef}
         aria="Alert"
         {...args}
       >

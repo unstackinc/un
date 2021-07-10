@@ -7,7 +7,7 @@ import theme from '../../../theme';
 const { margin, padding, colors, radii, shadows } = theme;
 
 export const Styles = css`
-  max-width: 37.5rem;
+  max-width: 24rem;
   box-shadow: ${shadows.lg};
   background: ${colors.card};
   position: relative;

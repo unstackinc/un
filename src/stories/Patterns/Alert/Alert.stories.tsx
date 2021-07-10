@@ -51,10 +51,6 @@ const Template = (args) => {
       >
         <H0 display>Please Confirm!</H0>
         <P1>Are you sure you want to delete something?</P1>
-        <P2 color={colors.text.secondary} display>
-          (and we're totally not just flipping a field called "deleted" to
-          "true" in our database, we're actually deleting something.)
-        </P2>
       </Alert>
     </>
   );

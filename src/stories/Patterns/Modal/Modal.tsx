@@ -14,7 +14,7 @@ import {
   BodyStyles,
   FooterStyles,
 } from './Modal.styles';
-import { Fab, Overlay, H3 } from '../..';
+import { IconButton, Overlay, H3 } from '../..';
 import { escape } from '../../../utils';
 
 interface ModalProps {
@@ -74,13 +74,13 @@ export const Modal = ({
               >
                 <div css={HeadingStyles}>
                   <H3 display>{title}</H3>
-                  <Fab
+                  <IconButton
                     aria-label="Close modal"
                     onClick={() => setShowModal(false)}
                   >
                     <VisuallyHidden>Close</VisuallyHidden>
                     <IoClose aria-hidden />
-                  </Fab>
+                  </IconButton>
                 </div>
                 <div css={BodyStyles}>{children}</div>
                 <div css={FooterStyles}>

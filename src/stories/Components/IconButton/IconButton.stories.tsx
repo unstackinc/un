@@ -1,14 +1,14 @@
-// Fab.stories.tsx
+// IconButton.stories.tsx
 
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 
 import { IoAdd } from 'react-icons/io5';
-import { Fab } from './Fab';
+import { IconButton } from './IconButton';
 
 export default {
-  title: 'Components/Fab',
-  component: Fab,
+  title: 'Components/IconButton',
+  component: IconButton,
   argTypes: {
     variant: {
       options: ['small', 'medium', 'large'],
@@ -23,7 +23,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Fab {...args} />;
+const Template = (args) => <IconButton {...args} />;
 
 export const Small = Template.bind({});
 Small.args = {

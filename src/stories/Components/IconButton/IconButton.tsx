@@ -1,10 +1,10 @@
-// Fab.tsx
+// IconButton.tsx
 
 import * as React from 'react';
 import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
-import { Styles, MediumStyles, LargeStyles } from './Fab.styles';
+import { Styles, MediumStyles, LargeStyles } from './IconButton.styles';
 
 interface Props {
   variant?: 'small' | 'medium' | 'large';
@@ -14,7 +14,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const Fab = ({
+export const IconButton = ({
   variant,
   color,
   disabled,
@@ -42,11 +42,11 @@ export const Fab = ({
   );
 };
 
-Fab.defaultProps = {
+IconButton.defaultProps = {
   variant: 'small',
   color: 'null',
   disabled: false,
   onClick: undefined,
 };
 
-export default Fab;
+export default IconButton;

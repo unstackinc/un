@@ -14,7 +14,7 @@ import {
   BodyStyles,
   FooterStyles,
 } from './Drawer.styles';
-import { Fab, Overlay, H3 } from '../..';
+import { IconButton, Overlay, H3 } from '../..';
 import { escape } from '../../../utils';
 
 interface DrawerProps {
@@ -72,13 +72,13 @@ export const Drawer = ({
               >
                 <div css={HeadingStyles}>
                   <H3 display>{title}</H3>
-                  <Fab
+                  <IconButton
                     aria-label="Close modal"
                     onClick={() => setShowDrawer(false)}
                   >
                     <VisuallyHidden>Close</VisuallyHidden>
                     <IoClose aria-hidden />
-                  </Fab>
+                  </IconButton>
                 </div>
                 <div css={BodyStyles}>{children}</div>
                 <div css={FooterStyles}>

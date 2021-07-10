@@ -30,6 +30,7 @@ export const LinkStyles = css`
 const p = css`
   font-family: ${fonts.body};
   color: ${colors.text.default};
+  display: inline;
 `;
 
 export const P0Styles = css`

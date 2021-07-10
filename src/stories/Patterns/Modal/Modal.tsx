@@ -64,35 +64,34 @@ export const Modal = ({
                 showOverlay={showModal}
                 setShowOverlay={setShowModal}
                 onClick={() => setShowModal(false)}
+              />
+              <AnimatedUnModal
+                css={Styles}
+                style={styles}
+                aria-label={aria}
+                {...props}
               >
-                <AnimatedUnModal
-                  css={Styles}
-                  style={styles}
-                  aria-label={aria}
-                  {...props}
-                >
-                  <div css={HeadingStyles}>
-                    <H3 display>{title}</H3>
-                    <Fab
-                      aria-label="Close modal"
-                      onClick={() => setShowModal(false)}
-                    >
-                      <VisuallyHidden>Close</VisuallyHidden>
-                      <FiX aria-hidden />
-                    </Fab>
-                  </div>
-                  <div css={BodyStyles}>{children}</div>
-                  <div css={FooterStyles}>
-                    {actions.map((action, index) => {
-                      return (
-                        <React.Fragment key={`${action.toString()}-${index}`}>
-                          {action}
-                        </React.Fragment>
-                      );
-                    })}
-                  </div>
-                </AnimatedUnModal>
-              </Overlay>
+                <div css={HeadingStyles}>
+                  <H3 display>{title}</H3>
+                  <Fab
+                    aria-label="Close modal"
+                    onClick={() => setShowModal(false)}
+                  >
+                    <VisuallyHidden>Close</VisuallyHidden>
+                    <FiX aria-hidden />
+                  </Fab>
+                </div>
+                <div css={BodyStyles}>{children}</div>
+                <div css={FooterStyles}>
+                  {actions.map((action, index) => {
+                    return (
+                      <React.Fragment key={`${action.toString()}-${index}`}>
+                        {action}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              </AnimatedUnModal>
             </>
           ),
       )}

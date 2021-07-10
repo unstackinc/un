@@ -62,35 +62,34 @@ export const Drawer = ({
                 showOverlay={showDrawer}
                 setShowOverlay={setShowDrawer}
                 onClick={() => setShowDrawer(false)}
+              />
+              <AnimatedDialog
+                css={Styles}
+                style={animation}
+                aria-label={aria}
+                {...props}
               >
-                <AnimatedDialog
-                  css={Styles}
-                  style={animation}
-                  aria-label={aria}
-                  {...props}
-                >
-                  <div css={HeadingStyles}>
-                    <H3 display>{title}</H3>
-                    <Fab
-                      aria-label="Close modal"
-                      onClick={() => setShowDrawer(false)}
-                    >
-                      <VisuallyHidden>Close</VisuallyHidden>
-                      <FiX aria-hidden />
-                    </Fab>
-                  </div>
-                  <div css={BodyStyles}>{children}</div>
-                  <div css={FooterStyles}>
-                    {actions.map((action, index) => {
-                      return (
-                        <React.Fragment key={`${action.toString()}-${index}`}>
-                          {action}
-                        </React.Fragment>
-                      );
-                    })}
-                  </div>
-                </AnimatedDialog>
-              </Overlay>
+                <div css={HeadingStyles}>
+                  <H3 display>{title}</H3>
+                  <Fab
+                    aria-label="Close modal"
+                    onClick={() => setShowDrawer(false)}
+                  >
+                    <VisuallyHidden>Close</VisuallyHidden>
+                    <FiX aria-hidden />
+                  </Fab>
+                </div>
+                <div css={BodyStyles}>{children}</div>
+                <div css={FooterStyles}>
+                  {actions.map((action, index) => {
+                    return (
+                      <React.Fragment key={`${action.toString()}-${index}`}>
+                        {action}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              </AnimatedDialog>
             </>
           ),
       )}

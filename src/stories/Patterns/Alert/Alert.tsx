@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { animated, useTransition } from 'react-spring';
 
-import { Dialog } from '@reach/dialog';
+import { Alert as unAlert } from '@reach/alert';
 
 import { Styles, BodyStyles, FooterStyles } from './Alert.styles';
 import { Overlay } from '../..';
@@ -30,7 +30,7 @@ export const Alert = ({
   ...props
 }: AlertProps) => {
   escape(showAlert, setShowAlert);
-  const AnimatedAlert = animated(Dialog);
+  const AnimatedAlert = animated(unAlert);
   const transitions = useTransition(showAlert, {
     from: {
       opacity: 0,
@@ -52,25 +52,24 @@ export const Alert = ({
         (styles, item) =>
           item && (
             <>
-              <Overlay showOverlay={showAlert} setShowOverlay={setShowAlert}>
-                <AnimatedAlert
-                  style={styles}
-                  css={Styles}
-                  aria-label={aria}
-                  {...props}
-                >
-                  <div css={BodyStyles}>{children}</div>
-                  <div css={FooterStyles}>
-                    {actions.map((action, index) => {
-                      return (
-                        <React.Fragment key={`${action.toString()}-${index}`}>
-                          {action}
-                        </React.Fragment>
-                      );
-                    })}
-                  </div>
-                </AnimatedAlert>
-              </Overlay>
+              <Overlay showOverlay={showAlert} setShowOverlay={setShowAlert} />
+              <AnimatedAlert
+                style={styles}
+                css={Styles}
+                aria-label={aria}
+                {...props}
+              >
+                <div css={BodyStyles}>{children}</div>
+                <div css={FooterStyles}>
+                  {actions.map((action, index) => {
+                    return (
+                      <React.Fragment key={`${action.toString()}-${index}`}>
+                        {action}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              </AnimatedAlert>
             </>
           ),
       )}

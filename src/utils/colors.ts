@@ -30,7 +30,7 @@ export const colors = {
     accent: un.blue,
     highlight: un.yellow,
     muted: un.border,
-    overlay: un.greyDark,
+    overlay: `${un.greyDark}CC`,
     card: un.white,
     border: un.border,
     disabled: un.disabled,

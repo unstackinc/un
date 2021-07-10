@@ -10,7 +10,6 @@ interface OverlayProps {
   showOverlay?: boolean;
   setShowOverlay?: any;
   background?: string;
-  children: React.ReactNode;
   onClick?: any;
 }
 
@@ -18,12 +17,11 @@ export const Overlay = ({
   showOverlay,
   setShowOverlay,
   background,
-  children,
   ...props
 }: OverlayProps) => {
   const transitions = useTransition(showOverlay, {
     from: { opacity: 0 },
-    enter: { opacity: 0.8 },
+    enter: { opacity: 1 },
     leave: { opacity: 0 },
   });
 
@@ -39,16 +37,13 @@ export const Overlay = ({
             `,
           ]}
           {...props}
-        >
-          {children}
-        </animated.div>
+        />
       ),
   );
 };
 
 Overlay.defaultProps = {
   showOverlay: false,
-  background: 'null',
 };
 
 export default Overlay;

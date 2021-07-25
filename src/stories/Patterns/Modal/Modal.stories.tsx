@@ -20,14 +20,22 @@ const Template = (args) => {
 
   return (
     <>
-      <Button
+      <div
         css={css`
           margin: 10vh auto;
+          display: flex;
+          justify-content: center;
         `}
-        onClick={open}
       >
-        Open modal
-      </Button>
+        <Button
+          css={css`
+            margin: 10vh auto;
+          `}
+          onClick={open}
+        >
+          Open modal
+        </Button>
+      </div>
       <Modal
         actions={[
           <Button variant="outline" onClick={close}>

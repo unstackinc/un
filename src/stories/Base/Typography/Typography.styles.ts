@@ -82,6 +82,11 @@ export const H3Styles = css`
   font-weight: ${fontWeights[1]};
 `;
 
+export const LabelContainerStyles = css`
+  max-width: 16rem;
+  width: 100%;
+`;
+
 export const LabelStyles = css`
   font-family: ${fonts.body};
   font-weight: ${fontWeights[1]};

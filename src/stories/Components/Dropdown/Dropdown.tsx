@@ -3,17 +3,15 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
 
-import { Menu, Transition } from '@headlessui/react';
+import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 
 import {
   Styles,
   ButtonStyles,
-  TransitionStyles,
   DropdownStyles,
   OptionStyles,
   BeforeStyles,
 } from './Dropdown.styles';
-import './Dropdown.transitions.css';
 
 interface Props {
   button: ReactNode;
@@ -23,19 +21,11 @@ interface Props {
 
 export const Dropdown = ({ button, children, value, ...props }: Props) => {
   return (
-    <Menu as="div" css={Styles} {...props}>
-      <Menu.Button css={ButtonStyles}>{button}</Menu.Button>
-      <Transition
-        enter="enter"
-        enterFrom="enterFrom"
-        enterTo="enterTo"
-        leave="leave"
-        leaveFrom="leaveFrom"
-        leaveTo="leaveTo"
-        css={TransitionStyles}
-      >
-        <Menu.Items css={DropdownStyles}>{children}</Menu.Items>
-      </Transition>
+    <Menu css={Styles} {...props}>
+      <MenuButton as="div" css={ButtonStyles}>
+        {button}
+      </MenuButton>
+      <MenuList css={DropdownStyles}>{children}</MenuList>
     </Menu>
   );
 };
@@ -47,10 +37,10 @@ interface ItemProps {
 
 export const DropdownItem = ({ before, children, ...props }: ItemProps) => {
   return (
-    <Menu.Item as="div" css={OptionStyles} {...props}>
+    <MenuItem css={OptionStyles} {...props}>
       {before && <div css={BeforeStyles}>{before}</div>}
       {children}
-    </Menu.Item>
+    </MenuItem>
   );
 };
 

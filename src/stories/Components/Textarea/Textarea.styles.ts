@@ -15,6 +15,10 @@ export const Styles = css`
   border: 1px solid ${colors.border};
   border-radius: ${radii.xs};
   padding: ${padding.xxs};
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 4rem;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;

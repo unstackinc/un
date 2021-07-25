@@ -26,8 +26,6 @@ interface Props {
   aria: string;
 }
 
-/* FIX: Escape key not working */
-
 export const Modal = ({
   showModal,
   setShowModal,
@@ -38,7 +36,7 @@ export const Modal = ({
   ...props
 }: Props) => {
   escape(showModal, setShowModal);
-  const AnimatedUnModal = animated(Dialog);
+  const AnimatedModal = animated(Dialog);
   const transitions = useTransition(showModal, {
     from: {
       opacity: 0,
@@ -66,7 +64,7 @@ export const Modal = ({
                 setShowOverlay={setShowModal}
                 onClick={() => setShowModal(false)}
               />
-              <AnimatedUnModal
+              <AnimatedModal
                 css={Styles}
                 style={styles}
                 aria-label={aria}
@@ -92,7 +90,7 @@ export const Modal = ({
                     );
                   })}
                 </div>
-              </AnimatedUnModal>
+              </AnimatedModal>
             </>
           ),
       )}

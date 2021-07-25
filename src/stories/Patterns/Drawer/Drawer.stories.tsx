@@ -6,7 +6,7 @@ import { Meta } from '@storybook/react';
 import { css } from '@emotion/react';
 
 import { Drawer } from './Drawer';
-import { Button, Textarea, Textbox, Dropdown, DropdownOption } from '../..';
+import { Button, Textarea, Textbox, Select, SelectOption } from '../..';
 
 export default {
   title: 'Patterns/Drawer',
@@ -20,14 +20,15 @@ const Template = (args) => {
 
   return (
     <>
-      <Button
+      <div
         css={css`
           margin: 10vh auto;
+          display: flex;
+          justify-content: center;
         `}
-        onClick={open}
       >
-        Open drawer
-      </Button>
+        <Button onClick={open}>Open drawer</Button>
+      </div>
       <Drawer
         actions={[
           <Button variant="tertiary" onClick={close}>
@@ -75,13 +76,14 @@ const Template = (args) => {
           name="description"
           full
         />
-        <Dropdown
+        <Select
           label="Designate this as premium content?"
           id="premium"
           name="premium"
+          value="premium"
           options={[
-            <DropdownOption value="no">No</DropdownOption>,
-            <DropdownOption value="yes">Yes</DropdownOption>,
+            <SelectOption value="no">No</SelectOption>,
+            <SelectOption value="yes">Yes</SelectOption>,
           ]}
           full
         />

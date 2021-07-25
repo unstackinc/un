@@ -27,7 +27,6 @@ interface Props {
 }
 
 /* FIX: Animations are janky after composition refactor */
-/* FIX: Escape key not working */
 
 export const Drawer = ({
   showDrawer,

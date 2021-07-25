@@ -4,6 +4,7 @@ import * as React from 'react';
 import { ReactNode } from 'react';
 
 import {
+  LabelContainerStyles,
   LabelStyles,
   FullStyles,
   InlineStyles,
@@ -46,7 +47,7 @@ export const Label = ({
   ...props
 }: Props) => {
   return (
-    <div css={[css]} {...props}>
+    <div css={[LabelContainerStyles, full && FullStyles, css]} {...props}>
       <label
         htmlFor={id}
         css={[

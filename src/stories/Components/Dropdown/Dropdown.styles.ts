@@ -38,8 +38,6 @@ export const TransitionStyles = css`
 export const DropdownStyles = css`
   display: inline-flex;
   flex-direction: column;
-  position: absolute;
-  right: 0;
   gap: ${padding.xxs};
   background: ${colors.card};
   font-family: ${fonts.body};

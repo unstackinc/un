@@ -9,8 +9,6 @@ import { Alert } from './Alert';
 import { Button, H0, P1, P2 } from '../..';
 import theme from '../../../theme';
 
-const { colors } = theme;
-
 export default {
   title: 'Patterns/Alert',
   component: Alert,
@@ -25,14 +23,22 @@ const Template = (args) => {
 
   return (
     <>
-      <Button
+      <div
         css={css`
           margin: 10vh auto;
+          display: flex;
+          justify-content: center;
         `}
-        onClick={open}
       >
-        Open alert
-      </Button>
+        <Button
+          css={css`
+            margin: 10vh auto;
+          `}
+          onClick={open}
+        >
+          Open alert
+        </Button>
+      </div>
       <Alert
         title="Alert"
         actions={[

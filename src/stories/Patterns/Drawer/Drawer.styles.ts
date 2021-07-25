@@ -40,6 +40,7 @@ export const HeadingStyles = css`
 export const BodyStyles = css`
   height: 100%;
   padding: ${padding.sm};
+  padding-bottom: ${padding.xxl};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

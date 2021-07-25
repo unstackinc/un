@@ -25,7 +25,7 @@ export const Styles = css`
   border-radius: 0.25em;
   box-sizing: border-box;
   padding: ${padding.xxs} ${padding.xs};
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: ${margin.xxs};

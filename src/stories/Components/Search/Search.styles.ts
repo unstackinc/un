@@ -4,8 +4,16 @@ import { css } from '@emotion/react';
 
 import theme, { fontSizes } from '../../../theme';
 
-const { colors, fonts, fontWeights, padding, radii, shadows, transitions } =
-  theme;
+const {
+  colors,
+  fonts,
+  fontWeights,
+  padding,
+  margin,
+  radii,
+  shadows,
+  transitions,
+} = theme;
 
 export const Styles = css`
   border-radius: ${radii.lg};
@@ -25,19 +33,19 @@ export const Styles = css`
     top: 50%;
     width: 1.25em;
     height: 1.25em;
-    transform: translateX(calc(100% - ${padding.xxs})) translateY(-50%);
+    transform: translateX(calc(100% - ${margin.xs})) translateY(-50%);
   }
 `;
 
 export const InputStyles = css`
   background-color: ${colors.input.background.default};
-  ${fontSizes[2]};
+  ${fontSizes[1]};
   font-family: ${fonts.body};
   font-weight: ${fontWeights[0]};
   border: 1px solid ${colors.border};
   border-radius: ${radii.lg};
-  padding: ${padding.xs};
-  padding-left: ${padding.xl};
+  padding: ${padding.xxs};
+  padding-left: ${padding.lg};
   color: ${colors.text.secondary};
   width: 100%;
   transition: color ${transitions[0]}, background-color ${transitions[0]};

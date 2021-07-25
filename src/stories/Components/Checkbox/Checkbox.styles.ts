@@ -2,7 +2,6 @@
 
 import { css } from '@emotion/react';
 
-// import { Label } from '../..';
 import theme from '../../../theme';
 
 const { colors, opacities, margin, padding, shadows, transitions } = theme;
@@ -12,37 +11,58 @@ export const Styles = css`
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    :checked ~ label .control {
-      background-color: ${colors.toggle.border.active};
-      border-color: transparent;
-      box-shadow: ${shadows.inset.active};
+    :checked,
+    :indeterminate {
+      ~ .control {
+        background-color: ${colors.toggle.border.active};
+        border-color: transparent;
+        box-shadow: ${shadows.inset.active};
+      }
+      :hover ~ .control {
+        background-color: ${colors.toggle.background.hover};
+      }
     }
-    ~ label svg {
+    :hover ~ .control {
+      background-color: ${colors.toggle.background.hover};
+    }
+    ~ .control svg {
       display: none;
       color: white;
     }
-    :checked ~ label svg {
-      display: block;
+    :checked {
+      ~ .control .checked {
+        display: block;
+      }
+      :indeterminate ~ .control .checked {
+        display: none;
+      }
+      :hover ~ .control {
+        background-color: ${colors.toggle.border.active};
+      }
     }
-    :checked:hover ~ label .control {
-      background-color: ${colors.toggle.border.active};
+    :indeterminate {
+      ~ .control .indeterminate {
+        display: block;
+      }
+      :hover ~ .control {
+        background-color: ${colors.toggle.border.active};
+      }
     }
-    :hover ~ label .control {
-      background-color: ${colors.toggle.background.hover};
-    }
-    :focus ~ label .control::before {
+    :focus ~ .control::before {
       opacity: 1;
     }
-    :active ~ label .control::before {
+    :active ~ .control::before {
       opacity: ${opacities[5]};
     }
-    :disabled ~ label .control {
-      cursor: not-allowed;
-      background-color: ${colors.toggle.background.disabled};
-      box-shadow: ${shadows.inset.disabled};
-    }
-    :disabled:active ~ label .control::before {
-      opacity: 0;
+    :disabled {
+      ~ .control {
+        cursor: not-allowed;
+        background-color: ${colors.toggle.background.disabled};
+        box-shadow: ${shadows.inset.disabled};
+      }
+      :active ~ .control::before {
+        opacity: 0;
+      }
     }
   }
 

@@ -6,6 +6,7 @@ import { ReactNode } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 
 import {
+  Styles,
   ButtonStyles,
   TransitionStyles,
   DropdownStyles,
@@ -17,11 +18,12 @@ import './Dropdown.transitions.css';
 interface Props {
   button: ReactNode;
   children: any;
+  value: string;
 }
 
-export const Dropdown = ({ button, children, ...props }: Props) => {
+export const Dropdown = ({ button, children, value, ...props }: Props) => {
   return (
-    <Menu as="div" {...props}>
+    <Menu as="div" css={Styles} {...props}>
       <Menu.Button css={ButtonStyles}>{button}</Menu.Button>
       <Transition
         enter="enter"
@@ -46,7 +48,7 @@ interface ItemProps {
 export const DropdownItem = ({ before, children, ...props }: ItemProps) => {
   return (
     <Menu.Item as="div" css={OptionStyles} {...props}>
-      <div css={BeforeStyles}>{before}</div>
+      {before && <div css={BeforeStyles}>{before}</div>}
       {children}
     </Menu.Item>
   );

@@ -31,7 +31,14 @@ export const Textbox = ({
   ...props
 }: Props) => {
   return (
-    <Label id={id} label={label} disabled={disabled} full={full}>
+    <Label
+      id={id}
+      label={label}
+      disabled={disabled}
+      full={full}
+      warningText={warningText}
+      helpText={helpText}
+    >
       <input
         type="text"
         id={id}
@@ -41,8 +48,6 @@ export const Textbox = ({
         css={[Styles, full && FullStyles, warning && WarningStyles]}
         {...props}
       ></input>
-      {warningText && <div className="warning-text">{warningText}</div>}
-      {helpText && <div className="help-text">{helpText}</div>}
     </Label>
   );
 };

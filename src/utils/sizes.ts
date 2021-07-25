@@ -5,4 +5,5 @@ export const sizes = {
   card: '20rem',
   wide: '82rem',
   grid: '90rem',
+  aside: '16rem',
 };

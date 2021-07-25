@@ -5,8 +5,8 @@ const { colors } = color;
 
 export const shadows = {
   sm: '0px 0px 2px rgba(0, 0, 0, 0.05), 0px 1px 4px rgba(0, 0, 0, 0.05)',
-  md: '0px 1px 4px rgba(0, 0, 0, 0.1), 0px 2px 8px rgba(0, 0, 0, 0.1)',
-  lg: '0px 2px 8px rgba(0, 0, 0, 0.15), 0px 4px 16px rgba(0, 0, 0, 0.15)',
+  md: '0px 1px 4px rgba(0, 0, 0, 0.1), 0px 2px 8px rgba(0, 0, 0, 0.05)',
+  lg: '0px 2px 8px rgba(0, 0, 0, 0.15), 0px 4px 16px rgba(0, 0, 0, 0.05)',
   disabled: '0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0)',
   inset: {
     default: `inset 0 1px 4px ${colors.toggle.border.default}`,

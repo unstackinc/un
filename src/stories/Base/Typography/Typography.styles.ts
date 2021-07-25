@@ -87,52 +87,41 @@ export const LabelStyles = css`
   font-weight: ${fontWeights[1]};
   color: ${colors.text.secondary};
   position: relative;
+  max-width: 16rem;
   display: flex;
   flex-direction: column;
   gap: ${margin.xs};
-  width: 16rem;
-  .label-text {
-    cursor: pointer;
-    width: 100%;
-  }
-  .warning-text,
-  .help-text {
-    ${fontSizes[1]};
-    font-weight: ${fontWeights[0]};
-  }
-  .warning-text {
-    color: ${colors.warning};
-  }
-`;
-
-export const FullStyles = css`
+  cursor: pointer;
   width: 100%;
 `;
 
+export const FullStyles = css`
+  max-width: 100%;
+`;
+
 export const InlineStyles = css`
+  color: ${colors.text.default};
+  display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: ${margin.xs};
-  .label-text {
-    color: ${colors.text.default};
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: ${margin.xs};
-    margin-bottom: 0;
-  }
+  margin-bottom: 0;
 `;
 
 export const DisabledStyles = css`
-  .label-text {
-    cursor: auto;
-  }
+  cursor: auto;
 `;
 
 export const BeforeStyles = css`
-  .label-text {
-    justify-content: space-between;
-  }
+  justify-content: space-between;
+`;
+
+export const TextStyles = css`
+  ${fontSizes[1]};
+  font-weight: ${fontWeights[0]};
+`;
+
+export const WarningTextStyles = css`
+  color: ${colors.warning};
 `;

@@ -1,4 +1,4 @@
-// Listbox.styles.ts
+// Select.styles.ts
 
 import { css } from '@emotion/react';
 
@@ -15,12 +15,12 @@ export const Styles = css`
   width: 16rem;
   box-shadow: none;
   background-color: ${colors.input.background.default};
-  ${fontSizes[2]};
+  ${fontSizes[1]};
   font-family: ${fonts.body};
   font-weight: ${fontWeights[0]};
   border: 1px solid ${colors.border};
   border-radius: ${radii.xs};
-  padding: ${padding.xs};
+  padding: ${padding.xxs};
   justify-content: space-between;
   color: ${colors.text.secondary};
   user-select: none;
@@ -50,10 +50,10 @@ export const Styles = css`
 export const OptionStyles = css`
   appearance: none;
   background-color: ${colors.input.background.light};
-  ${fontSizes[2]};
+  ${fontSizes[1]};
   font-family: ${fonts.body};
   font-weight: ${fontWeights[0]};
-  padding: ${padding.xs};
+  padding: ${padding.xxs};
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -1,4 +1,4 @@
-// Listbox.tsx
+// Select.tsx
 
 import * as React from 'react';
 import { Fragment, ReactNode } from 'react';
@@ -10,35 +10,40 @@ import {
   FullStyles,
   WarningStyles,
   DisabledStyles,
-} from './Listbox.styles';
+} from './Select.styles';
 
-interface ListboxProps {
-  options: any;
+interface SelectProps {
+  options: any[];
   label?: string;
-  id: string;
-  name: string;
+  id?: string;
+  name?: string;
   warningText?: string;
   helpText?: string;
-  placeholder: string;
+  placeholder?: string;
+  value: string | number;
   full?: boolean;
   warning?: boolean;
   disabled?: boolean;
   onClick?: any;
+  onChange?: any;
 }
 
-export const Listbox = ({
+export const Select = ({
   options,
   label,
   id,
   name,
+  value,
   warningText,
   helpText,
   placeholder,
   full,
+  onChange,
   warning,
+  onClick,
   disabled,
   ...props
-}: ListboxProps) => {
+}: SelectProps) => {
   return (
     <Label id={id} label={label} disabled={disabled} full={full}>
       <select
@@ -50,8 +55,10 @@ export const Listbox = ({
           warning && WarningStyles,
           disabled && DisabledStyles,
         ]}
+        value={value}
         placeholder={placeholder}
         disabled={disabled}
+        onChange={onChange}
         {...props}
       >
         {options.map((option, index) => {
@@ -66,7 +73,7 @@ export const Listbox = ({
   );
 };
 
-Listbox.defaultProps = {
+Select.defaultProps = {
   placeholder: 'Placeholder',
   warning: false,
   disabled: false,
@@ -74,11 +81,11 @@ Listbox.defaultProps = {
 };
 
 interface OptionProps {
-  value: string;
+  value: string | number;
   children: ReactNode;
 }
 
-export const ListboxOption = ({ value, children, ...props }: OptionProps) => {
+export const SelectOption = ({ value, children, ...props }: OptionProps) => {
   return (
     <option value={value} css={OptionStyles} {...props}>
       {children}
@@ -86,8 +93,8 @@ export const ListboxOption = ({ value, children, ...props }: OptionProps) => {
   );
 };
 
-ListboxOption.defaultProps = {
+SelectOption.defaultProps = {
   value: 'Placeholder',
 };
 
-export default Listbox;
+export default Select;

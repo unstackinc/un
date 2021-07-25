@@ -40,3 +40,7 @@ const Template = (args) => (
 );
 
 export const Default = Template.bind({});
+
+Default.parameters = {
+  layout: 'centered',
+};

@@ -15,7 +15,7 @@ export const Styles = css`
   border: 2px solid ${colors.button.background.tertiary};
   border-radius: 0.5em;
   padding: 0.25em;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -31,10 +31,9 @@ export const Styles = css`
     color: ${colors.text.bold};
   }
   :active {
-    transform: scale(0.95);
     background-color: ${colors.button.background.tertiaryHover};
   }
-  :focus {
+  :focus-visible {
     outline: none;
     box-shadow: ${shadows.focus.tertiary};
   }

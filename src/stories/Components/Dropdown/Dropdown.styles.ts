@@ -16,6 +16,12 @@ const {
   transitions,
 } = theme;
 
+export const Styles = css`
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+`;
+
 export const ButtonStyles = css`
   cursor: pointer;
   display: flex;
@@ -23,17 +29,17 @@ export const ButtonStyles = css`
   border: none;
   background: none;
   appearance: none;
-  padding: ${padding.xxs};
 `;
 
 export const TransitionStyles = css`
-  display: inline-flex;
   transition: ${transitions[2]};
 `;
 
 export const DropdownStyles = css`
   display: inline-flex;
   flex-direction: column;
+  position: absolute;
+  right: 0;
   gap: ${padding.xxs};
   background: ${colors.card};
   font-family: ${fonts.body};
@@ -55,6 +61,7 @@ export const OptionStyles = css`
   ${fontSizes[2]};
   font-family: ${fonts.body};
   font-weight: ${fontWeights[0]};
+  white-space: nowrap;
   min-width: 12rem;
   padding: ${padding.xxs} ${padding.xs};
   padding-left: ${padding.xxs};

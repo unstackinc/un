@@ -16,10 +16,8 @@ import {
 import { Tag } from '../../';
 import {
   Styles,
-  HeadingStyles,
   BodyStyles,
   SectionStyles,
-  FooterStyles,
   PanelStyles,
   NavLinkStyles,
   PushStyles,
@@ -28,8 +26,6 @@ import {
 } from './Nav.styles';
 
 interface NavProps {
-  heading: ReactNode;
-  footer: ReactNode;
   children: ReactNode;
 }
 
@@ -37,9 +33,7 @@ export const Nav = ({ children, ...props }: NavProps) => {
   return (
     <nav css={Styles} {...props}>
       <Router>
-        <div css={HeadingStyles}></div>
         <div css={BodyStyles}>{children}</div>
-        <div css={FooterStyles}></div>
       </Router>
     </nav>
   );

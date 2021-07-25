@@ -35,6 +35,7 @@ export const IconButton = ({
           }
         `,
       ]}
+      onClick={onClick}
       {...props}
     >
       {children}

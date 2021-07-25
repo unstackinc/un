@@ -16,7 +16,7 @@ import {
 import { Nav, NavSection } from './Nav';
 
 export default {
-  title: 'Patterns/Nav',
+  title: 'Components/Nav',
   component: Nav,
 } as Meta;
 

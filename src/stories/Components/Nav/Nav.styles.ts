@@ -13,31 +13,13 @@ export const Styles = css`
   height: 100%;
   overflow-y: scroll;
   display: flex;
-  position: fixed;
   top: 0;
   left: 0;
-  background-color: ${colors.background};
   flex-direction: column;
   scrollbar-width: none;
   ::-webkit-scrollbar {
     width: 0;
   }
-`;
-
-export const HeadingStyles = css`
-  background-color: ${colors.background};
-  width: 100%;
-  padding: ${padding.xxs};
-  padding-left: ${padding.sm};
-  box-sizing: border-box;
-  /* display: flex; */
-  display: none;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  border-bottom: 1px solid;
-  border-color: ${colors.border};
 `;
 
 export const BodyStyles = css`
@@ -168,19 +150,4 @@ export const PanelStyles = css`
       ${colors.background} 100%
     );
   }
-`;
-
-export const FooterStyles = css`
-  width: 100%;
-  padding: ${padding.xs};
-  box-sizing: border-box;
-  /* display: flex; */
-  display: none;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  gap: ${margin.xs};
-  position: relative;
-  border-top: 1px solid;
-  border-color: ${colors.border};
 `;

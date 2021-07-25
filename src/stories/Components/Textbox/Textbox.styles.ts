@@ -9,12 +9,12 @@ const { colors, fonts, fontWeights, padding, radii, shadows, transitions } =
 
 export const Styles = css`
   background-color: ${colors.input.background.default};
-  ${fontSizes[2]};
+  ${fontSizes[1]};
   font-family: ${fonts.body};
   font-weight: ${fontWeights[0]};
   border: 1px solid ${colors.border};
   border-radius: ${radii.xs};
-  padding: ${padding.xs};
+  padding: ${padding.xxs};
   display: flex;
   justify-content: center;
   align-items: center;

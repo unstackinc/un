@@ -11,39 +11,47 @@ export const Styles = css`
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    :checked ~ label .control {
-      background-color: ${colors.toggle.border.active};
-      border-color: transparent;
-      box-shadow: ${shadows.inset.active};
+    :checked {
+      ~ .control {
+        background-color: ${colors.toggle.border.active};
+        border-color: transparent;
+        box-shadow: ${shadows.inset.active};
+        :after {
+          transform: translateX(100%);
+        }
+      }
+      :hover ~ .control {
+        background-color: ${colors.toggle.border.active};
+      }
     }
-    :checked:hover ~ label .control {
-      background-color: ${colors.toggle.border.active};
-    }
-    :checked ~ label .control:after {
-      transform: translateX(100%);
-    }
-    :hover ~ label .control {
+    :hover ~ .control {
       background-color: ${colors.toggle.background.hover};
     }
-    :focus ~ label .control::before {
+    :focus ~ .control::before {
       opacity: 1;
     }
-    :active ~ label .control::before {
+    :active ~ .control::before {
       opacity: ${opacities[5]};
     }
-    :disabled ~ label .control,
-    :disabled:hover ~ label .control {
-      cursor: not-allowed;
-      background-color: ${colors.toggle.background.disabled};
-      box-shadow: ${shadows.inset.disabled};
-      border-color: transparent;
-    }
-    :disabled:active ~ label .control::before {
-      opacity: 0;
-    }
-    :disabled ~ label .control::after,
-    :disabled:active ~ label .control::after {
-      box-shadow: ${shadows.disabled};
+    :disabled {
+      ~ .control,
+      :hover ~ .control {
+        cursor: not-allowed;
+        background-color: ${colors.toggle.background.disabled};
+        box-shadow: ${shadows.inset.disabled};
+        border-color: transparent;
+        ::after {
+          box-shadow: ${shadows.disabled};
+        }
+      }
+      :active ~ .control {
+        ::before {
+          opacity: 0;
+        }
+        ::after {
+          box-shadow: ${shadows.disabled};
+        }
+      }
     }
   }
 

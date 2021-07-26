@@ -1,7 +1,7 @@
 // Heading.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 import { css } from '@emotion/react';
 
 import {
@@ -12,13 +12,15 @@ import {
   H3Styles,
 } from './Typography.styles';
 
-interface Props {
-  color?: string;
-  display?: boolean;
-  children: ReactNode;
-}
+const Types = {
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  display: PropTypes.bool,
+};
 
-export const H3 = ({ color, display, children, ...props }: Props) => {
+type Props = InferProps<typeof Types>;
+
+export const H3 = ({ children, color, display, ...props }: Props) => {
   return (
     <h3
       css={[
@@ -38,6 +40,8 @@ export const H3 = ({ color, display, children, ...props }: Props) => {
 H3.defaultProps = {
   display: false,
 };
+
+H3.propTypes = Types;
 
 export const H2 = ({ color, display, children, ...props }: Props) => {
   return (
@@ -60,6 +64,8 @@ H2.defaultProps = {
   display: false,
 };
 
+H2.propTypes = Types;
+
 export const H1 = ({ color, display, children, ...props }: Props) => {
   return (
     <h1
@@ -81,6 +87,8 @@ H1.defaultProps = {
   display: false,
 };
 
+H1.propTypes = Types;
+
 export const H0 = ({ color, display, children, ...props }: Props) => {
   return (
     <h1
@@ -101,5 +109,7 @@ export const H0 = ({ color, display, children, ...props }: Props) => {
 H0.defaultProps = {
   display: false,
 };
+
+H0.propTypes = Types;
 
 export default H1;

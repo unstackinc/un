@@ -1,7 +1,7 @@
 // Paragraph.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import {
   LabelContainerStyles,
@@ -14,36 +14,36 @@ import {
   WarningTextStyles,
 } from './Typography.styles';
 
-interface Props {
-  label?: string;
-  id?: string;
-  full?: boolean;
-  inline?: boolean;
-  before?: boolean;
-  after?: boolean;
-  nested?: boolean;
-  disabled?: boolean;
-  control?: ReactNode;
-  warningText?: string;
-  helpText?: string;
-  css?: any;
-  children?: ReactNode;
-}
+const Types = {
+  after: PropTypes.bool,
+  before: PropTypes.bool,
+  control: PropTypes.node,
+  children: PropTypes.node,
+  css: PropTypes.any,
+  disabled: PropTypes.bool,
+  full: PropTypes.bool,
+  helpText: PropTypes.string,
+  id: PropTypes.string,
+  inline: PropTypes.bool,
+  label: PropTypes.string,
+  warningText: PropTypes.string,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Label = ({
-  label,
-  id,
-  full,
-  inline,
-  before,
   after,
-  nested,
-  disabled,
+  before,
   control,
-  warningText,
-  helpText,
-  css,
   children,
+  css,
+  disabled,
+  full,
+  helpText,
+  id,
+  inline,
+  label,
+  warningText,
   ...props
 }: Props) => {
   return (
@@ -66,7 +66,7 @@ export const Label = ({
             {label}
             {!after && control}
 
-            {!after && !before && !nested && children}
+            {!after && !before && children}
 
             {warningText && (
               <div css={[TextStyles, WarningTextStyles]}>{warningText}</div>
@@ -77,7 +77,7 @@ export const Label = ({
           <>
             {(after || before) && children}
             {control}
-            {!after && !before && !nested && children}
+            {!after && !before && children}
           </>
         )}
       </label>
@@ -86,9 +86,11 @@ export const Label = ({
 };
 
 Label.defaultProps = {
+  after: false,
+  before: false,
+  disabled: false,
   full: false,
   inline: false,
-  before: false,
-  after: false,
-  disabled: false,
 };
+
+Label.propTypes = Types;

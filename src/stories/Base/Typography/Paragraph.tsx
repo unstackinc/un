@@ -1,7 +1,7 @@
 // Paragraph.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 import { css } from '@emotion/react';
 
 import {
@@ -16,20 +16,22 @@ import {
   P3Styles,
 } from './Typography.styles';
 
-interface Props {
-  weight?: 'normal' | 'medium' | 'bold';
-  color?: string;
-  link?: boolean;
-  display?: boolean;
-  children: ReactNode;
-}
+const Types = {
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  display: PropTypes.bool,
+  link: PropTypes.bool,
+  weight: PropTypes.oneOf(['normal', 'medium', 'bold']),
+};
+
+type Props = InferProps<typeof Types>;
 
 export const P3 = ({
-  weight,
-  color,
-  link,
-  display,
   children,
+  color,
+  display,
+  link,
+  weight,
   ...props
 }: Props) => {
   return (
@@ -53,10 +55,12 @@ export const P3 = ({
 };
 
 P3.defaultProps = {
-  weight: 'normal',
-  link: false,
   display: false,
+  link: false,
+  weight: 'normal',
 };
+
+P3.propTypes = Types;
 
 export const P2 = ({
   weight,
@@ -87,10 +91,12 @@ export const P2 = ({
 };
 
 P2.defaultProps = {
-  weight: 'normal',
-  link: false,
   display: false,
+  link: false,
+  weight: 'normal',
 };
+
+P2.propTypes = Types;
 
 export const P1 = ({
   weight,
@@ -121,10 +127,12 @@ export const P1 = ({
 };
 
 P1.defaultProps = {
-  weight: 'normal',
-  link: false,
   display: false,
+  link: false,
+  weight: 'normal',
 };
+
+P1.propTypes = Types;
 
 export const P0 = ({
   weight,
@@ -155,7 +163,9 @@ export const P0 = ({
 };
 
 P0.defaultProps = {
-  weight: 'normal',
-  link: false,
   display: false,
+  link: false,
+  weight: 'normal',
 };
+
+P0.propTypes = Types;

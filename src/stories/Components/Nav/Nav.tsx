@@ -1,8 +1,8 @@
 // Nav.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
 import { useState, useEffect, useCallback } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 import { useMeasure } from 'react-use';
 import { animated, useSpring } from 'react-spring';
 
@@ -25,11 +25,13 @@ import {
   IconStyles,
 } from './Nav.styles';
 
-interface NavProps {
-  children: ReactNode;
-}
+const Types = {
+  children: PropTypes.node.isRequired,
+};
 
-export const Nav = ({ children, ...props }: NavProps) => {
+type Props = InferProps<typeof Types>;
+
+export const Nav = ({ children, ...props }: Props) => {
   return (
     <nav css={Styles} {...props}>
       <Router>
@@ -39,30 +41,34 @@ export const Nav = ({ children, ...props }: NavProps) => {
   );
 };
 
-interface SectionProps {
-  icon: ReactNode;
-  label: string;
-  to?: string;
-  tag?: ReactNode;
-  links?: LinksProps[];
-  push?: boolean;
-  children?: ReactNode;
-}
+Nav.propTypes = Types;
 
-interface LinksProps {
-  name: string;
-  to: string;
-  tag?: string;
-}
+const LinksTypes = {
+  name: PropTypes.string.isRequired,
+  tag: PropTypes.string,
+  to: PropTypes.string.isRequired,
+};
+
+const SectionTypes = {
+  children: PropTypes.node,
+  icon: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
+  links: PropTypes.arrayOf(LinksTypes),
+  push: PropTypes.bool,
+  tag: PropTypes.node,
+  to: PropTypes.string,
+};
+
+type SectionProps = InferProps<typeof SectionTypes>;
 
 export const NavSection = ({
+  children,
   icon,
   label,
-  to,
-  tag,
   links,
   push,
-  children,
+  tag,
+  to,
   ...props
 }: SectionProps) => {
   /* Animate height */
@@ -159,8 +165,6 @@ export const NavSection = ({
   );
 };
 
-Nav.defaultProps = {
-  title: 'Title',
-};
+NavSection.propTypes = SectionTypes;
 
 export default Nav;

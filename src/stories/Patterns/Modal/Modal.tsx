@@ -1,7 +1,8 @@
 // Modal.tsx
 
 import * as React from 'react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 import { animated, useTransition, config } from 'react-spring';
 
 import { Dialog } from '@reach/dialog';
@@ -15,27 +16,28 @@ import {
   FooterStyles,
 } from './Modal.styles';
 import { IconButton, Overlay, H3 } from '../..';
-import { escape } from '../../../utils';
 
-interface Props {
-  showModal?: boolean;
-  setShowModal?: any;
-  title: string;
-  children: ReactNode;
-  actions?: ReactNode[];
-  aria: string;
-}
+const Types = {
+  actions: PropTypes.arrayOf(PropTypes.node),
+  aria: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  setShowModal: PropTypes.any,
+  showModal: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Modal = ({
-  showModal,
-  setShowModal,
-  title,
-  children,
-  actions,
   aria,
+  actions,
+  children,
+  setShowModal,
+  showModal,
+  title,
   ...props
 }: Props) => {
-  escape(showModal, setShowModal);
+  const close = () => setShowModal(false);
   const AnimatedModal = animated(Dialog);
   const transitions = useTransition(showModal, {
     from: {
@@ -65,6 +67,7 @@ export const Modal = ({
                 onClick={() => setShowModal(false)}
               />
               <AnimatedModal
+                onDismiss={close}
                 css={Styles}
                 style={styles}
                 aria-label={aria}
@@ -102,5 +105,7 @@ Modal.defaultProps = {
   showModal: false,
   title: 'Title',
 };
+
+Modal.propTypes = Types;
 
 export default Modal;

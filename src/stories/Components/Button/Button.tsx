@@ -1,7 +1,7 @@
 // Button.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import { css } from '@emotion/react';
 
@@ -20,34 +20,36 @@ import {
   WarningOutlineStyles,
 } from './Button.styles';
 
-interface Props {
-  ref?: any;
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'outline';
-  color?: string;
-  background?: string;
-  large?: boolean;
-  full?: boolean;
-  warning?: boolean;
-  disabled?: boolean;
-  before?: ReactNode;
-  children: ReactNode;
-  after?: ReactNode;
-  onClick?: any;
-}
+const Types = {
+  after: PropTypes.node,
+  background: PropTypes.string,
+  before: PropTypes.node,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  disabled: PropTypes.bool,
+  full: PropTypes.bool,
+  large: PropTypes.bool,
+  onClick: PropTypes.any,
+  ref: PropTypes.any,
+  variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'outline']),
+  warning: PropTypes.bool,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Button = ({
-  ref,
-  variant,
-  color,
+  after,
   background,
-  large,
-  full,
-  warning,
-  disabled,
   before,
   children,
-  after,
+  color,
+  disabled,
+  full,
+  large,
   onClick,
+  ref,
+  variant,
+  warning,
   ...props
 }: Props) => {
   let Variant;
@@ -102,9 +104,11 @@ export const Button = ({
 };
 
 Button.defaultProps = {
-  variant: 'primary',
   disabled: false,
   onClick: undefined,
+  variant: 'primary',
 };
+
+Button.propTypes = Types;
 
 export default Button;

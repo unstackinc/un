@@ -1,16 +1,18 @@
 // Layout.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import { Styles, SidebarStyles } from './Layout.styles';
 
-interface Props {
-  heading: ReactNode;
-  footer: ReactNode;
-  sidebar: boolean;
-  children: ReactNode;
-}
+const Types = {
+  children: PropTypes.node.isRequired,
+  footer: PropTypes.node,
+  heading: PropTypes.node,
+  sidebar: PropTypes.boolean,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Layout = ({ children, sidebar, ...props }: Props) => {
   return (
@@ -19,5 +21,7 @@ export const Layout = ({ children, sidebar, ...props }: Props) => {
     </div>
   );
 };
+
+Layout.propTypes = Types;
 
 export default Layout;

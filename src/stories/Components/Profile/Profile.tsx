@@ -1,7 +1,7 @@
 // Profile.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import {
   Styles,
@@ -10,12 +10,14 @@ import {
   ExtraLargeStyles,
 } from './Profile.styles';
 
-interface Props {
-  variant?: 'small' | 'medium' | 'large' | 'extralarge';
-  children: ReactNode;
-}
+const Types = {
+  children: PropTypes.node.isRequired,
+  variant: PropTypes.oneOf(['small', 'medium', 'large', 'extralarge']),
+};
 
-export const Profile = ({ variant, children, ...props }: Props) => {
+type Props = InferProps<typeof Types>;
+
+export const Profile = ({ children, variant, ...props }: Props) => {
   return (
     <div
       css={[
@@ -34,5 +36,7 @@ export const Profile = ({ variant, children, ...props }: Props) => {
 Profile.defaultProps = {
   variant: 'small',
 };
+
+Profile.propTypes = Types;
 
 export default Profile;

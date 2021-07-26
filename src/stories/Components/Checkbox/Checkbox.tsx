@@ -2,27 +2,40 @@
 
 import * as React from 'react';
 import { useEffect, useRef, forwardRef } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import { IoCheckmark, IoRemove } from 'react-icons/io5';
 
 import { Label } from '../..';
 import { Styles } from './Checkbox.styles';
 
-interface Props {
-  label?: string;
-  id?: string;
-  name?: string;
-  value?: string;
-  indeterminate?: boolean;
-  full?: boolean;
-  disabled?: boolean;
-  onClick?: any;
-  props: any;
-}
+const Types = {
+  disabled: PropTypes.bool,
+  full: PropTypes.bool,
+  id: PropTypes.string,
+  indeterminate: PropTypes.bool,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  onClick: PropTypes.any,
+  props: PropTypes.any,
+  value: PropTypes.string,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Checkbox = forwardRef(
   (
-    { label, id, name, value, indeterminate, full, disabled, props }: Props,
+    {
+      disabled,
+      full,
+      id,
+      indeterminate,
+      label,
+      name,
+      onClick,
+      value,
+      props,
+    }: Props,
     ref,
   ) => {
     const defaultRef = useRef();
@@ -40,7 +53,6 @@ export const Checkbox = forwardRef(
         full={full}
         inline
         after
-        nested
         control={
           <span className="control">
             <IoCheckmark className="checked" />
@@ -68,9 +80,13 @@ Checkbox.defaultProps = {
   onClick: undefined,
 };
 
-interface IndeterminateProps {
-  indeterminate?: any;
-}
+Checkbox.propTypes = Types;
+
+const IndeterminateTypes = {
+  indeterminate: PropTypes.any,
+};
+
+type IndeterminateProps = InferProps<typeof IndeterminateTypes>;
 
 export const IndeterminateCheckbox = forwardRef(
   ({ indeterminate, ...props }: IndeterminateProps, ref) => {
@@ -88,5 +104,7 @@ export const IndeterminateCheckbox = forwardRef(
     );
   },
 );
+
+IndeterminateCheckbox.propTypes = IndeterminateTypes;
 
 export default Checkbox;

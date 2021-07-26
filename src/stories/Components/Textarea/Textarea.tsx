@@ -1,33 +1,37 @@
 // Textarea.tsx
 
 import * as React from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import { Label } from '../../';
 import { Styles, FullStyles, WarningStyles } from './Textarea.styles';
 
-interface Props {
-  label?: string;
-  id: string;
-  name: string;
-  warningText?: string;
-  helpText?: string;
-  placeholder: string;
-  full?: boolean;
-  warning?: boolean;
-  disabled?: boolean;
-  onClick?: any;
-}
+const Types = {
+  disabled: PropTypes.bool,
+  full: PropTypes.bool,
+  helpText: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onClick: PropTypes.any,
+  placeholder: PropTypes.string.isRequired,
+  warning: PropTypes.bool,
+  warningText: PropTypes.string,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Textarea = ({
-  label,
-  id,
-  name,
-  warningText,
-  helpText,
-  placeholder,
-  full,
-  warning,
   disabled,
+  full,
+  helpText,
+  id,
+  label,
+  name,
+  onClick,
+  placeholder,
+  warning,
+  warningText,
   ...props
 }: Props) => {
   return (
@@ -52,10 +56,12 @@ export const Textarea = ({
 };
 
 Textarea.defaultProps = {
-  placeholder: 'Placeholder',
-  warning: false,
   disabled: false,
   onClick: undefined,
+  placeholder: 'Placeholder',
+  warning: false,
 };
+
+Textarea.propTypes = Types;
 
 export default Textarea;

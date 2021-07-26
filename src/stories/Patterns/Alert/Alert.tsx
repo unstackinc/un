@@ -1,7 +1,8 @@
 // Alert.tsx
 
 import * as React from 'react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 import { animated, useTransition } from 'react-spring';
 
 import { AlertDialog, AlertDialogLabel } from '@reach/alert-dialog';
@@ -9,31 +10,30 @@ import VisuallyHidden from '@reach/visually-hidden';
 
 import { Styles, BodyStyles, FooterStyles } from './Alert.styles';
 import { Overlay } from '../..';
-import { escape } from '../../../utils';
 
-interface Props {
-  showAlert?: boolean;
-  setShowAlert?: any;
-  title: string;
-  children: ReactNode;
-  actions?: ReactNode[];
-  leastDestructiveRef: any;
-  aria: string;
-}
+const Types = {
+  actions: PropTypes.arrayOf(PropTypes.node),
+  aria: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  leastDestructiveRef: PropTypes.any.isRequired,
+  setShowAlert: PropTypes.any,
+  showAlert: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+};
 
-/* FIX: Escape key not working */
+type Props = InferProps<typeof Types>;
 
 export const Alert = ({
-  showAlert,
-  setShowAlert,
-  title,
-  children,
   actions,
-  leastDestructiveRef,
   aria,
+  children,
+  leastDestructiveRef,
+  setShowAlert,
+  showAlert,
+  title,
   ...props
 }: Props) => {
-  escape(showAlert, setShowAlert);
+  const close = () => setShowAlert(false);
   const AnimatedAlert = animated(AlertDialog);
   const transitions = useTransition(showAlert, {
     from: {
@@ -58,6 +58,7 @@ export const Alert = ({
             <>
               <Overlay showOverlay={showAlert} setShowOverlay={setShowAlert} />
               <AnimatedAlert
+                onDismiss={close}
                 leastDestructiveRef={leastDestructiveRef}
                 style={styles}
                 css={Styles}
@@ -89,5 +90,7 @@ Alert.defaultProps = {
   showAlert: false,
   title: 'Title',
 };
+
+Alert.propTypes = Types;
 
 export default Alert;

@@ -1,7 +1,7 @@
 // Dropdown.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 
@@ -13,11 +13,13 @@ import {
   BeforeStyles,
 } from './Dropdown.styles';
 
-interface Props {
-  button: ReactNode;
-  children: any;
-  value: string;
-}
+const Types = {
+  button: PropTypes.node.isRequired,
+  children: PropTypes.any.isRequired,
+  value: PropTypes.string.isRequired,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Dropdown = ({ button, children, value, ...props }: Props) => {
   return (
@@ -30,10 +32,14 @@ export const Dropdown = ({ button, children, value, ...props }: Props) => {
   );
 };
 
-interface ItemProps {
-  before?: ReactNode;
-  children: ReactNode;
-}
+Dropdown.propTypes = Types;
+
+const ItemTypes = {
+  before: PropTypes.node,
+  children: PropTypes.node.isRequired,
+};
+
+type ItemProps = InferProps<typeof ItemTypes>;
 
 export const DropdownItem = ({ before, children, ...props }: ItemProps) => {
   return (
@@ -43,5 +49,7 @@ export const DropdownItem = ({ before, children, ...props }: ItemProps) => {
     </MenuItem>
   );
 };
+
+DropdownItem.propTypes = ItemTypes;
 
 export default Dropdown;

@@ -1,7 +1,8 @@
 // Drawer.tsx
 
 import * as React from 'react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 import { animated, useTransition, config } from 'react-spring';
 
 import { Dialog } from '@reach/dialog';
@@ -15,29 +16,28 @@ import {
   FooterStyles,
 } from './Drawer.styles';
 import { IconButton, Overlay, H3 } from '../..';
-import { escape } from '../../../utils';
 
-interface Props {
-  showDrawer?: boolean;
-  setShowDrawer?: any;
-  title: string;
-  children: ReactNode;
-  actions?: ReactNode[];
-  aria: string;
-}
+const Types = {
+  actions: PropTypes.arrayOf(PropTypes.node),
+  aria: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  setShowDrawer: PropTypes.any,
+  showDrawer: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+};
 
-/* FIX: Animations are janky after composition refactor */
+type Props = InferProps<typeof Types>;
 
 export const Drawer = ({
-  showDrawer,
-  setShowDrawer,
-  title,
-  children,
   actions,
   aria,
+  children,
+  setShowDrawer,
+  showDrawer,
+  title,
   ...props
 }: Props) => {
-  escape(showDrawer, setShowDrawer);
+  const close = () => setShowDrawer(false);
   const AnimatedDialog = animated(Dialog);
   const transitions = useTransition(showDrawer, {
     from: {
@@ -64,6 +64,7 @@ export const Drawer = ({
                 onClick={() => setShowDrawer(false)}
               />
               <AnimatedDialog
+                onDismiss={close}
                 css={Styles}
                 style={animation}
                 aria-label={aria}
@@ -101,5 +102,7 @@ Drawer.defaultProps = {
   showDrawer: false,
   title: 'Title',
 };
+
+Drawer.propTypes = Types;
 
 export default Drawer;

@@ -1,7 +1,7 @@
 // Tag.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 import { css } from '@emotion/react';
 
 import {
@@ -13,20 +13,28 @@ import {
 } from './Tag.variants';
 import { Styles, SmallStyles } from './Tag.styles';
 
-interface Props {
-  variant?: 'primary' | 'yellow' | 'green' | 'outline' | 'outlineBlue';
-  color?: string;
-  background?: string;
-  small?: boolean;
-  children: ReactNode;
-}
+const Types = {
+  background: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  small: PropTypes.bool,
+  variant: PropTypes.oneOf([
+    'primary',
+    'yellow',
+    'green',
+    'outline',
+    'outlineBlue',
+  ]),
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Tag = ({
-  variant,
-  color,
   background,
-  small,
   children,
+  color,
+  small,
+  variant,
   ...props
 }: Props) => {
   let Variant;
@@ -72,5 +80,7 @@ export const Tag = ({
 Tag.defaultProps = {
   variant: 'primary',
 };
+
+Tag.propTypes = Types;
 
 export default Tag;

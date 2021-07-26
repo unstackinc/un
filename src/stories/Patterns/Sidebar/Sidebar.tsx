@@ -1,15 +1,17 @@
 // Sidebar.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import { Styles } from './Sidebar.styles';
 
-interface Props {
-  heading?: ReactNode;
-  children: ReactNode;
-  footer?: ReactNode;
-}
+const Types = {
+  children: PropTypes.node.isRequired,
+  footer: PropTypes.node,
+  heading: PropTypes.node,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Sidebar = ({ children, ...props }: Props) => {
   return (
@@ -18,5 +20,7 @@ export const Sidebar = ({ children, ...props }: Props) => {
     </aside>
   );
 };
+
+Sidebar.propTypes = Types;
 
 export default Sidebar;

@@ -1,16 +1,18 @@
 // Header.tsx
 
 import * as React from 'react';
-import { ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 
 import { Styles, ContainerStyles } from './Header.styles';
 
-interface HeaderProps {
-  start?: ReactNode;
-  end?: ReactNode;
-}
+const Types = {
+  end: PropTypes.node,
+  start: PropTypes.node,
+};
 
-export const Header = ({ start, end, ...props }: HeaderProps) => {
+type Props = InferProps<typeof Types>;
+
+export const Header = ({ end, start, ...props }: Props) => {
   return (
     <header css={Styles} {...props}>
       <div css={ContainerStyles}>
@@ -20,5 +22,7 @@ export const Header = ({ start, end, ...props }: HeaderProps) => {
     </header>
   );
 };
+
+Header.propTypes = Types;
 
 export default Header;

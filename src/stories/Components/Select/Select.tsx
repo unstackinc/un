@@ -1,7 +1,8 @@
 // Select.tsx
 
 import * as React from 'react';
-import { Fragment, ReactNode } from 'react';
+import PropTypes, { InferProps } from 'prop-types';
+import { Fragment } from 'react';
 
 import { Label } from '../..';
 import {
@@ -12,38 +13,40 @@ import {
   DisabledStyles,
 } from './Select.styles';
 
-interface SelectProps {
-  options: any[];
-  label?: string;
-  id?: string;
-  name?: string;
-  warningText?: string;
-  helpText?: string;
-  placeholder?: string;
-  value: string | number;
-  full?: boolean;
-  warning?: boolean;
-  disabled?: boolean;
-  onClick?: any;
-  onChange?: any;
-}
+const Types = {
+  disabled: PropTypes.bool,
+  full: PropTypes.bool,
+  helpText: PropTypes.string,
+  id: PropTypes.string,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  onClick: PropTypes.any,
+  onChange: PropTypes.any,
+  options: PropTypes.arrayOf(PropTypes.any).isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
+  warning: PropTypes.bool,
+  warningText: PropTypes.string,
+};
+
+type Props = InferProps<typeof Types>;
 
 export const Select = ({
-  options,
-  label,
-  id,
-  name,
-  value,
-  warningText,
-  helpText,
-  placeholder,
-  full,
-  onChange,
-  warning,
-  onClick,
   disabled,
+  full,
+  helpText,
+  id,
+  label,
+  name,
+  onClick,
+  onChange,
+  options,
+  placeholder,
+  value,
+  warning,
+  warningText,
   ...props
-}: SelectProps) => {
+}: Props) => {
   return (
     <Label id={id} label={label} disabled={disabled} full={full}>
       <select
@@ -74,18 +77,22 @@ export const Select = ({
 };
 
 Select.defaultProps = {
-  placeholder: 'Placeholder',
-  warning: false,
   disabled: false,
   onClick: undefined,
+  placeholder: 'Placeholder',
+  warning: false,
 };
 
-interface OptionProps {
-  value: string | number;
-  children: ReactNode;
-}
+Select.propTypes = Types;
 
-export const SelectOption = ({ value, children, ...props }: OptionProps) => {
+const OptionTypes = {
+  children: PropTypes.node.isRequired,
+  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
+};
+
+type OptionProps = InferProps<typeof OptionTypes>;
+
+export const SelectOption = ({ children, value, ...props }: OptionProps) => {
   return (
     <option value={value} css={OptionStyles} {...props}>
       {children}
@@ -96,5 +103,7 @@ export const SelectOption = ({ value, children, ...props }: OptionProps) => {
 SelectOption.defaultProps = {
   value: 'Placeholder',
 };
+
+SelectOption.propTypes = OptionTypes;
 
 export default Select;

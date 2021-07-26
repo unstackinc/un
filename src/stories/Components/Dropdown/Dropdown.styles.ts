@@ -56,11 +56,11 @@ export const DropdownStyles = css`
 export const OptionStyles = css`
   appearance: none;
   background-color: ${colors.input.background.light};
-  ${fontSizes[2]};
+  ${fontSizes[1]};
   font-family: ${fonts.body};
-  font-weight: ${fontWeights[0]};
+  font-weight: ${fontWeights[1]};
   white-space: nowrap;
-  min-width: 12rem;
+  min-width: 10rem;
   padding: ${padding.xxs} ${padding.xs};
   padding-left: ${padding.xxs};
   display: flex;
@@ -82,8 +82,8 @@ export const OptionStyles = css`
 
 export const BeforeStyles = css`
   background-color: ${colors.text.secondary}11;
-  width: ${padding.lg};
-  height: ${padding.lg};
+  width: ${padding.md};
+  height: ${padding.md};
   border-radius: ${radii.lg};
   display: flex;
   justify-content: center;

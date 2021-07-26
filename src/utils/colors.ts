@@ -25,6 +25,7 @@ export const colors = {
   colors: {
     texts: un.grey,
     background: un.whiteOff,
+    sidebar: un.greyDark,
     primary: un.primary,
     secondary: un.greyLight,
     accent: un.blue,

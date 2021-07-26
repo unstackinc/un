@@ -7,8 +7,8 @@ import theme from '../../../theme';
 const { radii } = theme;
 
 export const Styles = css`
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: ${radii.lg};
   position: relative;
   overflow: hidden;
@@ -19,8 +19,8 @@ export const Styles = css`
 `;
 
 export const MediumStyles = css`
-  width: 3rem;
-  height: 3rem;
+  width: 2.25rem;
+  height: 2.25rem;
 `;
 
 export const LargeStyles = css`

@@ -30,14 +30,7 @@ const Template = (args) => {
           justify-content: center;
         `}
       >
-        <Button
-          css={css`
-            margin: 10vh auto;
-          `}
-          onClick={open}
-        >
-          Open alert
-        </Button>
+        <Button onClick={open}>Open alert</Button>
       </div>
       <Alert
         title="Alert"

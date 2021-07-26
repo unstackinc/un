@@ -5,4 +5,5 @@ export const radii = {
   sm: '.5rem',
   md: '1rem',
   lg: '2rem',
+  full: '9999px',
 };

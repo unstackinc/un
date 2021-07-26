@@ -27,14 +27,7 @@ const Template = (args) => {
           justify-content: center;
         `}
       >
-        <Button
-          css={css`
-            margin: 10vh auto;
-          `}
-          onClick={open}
-        >
-          Open modal
-        </Button>
+        <Button onClick={open}>Open modal</Button>
       </div>
       <Modal
         actions={[

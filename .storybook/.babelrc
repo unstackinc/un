@@ -12,7 +12,7 @@
     ],
     [
       "@babel/preset-react",
-      { "runtime": "automatic", "importSource": "@emotion/react" }
+      { "runtime": "automatic", "importSource": "theme-ui" }
     ],
     ["@babel/preset-typescript"]
   ],

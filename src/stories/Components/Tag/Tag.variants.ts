@@ -1,36 +1,36 @@
 // Tag.variants.ts
 
-import { css } from '@emotion/react';
+const PrimaryVariant = {
+  color: 'text.reversed',
+  backgroundColor: 'tag.default.purple',
+};
 
-import theme from '../../../theme';
+const YellowVariant = {
+  color: 'text.reversed',
+  backgroundColor: 'tag.default.yellow',
+};
 
-const { colors } = theme;
+const GreenVariant = {
+  color: 'text.reversed',
+  backgroundColor: 'tag.default.green',
+};
 
-export const PrimaryVariant = css`
-  color: ${colors.text.reversed};
-  background-color: ${colors.tag.default.purple};
-`;
+const OutlineVariant = {
+  color: 'tag.outline.default',
+  backgroundColor: 'tag.outline.background',
+};
 
-export const YellowVariant = css`
-  color: ${colors.text.reversed};
-  background-color: ${colors.tag.default.yellow};
-`;
+const OutlineBlueVariant = {
+  color: 'tag.outline.blue',
+  backgroundColor: 'tag.outline.background',
+};
 
-export const GreenVariant = css`
-  color: ${colors.text.reversed};
-  background-color: ${colors.tag.default.green};
-`;
+const tags = {
+  primary: PrimaryVariant,
+  yellow: YellowVariant,
+  green: GreenVariant,
+  outline: OutlineVariant,
+  outlineBlue: OutlineBlueVariant,
+};
 
-export const OutlineVariant = css`
-  color: ${colors.tag.outline.default};
-  outline: 2px solid currentColor;
-  outline-offset: -2px;
-  background-color: ${colors.tag.outline.background};
-`;
-
-export const OutlineBlueVariant = css`
-  color: ${colors.tag.outline.blue};
-  outline: 2px solid currentColor;
-  outline-offset: -2px;
-  background-color: ${colors.tag.outline.background};
-`;
+export default tags;

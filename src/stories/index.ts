@@ -1,3 +1,4 @@
+export * from './Base/Background/Background';
 export * from './Base/Typography/Heading';
 export * from './Base/Typography/Label';
 export * from './Base/Typography/Paragraph';

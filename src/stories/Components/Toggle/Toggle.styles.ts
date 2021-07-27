@@ -65,6 +65,7 @@ export const Styles = css`
     border: 1px solid ${colors.toggle.border.default};
     background-color: ${colors.toggle.background.default};
     padding: ${padding.xxxs};
+    box-sizing: content-box;
     border-radius: ${margin.xxl};
     box-shadow: ${shadows.inset.default};
     transition: opacity ${transitions[0]}, border-color ${transitions[0]},

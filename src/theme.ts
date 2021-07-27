@@ -14,6 +14,8 @@ import {
   transitions,
   typography,
 } from './utils';
+import buttons from './stories/Components/Button/Button.variants';
+import tags from './stories/Components/Tag/Tag.variants';
 
 const base = 0.64;
 const scale = 1.2;
@@ -69,6 +71,8 @@ const theme = {
   styles,
   ...transitions,
   ...typography,
+  buttons,
+  tags,
 };
 
 export default theme;

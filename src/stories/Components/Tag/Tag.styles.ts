@@ -6,7 +6,6 @@ import theme, { fontSizes } from '../../../theme';
 
 const { margin, padding, fonts, fontWeights } = theme;
 
-
 export const Styles = css`
   ${fontSizes[0]};
   font-family: ${fonts.body};
@@ -14,6 +13,11 @@ export const Styles = css`
   border-radius: ${margin.xxl};
   padding: ${padding.xxs} ${padding.xs};
   display: inline-block;
+`;
+
+export const OutlineVariant = css`
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
 `;
 
 export const SmallStyles = css`

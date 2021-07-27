@@ -1,6 +1,6 @@
 {
   "name": "un",
-  "version": "0.20.0-alpha",
+  "version": "0.21.0-alpha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unstackinc/un.git"
+    "url": "git+https://github.com/unstackinc/unds.git"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/unstackinc/un/issues"
+    "url": "https://github.com/unstackinc/unds/issues"
   },
-  "homepage": "https://github.com/unstackinc/un#readme",
+  "homepage": "https://github.com/unstackinc/unds#readme",
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@reach/alert": "^0.15.0",
@@ -42,7 +42,9 @@
     "react-router-dom": "^5.2.0",
     "react-spring": "^9.2.3",
     "react-table": "^7.7.0",
-    "react-use": "^17.2.4"
+    "react-use": "^17.2.4",
+    "storybook-addon-theme-ui": "^0.1.5",
+    "theme-ui": "^0.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",

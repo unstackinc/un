@@ -6,7 +6,7 @@ import { Meta } from '@storybook/react';
 import { css } from '@emotion/react';
 
 import { Drawer } from './Drawer';
-import { Button, Textarea, Textbox, Select, SelectOption } from '../..';
+import { Button, Textarea, Textbox, Select } from '../..';
 
 export default {
   title: 'Patterns/Drawer',
@@ -82,8 +82,8 @@ const Template = (args) => {
           name="premium"
           value="premium"
           options={[
-            <SelectOption value="no">No</SelectOption>,
-            <SelectOption value="yes">Yes</SelectOption>,
+            { name: 'No', value: 'no' },
+            { name: 'Yes', value: 'yes' },
           ]}
           full
         />

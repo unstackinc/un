@@ -21,9 +21,10 @@ export const Styles = css`
   height: 100vh;
   border-right: 1px solid;
   border-color: ${colors.border};
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-color: ${colors.background};
+  background-color: ${colors.sidemenu};
   scrollbar-width: none;
   ::-webkit-scrollbar {
     width: 0;
@@ -35,7 +36,6 @@ export const Styles = css`
 `;
 
 export const HeadingStyles = css`
-  background-color: ${colors.background};
   width: 100%;
   padding: ${padding.xxs};
   padding-left: ${padding.sm};

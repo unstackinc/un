@@ -1,46 +1,69 @@
 // Button.variants.ts
 
-import { css } from '@emotion/react';
+export const WarningStyles = {
+  color: 'text.reversed',
+  backgroundColor: 'warning',
+  ':focus-visible': {
+    boxShadow: 'focus.warning',
+  },
+};
 
-import theme from '../../../theme';
+const PrimaryVariant = {
+  color: 'text.reversed',
+  backgroundColor: 'button.background.primary',
+  ':focus-visible': {
+    boxShadow: 'focus.primary',
+  },
+  '&.warning': WarningStyles,
+};
 
-const { colors, shadows } = theme;
+const SecondaryVariant = {
+  color: 'text.reversed',
+  backgroundColor: 'button.background.secondary',
+  ':focus-visible': {
+    boxShadow: 'focus.secondary',
+  },
+  '&.warning': WarningStyles,
+};
 
-export const PrimaryVariant = css`
-  color: ${colors.text.reversed};
-  background-color: ${colors.button.background.primary};
-  :focus-visible {
-    box-shadow: ${shadows.focus.primary};
-  }
-`;
+const TertiaryVariant = {
+  color: 'button.background.primary',
+  backgroundColor: 'button.background.tertiary',
+  ':hover': {
+    opacity: 1,
+    backgroundColor: 'button.background.tertiaryHover',
+  },
+  ':focus-visible': {
+    boxShadow: 'focus.tertiary',
+  },
+  '&.warning': {
+    color: 'warning',
+    ':focus-visible': {
+      boxShadow: 'focus.warning',
+    },
+  },
+};
 
-export const SecondaryVariant = css`
-  color: ${colors.text.reversed};
-  background-color: ${colors.button.background.secondary};
-  :focus-visible {
-    box-shadow: ${shadows.focus.secondary};
-  }
-`;
+const OutlineVariant = {
+  color: 'button.background.primary',
+  backgroundColor: 'button.background.outline',
+  ':focus-visible': {
+    boxShadow: 'focus.color',
+  },
+  '&.warning': {
+    color: 'warning',
+    borderColor: 'warning',
+    ':focus-visible': {
+      boxShadow: 'focus.warning',
+    },
+  },
+};
 
-export const TertiaryVariant = css`
-  color: ${colors.button.background.primary};
-  background-color: ${colors.button.background.tertiary};
-  border-color: ${colors.button.background.tertiary};
-  :hover {
-    opacity: 1;
-    background-color: ${colors.button.background.tertiaryHover};
-  }
-  :focus-visible {
-    box-shadow: ${shadows.focus.tertiary};
-  }
-`;
+const buttons = {
+  primary: PrimaryVariant,
+  secondary: SecondaryVariant,
+  tertiary: TertiaryVariant,
+  outline: OutlineVariant,
+};
 
-export const OutlineVariant = css`
-  color: ${colors.button.background.primary};
-  border: 2px solid;
-  border-color: currentColor;
-  background-color: ${colors.button.background.outline};
-  :focus-visible {
-    box-shadow: ${shadows.focus.color};
-  }
-`;
+export default buttons;

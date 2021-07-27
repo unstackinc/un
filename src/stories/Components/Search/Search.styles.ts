@@ -50,7 +50,7 @@ export const InputStyles = css`
   width: 100%;
   transition: color ${transitions[0]}, background-color ${transitions[0]};
   ::before {
-    content: url(../../../assets/search.svg);
+    content: url('../../../assets/search.svg');
   }
   :hover {
     color: ${colors.text.bold};

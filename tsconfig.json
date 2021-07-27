@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "commonjs",
     "jsx": "react-jsx",
-    // "jsxImportSource": "theme-ui",
+    "jsxImportSource": "theme-ui",
     "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
     "moduleResolution": "node",
     "allowJs": true,

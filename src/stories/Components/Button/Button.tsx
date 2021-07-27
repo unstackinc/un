@@ -2,22 +2,14 @@
 
 import * as React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
-
 import { css } from '@emotion/react';
 
 import {
-  PrimaryVariant,
-  SecondaryVariant,
+  Styles,
   TertiaryVariant,
   OutlineVariant,
-} from './Button.variants';
-import {
-  Styles,
   LargeStyles,
   FullStyles,
-  WarningStyles,
-  WarningTertiaryStyles,
-  WarningOutlineStyles,
 } from './Button.styles';
 
 const Types = {
@@ -52,42 +44,18 @@ export const Button = ({
   warning,
   ...props
 }: Props) => {
-  let Variant;
-  let Warning;
-
-  switch (variant) {
-    case 'primary':
-      Variant = PrimaryVariant;
-      Warning = WarningStyles;
-      break;
-    case 'secondary':
-      Variant = SecondaryVariant;
-      Warning = WarningStyles;
-      break;
-    case 'tertiary':
-      Variant = TertiaryVariant;
-      Warning = WarningTertiaryStyles;
-      break;
-    case 'outline':
-      Variant = OutlineVariant;
-      Warning = WarningOutlineStyles;
-      break;
-    default:
-      Variant = PrimaryVariant;
-      Warning = WarningStyles;
-  }
-
   return (
     <button
       ref={ref}
-      // variant={variant}
       disabled={disabled}
+      className={`${warning && 'warning'}`}
+      sx={{ variant: `buttons.${variant}` }}
       css={[
         Styles,
-        Variant,
         large && LargeStyles,
         full && FullStyles,
-        warning && Warning,
+        variant === 'tertiary' && TertiaryVariant,
+        variant === 'outline' && OutlineVariant,
         css`
           background-color: ${background};
           color: ${color};

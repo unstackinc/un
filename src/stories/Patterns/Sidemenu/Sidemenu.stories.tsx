@@ -140,8 +140,6 @@ const Template = (args) => {
 
 export const Example = Template.bind({});
 
-Example.args = {};
-
 Example.parameters = {
   layout: 'fullscreen',
 };

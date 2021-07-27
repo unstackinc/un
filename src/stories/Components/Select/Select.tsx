@@ -1,7 +1,6 @@
 // Select.tsx
 
 import * as React from 'react';
-import { useState } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 
 import {
@@ -24,7 +23,7 @@ import {
 } from './Select.styles';
 
 const OptionTypes = {
-  children: PropTypes.node.isRequired,
+  name: PropTypes.node.isRequired,
   value: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
 };
 
@@ -60,9 +59,6 @@ export const Select = ({
   warningText,
   ...props
 }: Props) => {
-  let getOptions = options;
-  let [initialValue, setInitialValue] = useState(getOptions[0]);
-
   return (
     <ListboxInput css={[full && FullStyles]} {...props}>
       <Label

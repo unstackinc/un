@@ -16,6 +16,7 @@ export const Styles = css`
   top: 0;
   left: 0;
   flex-direction: column;
+  overflow-y: scroll;
   scrollbar-width: none;
   ::-webkit-scrollbar {
     width: 0;
@@ -146,8 +147,8 @@ export const PanelStyles = css`
     height: ${padding.xs};
     background: linear-gradient(
       180deg,
-      ${colors.background}00 0%,
-      ${colors.background} 100%
+      ${colors.sidemenu}00 0%,
+      ${colors.sidemenu} 100%
     );
   }
 `;

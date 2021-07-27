@@ -19,7 +19,7 @@ export const Styles = css`
   width: 100%;
   display: grid;
   grid-template-columns: 16rem 1fr;
-  background-color: ${colors.card};
+  background-color: ${colors.background};
 `;
 
 export const SidebarStyles = css`

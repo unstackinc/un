@@ -23,7 +23,7 @@ export const Styles = css`
 `;
 
 export const HeadingStyles = css`
-  background-color: ${colors.background};
+  background-color: ${colors.backgroundSecondary};
   width: 100%;
   padding: ${padding.xxs};
   padding-left: ${padding.sm};

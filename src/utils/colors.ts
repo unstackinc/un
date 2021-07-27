@@ -28,13 +28,17 @@ const palette = {
 
 export const colors = {
   colors: {
-    background: palette.whiteOff,
-    sidebar: palette.greyDark,
+    background: palette.white,
+    backgroundSecondary: palette.whiteOff,
     primary: palette.primary,
     secondary: palette.greyLight,
     accent: palette.blue,
     highlight: palette.yellow,
     muted: palette.border,
+    currentColor: 'currentColor',
+
+    sidebar: palette.greyDark,
+    sidemenu: palette.whiteOff,
     overlay: `${palette.greyDark}CC`,
     card: palette.white,
     border: palette.border,

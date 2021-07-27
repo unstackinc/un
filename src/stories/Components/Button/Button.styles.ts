@@ -54,6 +54,15 @@ export const Styles = css`
   }
 `;
 
+export const TertiaryVariant = css`
+  border-color: transparent;
+`;
+
+export const OutlineVariant = css`
+  border: 2px solid;
+  border-color: currentColor;
+`;
+
 export const LargeStyles = css`
   ${fontSizes[2]};
   padding: ${padding.xs} ${padding.md};
@@ -62,27 +71,4 @@ export const LargeStyles = css`
 
 export const FullStyles = css`
   width: 100%;
-`;
-
-export const WarningStyles = css`
-  color: ${colors.text.reversed};
-  background-color: ${colors.warning};
-  :focus-visible {
-    box-shadow: ${shadows.focus.warning};
-  }
-`;
-
-export const WarningTertiaryStyles = css`
-  color: ${colors.warning};
-  :focus-visible {
-    box-shadow: ${shadows.focus.warning};
-  }
-`;
-
-export const WarningOutlineStyles = css`
-  color: ${colors.warning};
-  border-color: ${colors.warning};
-  :focus-visible {
-    box-shadow: ${shadows.focus.warning};
-  }
 `;

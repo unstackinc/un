@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 
-import { Select, SelectOption } from './Select';
+import { Select } from './Select';
 
 export default {
   title: 'Components/Select',
@@ -24,14 +24,14 @@ export default {
 const Template = (args) => (
   <Select
     options={[
-      <SelectOption value="option1">Option 1</SelectOption>,
-      <SelectOption value="option2">Option 2</SelectOption>,
-      <SelectOption value="option3">Option 3</SelectOption>,
-      <SelectOption value="option4">Option 4</SelectOption>,
-      <SelectOption value="option5">Option 5</SelectOption>,
-      <SelectOption value="option6">Option 6</SelectOption>,
-      <SelectOption value="option7">Option 7</SelectOption>,
-      <SelectOption value="option8">Option 8</SelectOption>,
+      { name: 'Option 1', value: 'option1' },
+      { name: 'Option 2', value: 'option2' },
+      { name: 'Option 3', value: 'option3' },
+      { name: 'Option 4', value: 'option4' },
+      { name: 'Option 5', value: 'option5' },
+      { name: 'Option 6', value: 'option6' },
+      { name: 'Option 7', value: 'option7' },
+      { name: 'Option 8', value: 'option8' },
     ]}
     {...args}
   />

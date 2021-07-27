@@ -9,7 +9,7 @@ const Types = {
   children: PropTypes.node.isRequired,
   footer: PropTypes.node,
   heading: PropTypes.node,
-  sidebar: PropTypes.boolean,
+  sidebar: PropTypes.bool,
 };
 
 type Props = InferProps<typeof Types>;

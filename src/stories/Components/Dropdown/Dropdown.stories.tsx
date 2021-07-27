@@ -6,7 +6,7 @@ import { Meta } from '@storybook/react';
 import { IoPerson, IoSettingsSharp, IoExit } from 'react-icons/io5';
 
 import { IconButton, Profile } from '../../';
-import { Dropdown, DropdownItem } from './Dropdown';
+import { Dropdown } from './Dropdown';
 
 import ProfilePicture from '../../assets/profile.jpg';
 
@@ -22,21 +22,30 @@ const Template = (args) => (
         <IoPerson />
       </IconButton>
     }
+    options={[
+      {
+        before: (
+          <Profile>
+            <img src={ProfilePicture} />
+          </Profile>
+        ),
+        name: 'email@example.com',
+      },
+      {
+        before: <IoSettingsSharp />,
+        name: 'Account settings',
+      },
+      {
+        space: true,
+      },
+      {
+        before: <IoExit />,
+        name: 'Logout',
+      },
+    ]}
+    value="menu"
     {...args}
-  >
-    <DropdownItem
-      before={
-        <Profile>
-          <img src={ProfilePicture} />
-        </Profile>
-      }
-    >
-      email@example.com
-    </DropdownItem>
-    <DropdownItem before={<IoSettingsSharp />}>Account settings</DropdownItem>
-    <hr />
-    <DropdownItem before={<IoExit />}>Logout</DropdownItem>
-  </Dropdown>
+  />
 );
 
 export const Default = Template.bind({});

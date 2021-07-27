@@ -11,45 +11,49 @@ import {
   DropdownStyles,
   OptionStyles,
   BeforeStyles,
+  FullStyles,
 } from './Dropdown.styles';
+
+const ItemTypes = {
+  before: PropTypes.node,
+  name: PropTypes.string,
+  space: PropTypes.bool,
+};
 
 const Types = {
   button: PropTypes.node.isRequired,
-  children: PropTypes.any.isRequired,
+  full: PropTypes.bool,
+  options: PropTypes.arrayOf(ItemTypes).isRequired,
   value: PropTypes.string.isRequired,
 };
 
 type Props = InferProps<typeof Types>;
 
-export const Dropdown = ({ button, children, value, ...props }: Props) => {
+export const Dropdown = ({ button, full, options, value, ...props }: Props) => {
   return (
-    <Menu css={Styles} {...props}>
-      <MenuButton as="div" css={ButtonStyles}>
+    <Menu css={[Styles, full && FullStyles]} {...props}>
+      <MenuButton as="div" css={[ButtonStyles, full && FullStyles]}>
         {button}
       </MenuButton>
-      <MenuList css={DropdownStyles}>{children}</MenuList>
+      <MenuList css={DropdownStyles}>
+        {options.map((option) => {
+          const { before, name, space } = option;
+          const result = space!! ? (
+            <hr />
+          ) : (
+            <MenuItem css={OptionStyles} {...props}>
+              {before && <div css={BeforeStyles}>{before}</div>}
+              {name}
+            </MenuItem>
+          );
+
+          return result;
+        })}
+      </MenuList>
     </Menu>
   );
 };
 
 Dropdown.propTypes = Types;
-
-const ItemTypes = {
-  before: PropTypes.node,
-  children: PropTypes.node.isRequired,
-};
-
-type ItemProps = InferProps<typeof ItemTypes>;
-
-export const DropdownItem = ({ before, children, ...props }: ItemProps) => {
-  return (
-    <MenuItem css={OptionStyles} {...props}>
-      {before && <div css={BeforeStyles}>{before}</div>}
-      {children}
-    </MenuItem>
-  );
-};
-
-DropdownItem.propTypes = ItemTypes;
 
 export default Dropdown;

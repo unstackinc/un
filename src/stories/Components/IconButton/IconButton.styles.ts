@@ -9,14 +9,14 @@ const { colors, opacities, fonts, fontWeights, shadows, transitions } = theme;
 export const Styles = css`
   appearance: none;
   -webkit-appearance: none;
-  ${fontSizes[2]};
+  ${fontSizes[1]};
   font-family: ${fonts.body};
   font-weight: ${fontWeights[1]};
   border: 2px solid ${colors.button.background.tertiary};
   border-radius: 0.5em;
   padding: 0.25em;
   display: inline-flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   color: ${colors.text.secondary};

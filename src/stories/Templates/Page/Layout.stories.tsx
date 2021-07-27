@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { Meta } from '@storybook/react';
+import { css } from '@emotion/react';
 
 import {
   IoStar,
@@ -28,15 +29,23 @@ import {
   IconButton,
   Profile,
   Dropdown,
-  DropdownItem,
   Main,
   Card,
   Search,
   H2,
+  P2,
+  Logo,
 } from '../..';
 import { Layout } from './Layout';
+import theme from '../../../theme';
 
+const { padding } = theme;
+
+import AvatarBlue from '../../assets/avatar-blue.svg';
+import AvatarRed from '../../assets/avatar-red.svg';
+import AvatarYellow from '../../assets/avatar-yellow.svg';
 import ProfilePicture from '../../assets/profile.jpg';
+import LogoPicture from '../../assets/logo-light.svg';
 
 export default {
   title: 'Templates/Layout',
@@ -46,42 +55,50 @@ export default {
 const Template = (args) => {
   return (
     <Layout sidebar {...args}>
-      <Sidebar>
-        <Dropdown
-          button={
-            <IconButton>
-              <IoPerson />
-            </IconButton>
-          }
-        >
-          <DropdownItem
-            before={
-              <Profile>
-                <img src={ProfilePicture} />
-              </Profile>
-            }
-          >
-            email@example.com
-          </DropdownItem>
-          <DropdownItem before={<IoSettingsSharp />}>
-            Account settings
-          </DropdownItem>
-          <hr />
-          <DropdownItem before={<IoExit />}>Logout</DropdownItem>
-        </Dropdown>
-        <Dropdown
-          button={
-            <IconButton>
-              <IoHelpCircle />
-            </IconButton>
-          }
-        >
-          <DropdownItem before={<IoOpen />}>Slack commnunity</DropdownItem>
-          <DropdownItem before={<IoOpen />}>Help docs</DropdownItem>
-        </Dropdown>
-      </Sidebar>
+      <Sidebar
+        start={
+          <Logo>
+            <img src={LogoPicture} />
+          </Logo>
+        }
+        end={
+          <>
+            <Dropdown
+              button={
+                <IconButton>
+                  <IoPerson />
+                </IconButton>
+              }
+              options={[
+                {
+                  before: (
+                    <Profile>
+                      <img src={ProfilePicture} />
+                    </Profile>
+                  ),
+                  name: 'email@example.com',
+                },
+                { before: <IoSettingsSharp />, name: 'Account settings' },
+                { space: true },
+                { before: <IoExit />, name: 'Logout' },
+              ]}
+            />
+            <Dropdown
+              button={
+                <IconButton>
+                  <IoHelpCircle />
+                </IconButton>
+              }
+              options={[
+                { before: <IoOpen />, name: 'Slack commnunity' },
+                { before: <IoOpen />, name: 'Help docs' },
+              ]}
+            />
+          </>
+        }
+      ></Sidebar>
       <Sidemenu>
-        <Header></Header>
+        <Header padding={padding.md}></Header>
         <Nav>
           <NavSection
             icon={<IoStar />}
@@ -210,6 +227,7 @@ const Template = (args) => {
               <Button before={<IoAdd />}>New page</Button>
             </>
           }
+          padding="5vw"
         />
         <Main>
           <Card title="Pages" subtitle="Use your website to inform and excite.">

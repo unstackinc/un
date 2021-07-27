@@ -11,7 +11,7 @@ import {
   IoOpen,
 } from 'react-icons/io5';
 
-import { IconButton, Profile, Dropdown, DropdownItem, H0 } from '../../';
+import { IconButton, Profile, Dropdown, H0 } from '../../';
 
 import ProfilePicture from '../../assets/profile.jpg';
 
@@ -41,32 +41,31 @@ Example.args = {
             <IoHelpCircle />
           </IconButton>
         }
-      >
-        <DropdownItem before={<IoOpen />}>Slack commnunity</DropdownItem>
-        <DropdownItem before={<IoOpen />}>Help docs</DropdownItem>
-      </Dropdown>
+        options={[
+          { before: <IoOpen />, name: 'Slack commnunity' },
+          { before: <IoOpen />, name: 'Help docs' },
+        ]}
+      />
       <Dropdown
         button={
           <IconButton>
             <IoPerson />
           </IconButton>
         }
-      >
-        <DropdownItem
-          before={
-            <Profile>
-              <img src={ProfilePicture} />
-            </Profile>
-          }
-        >
-          email@example.com
-        </DropdownItem>
-        <DropdownItem before={<IoSettingsSharp />}>
-          Account settings
-        </DropdownItem>
-        <hr />
-        <DropdownItem before={<IoExit />}>Logout</DropdownItem>
-      </Dropdown>
+        options={[
+          {
+            before: (
+              <Profile>
+                <img src={ProfilePicture} />
+              </Profile>
+            ),
+            name: 'email@example.com',
+          },
+          { before: <IoSettingsSharp />, name: 'Account settings' },
+          { space: true },
+          { before: <IoExit />, name: 'Logout' },
+        ]}
+      />
     </>
   ),
 };

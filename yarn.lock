@@ -1560,6 +1560,18 @@
     "@reach/utils" "0.15.3"
     tslib "^2.3.0"
 
+"@reach/listbox@^0.15.3":
+  version "0.15.3"
+  resolved "https://registry.yarnpkg.com/@reach/listbox/-/listbox-0.15.3.tgz#b373817ffb13b5b504c7fc790e65c915964bafe9"
+  integrity sha512-li2mzK/gTrpnw2aJuDre6At1FEIZinmrm7aMqwApVy71FZcYP5idIzrc7elPufujPgQ94fF0w66Auf0xqlOLNg==
+  dependencies:
+    "@reach/auto-id" "0.15.3"
+    "@reach/descendants" "0.15.3"
+    "@reach/machine" "0.15.3"
+    "@reach/popover" "0.15.3"
+    "@reach/utils" "0.15.3"
+    prop-types "^15.7.2"
+
 "@reach/machine@0.15.3":
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/@reach/machine/-/machine-0.15.3.tgz#bd00a0dbf06312a82e6e1d68ca756a008048f333"

@@ -20,9 +20,9 @@ export const Styles = css`
   height: 4rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0 5vw;
+  padding: 0;
   box-sizing: border-box;
   border-bottom: 1px solid;
   border-color: ${colors.border};

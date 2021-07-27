@@ -6,6 +6,7 @@ export * from './Components/Card/Card';
 export * from './Components/Checkbox/Checkbox';
 export * from './Components/Dropdown/Dropdown';
 export * from './Components/IconButton/IconButton';
+export * from './Components/Logo/Logo';
 export * from './Components/Nav/Nav';
 export * from './Components/Overlay/Overlay';
 export * from './Components/Profile/Profile';

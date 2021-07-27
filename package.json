@@ -1,6 +1,6 @@
 {
   "name": "un",
-  "version": "0.19.1-alpha",
+  "version": "0.20.0-alpha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "@reach/checkbox": "^0.15.3",
     "@reach/combobox": "^0.15.1",
     "@reach/dialog": "^0.15.0",
+    "@reach/listbox": "^0.15.3",
     "@reach/menu-button": "^0.15.3",
     "@reach/skip-nav": "^0.15.0",
     "@reach/slider": "^0.15.0",

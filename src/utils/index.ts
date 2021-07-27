@@ -2,7 +2,6 @@ export * from './colors';
 export * from './borders';
 export * from './breakpoints';
 export * from './depth';
-export * from './escape';
 export * from './fluid';
 export * from './opacities';
 export * from './radii';

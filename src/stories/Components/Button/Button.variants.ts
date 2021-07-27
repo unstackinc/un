@@ -9,7 +9,7 @@ const { colors, shadows } = theme;
 export const PrimaryVariant = css`
   color: ${colors.text.reversed};
   background-color: ${colors.button.background.primary};
-  :focus {
+  :focus-visible {
     box-shadow: ${shadows.focus.primary};
   }
 `;
@@ -17,7 +17,7 @@ export const PrimaryVariant = css`
 export const SecondaryVariant = css`
   color: ${colors.text.reversed};
   background-color: ${colors.button.background.secondary};
-  :focus {
+  :focus-visible {
     box-shadow: ${shadows.focus.secondary};
   }
 `;
@@ -30,7 +30,7 @@ export const TertiaryVariant = css`
     opacity: 1;
     background-color: ${colors.button.background.tertiaryHover};
   }
-  :focus {
+  :focus-visible {
     box-shadow: ${shadows.focus.tertiary};
   }
 `;
@@ -40,7 +40,7 @@ export const OutlineVariant = css`
   border: 2px solid;
   border-color: currentColor;
   background-color: ${colors.button.background.outline};
-  :focus {
+  :focus-visible {
     box-shadow: ${shadows.focus.color};
   }
 `;

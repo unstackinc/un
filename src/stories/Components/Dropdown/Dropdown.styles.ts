@@ -20,6 +20,35 @@ export const Styles = css`
   position: relative;
   display: inline-block;
   z-index: 1;
+
+  // Dropdown.transitions.css
+
+  .enter {
+    transition: 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+  }
+
+  .enterFrom {
+    opacity: 0;
+    transform: scale(0.95) translateY(-0.5rem);
+  }
+
+  .enterTo {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  .leave {
+    transition: 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+  }
+  .leaveFrom {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  .leaveTo {
+    opacity: 0;
+    transform: scale(0.95) translateY(-0.5rem);
+  }
 `;
 
 export const ButtonStyles = css`
@@ -89,4 +118,8 @@ export const BeforeStyles = css`
   justify-content: center;
   align-items: center;
   transition: background-color ${transitions[0]};
+`;
+
+export const FullStyles = css`
+  width: 100%;
 `;

@@ -21,7 +21,6 @@ export const Styles = css`
   height: 100vh;
   border-right: 1px solid;
   border-color: ${colors.border};
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   background-color: ${colors.background};
@@ -52,7 +51,6 @@ export const HeadingStyles = css`
 `;
 
 export const BodyStyles = css`
-  overflow-y: scroll;
   scrollbar-width: none;
   ::-webkit-scrollbar {
     width: 0;

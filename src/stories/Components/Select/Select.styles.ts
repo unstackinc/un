@@ -4,8 +4,17 @@ import { css } from '@emotion/react';
 
 import theme, { fontSizes } from '../../../theme';
 
-const { colors, fonts, fontWeights, padding, radii, shadows, transitions } =
-  theme;
+const {
+  colors,
+  fonts,
+  fontWeights,
+  opacities,
+  padding,
+  margin,
+  radii,
+  shadows,
+  transitions,
+} = theme;
 
 export const Styles = css`
   cursor: pointer;
@@ -26,13 +35,8 @@ export const Styles = css`
   user-select: none;
   transition: color ${transitions[0]}, background-color ${transitions[0]};
   svg {
-    position: absolute;
     user-select: none;
     pointer-events: none;
-    right: 0;
-    width: 1.25em;
-    height: 1.25em;
-    transform: translateX(100%);
   }
   :hover {
     color: ${colors.text.bold};
@@ -45,6 +49,27 @@ export const Styles = css`
   :active {
     color: ${colors.text.default};
   }
+  [data-reach-listbox-arrow] {
+    display: inline-flex;
+  }
+`;
+
+export const ListStyles = css`
+  margin: ${margin.xs} 0;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  background: ${colors.card};
+  font-family: ${fonts.body};
+  padding: 0;
+  box-shadow: ${shadows.md};
+  box-sizing: border-box;
+  border-radius: ${radii.sm};
+  transition: ${transitions[2]};
+  overflow: hidden;
+  :focus {
+    outline: none;
+  }
 `;
 
 export const OptionStyles = css`
@@ -53,7 +78,7 @@ export const OptionStyles = css`
   ${fontSizes[1]};
   font-family: ${fonts.body};
   font-weight: ${fontWeights[0]};
-  padding: ${padding.xxs};
+  padding: ${padding.xs};
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -62,6 +87,10 @@ export const OptionStyles = css`
   transition: color ${transitions[0]}, background-color ${transitions[0]};
   :not(:last-child) {
     border-bottom: 1px solid ${colors.border};
+  }
+  :hover {
+    background-color: ${colors.border};
+    color: ${colors.text.bold};
   }
 `;
 

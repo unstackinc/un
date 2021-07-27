@@ -35,12 +35,12 @@ export const Styles = css`
   :hover {
     opacity: ${opacities[75]};
   }
-  :focus {
+  :focus-visible {
     outline: none;
     box-shadow: ${shadows.focus.color};
   }
   :active {
-    transform: scale(0.95);
+    opacity: ${opacities[5]};
   }
   :disabled {
     user-select: none;
@@ -67,14 +67,14 @@ export const FullStyles = css`
 export const WarningStyles = css`
   color: ${colors.text.reversed};
   background-color: ${colors.warning};
-  :focus {
+  :focus-visible {
     box-shadow: ${shadows.focus.warning};
   }
 `;
 
 export const WarningTertiaryStyles = css`
   color: ${colors.warning};
-  :focus {
+  :focus-visible {
     box-shadow: ${shadows.focus.warning};
   }
 `;
@@ -82,7 +82,7 @@ export const WarningTertiaryStyles = css`
 export const WarningOutlineStyles = css`
   color: ${colors.warning};
   border-color: ${colors.warning};
-  :focus {
+  :focus-visible {
     box-shadow: ${shadows.focus.warning};
   }
 `;

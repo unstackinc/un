@@ -1,17 +1,32 @@
 // Select.tsx
 
 import * as React from 'react';
+import { useState } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
-import { Fragment } from 'react';
+
+import {
+  ListboxInput,
+  ListboxButton,
+  ListboxPopover,
+  ListboxList,
+  ListboxOption,
+} from '@reach/listbox';
+import { IoChevronDown } from 'react-icons/io5';
 
 import { Label } from '../..';
 import {
   Styles,
+  ListStyles,
   OptionStyles,
   FullStyles,
   WarningStyles,
   DisabledStyles,
 } from './Select.styles';
+
+const OptionTypes = {
+  children: PropTypes.node.isRequired,
+  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
+};
 
 const Types = {
   disabled: PropTypes.bool,
@@ -21,8 +36,7 @@ const Types = {
   label: PropTypes.string,
   name: PropTypes.string,
   onClick: PropTypes.any,
-  onChange: PropTypes.any,
-  options: PropTypes.arrayOf(PropTypes.any).isRequired,
+  options: PropTypes.arrayOf(OptionTypes).isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
   warning: PropTypes.bool,
@@ -39,7 +53,6 @@ export const Select = ({
   label,
   name,
   onClick,
-  onChange,
   options,
   placeholder,
   value,
@@ -47,32 +60,50 @@ export const Select = ({
   warningText,
   ...props
 }: Props) => {
+  let getOptions = options;
+  let [initialValue, setInitialValue] = useState(getOptions[0]);
+
   return (
-    <Label id={id} label={label} disabled={disabled} full={full}>
-      <select
+    <ListboxInput css={[full && FullStyles]} {...props}>
+      <Label
         id={id}
-        name={name}
-        css={[
-          Styles,
-          full && FullStyles,
-          warning && WarningStyles,
-          disabled && DisabledStyles,
-        ]}
-        value={value}
-        placeholder={placeholder}
+        label={label}
         disabled={disabled}
-        onChange={onChange}
-        {...props}
+        full={full}
+        helpText={helpText}
+        warningText={warningText}
       >
-        {options.map((option, index) => {
-          return (
-            <Fragment key={`${option.toString()}-${index}`}>{option}</Fragment>
-          );
-        })}
-      </select>
-      {warningText && <div className="warning-text">{warningText}</div>}
-      {helpText && <div className="help-text">{helpText}</div>}
-    </Label>
+        <ListboxButton
+          as="button"
+          arrow={<IoChevronDown />}
+          css={[
+            Styles,
+            full && FullStyles,
+            warning && WarningStyles,
+            disabled && DisabledStyles,
+          ]}
+          placeholder={placeholder}
+          disabled={disabled}
+        ></ListboxButton>
+        <ListboxPopover>
+          <ListboxList css={ListStyles}>
+            {options.map((option, index) => {
+              const { name, value } = option;
+              return (
+                <ListboxOption
+                  css={OptionStyles}
+                  key={`${option.toString()}-${index}`}
+                  label={name}
+                  value={value}
+                >
+                  {name}
+                </ListboxOption>
+              );
+            })}
+          </ListboxList>
+        </ListboxPopover>
+      </Label>
+    </ListboxInput>
   );
 };
 
@@ -84,26 +115,5 @@ Select.defaultProps = {
 };
 
 Select.propTypes = Types;
-
-const OptionTypes = {
-  children: PropTypes.node.isRequired,
-  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
-};
-
-type OptionProps = InferProps<typeof OptionTypes>;
-
-export const SelectOption = ({ children, value, ...props }: OptionProps) => {
-  return (
-    <option value={value} css={OptionStyles} {...props}>
-      {children}
-    </option>
-  );
-};
-
-SelectOption.defaultProps = {
-  value: 'Placeholder',
-};
-
-SelectOption.propTypes = OptionTypes;
 
 export default Select;

@@ -22,10 +22,11 @@ export const Styles = css`
   border-color: ${colors.border};
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   gap: ${margin.xxs};
-  padding: ${padding.sm};
+  padding: ${padding.xs};
+  padding-top: 0;
   box-sizing: border-box;
   background-color: ${colors.sidebar};
   scrollbar-width: none;

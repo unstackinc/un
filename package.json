@@ -1,6 +1,6 @@
 {
   "name": "un",
-  "version": "0.21.3-alpha",
+  "version": "0.21.4-alpha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -43,7 +43,6 @@
     "react-spring": "^9.2.3",
     "react-table": "^7.7.0",
     "react-use": "^17.2.4",
-    "storybook-addon-theme-ui": "^0.1.5",
     "theme-ui": "^0.10.0"
   },
   "devDependencies": {
@@ -70,6 +69,9 @@
     "eslint-plugin-react": "^7.24.0",
     "prettier": "^2.3.1",
     "semantic-release": "^17.4.4"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   },
   "release": {
     "branches": [

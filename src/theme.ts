@@ -68,12 +68,11 @@ const theme = {
   shadows,
   sizes,
   ...space,
-  styles,
   ...transitions,
   ...typography,
+  styles,
   buttons,
   tags,
-  styles,
 };
 
 export default theme;

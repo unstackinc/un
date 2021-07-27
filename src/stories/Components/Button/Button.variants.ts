@@ -3,7 +3,7 @@
 export const WarningStyles = {
   color: 'text.reversed',
   backgroundColor: 'warning',
-  ':focus-visible': {
+  '&:focus': {
     boxShadow: 'focus.warning',
   },
 };
@@ -11,7 +11,7 @@ export const WarningStyles = {
 const PrimaryVariant = {
   color: 'text.reversed',
   backgroundColor: 'button.background.primary',
-  ':focus-visible': {
+  '&:focus': {
     boxShadow: 'focus.primary',
   },
   '&.warning': WarningStyles,
@@ -20,7 +20,7 @@ const PrimaryVariant = {
 const SecondaryVariant = {
   color: 'text.reversed',
   backgroundColor: 'button.background.secondary',
-  ':focus-visible': {
+  '&:focus': {
     boxShadow: 'focus.secondary',
   },
   '&.warning': WarningStyles,
@@ -29,16 +29,16 @@ const SecondaryVariant = {
 const TertiaryVariant = {
   color: 'button.background.primary',
   backgroundColor: 'button.background.tertiary',
-  ':hover': {
+  '&:hover': {
     opacity: 1,
     backgroundColor: 'button.background.tertiaryHover',
   },
-  ':focus-visible': {
+  '&:focus': {
     boxShadow: 'focus.tertiary',
   },
   '&.warning': {
     color: 'warning',
-    ':focus-visible': {
+    '&:focus': {
       boxShadow: 'focus.warning',
     },
   },
@@ -47,13 +47,13 @@ const TertiaryVariant = {
 const OutlineVariant = {
   color: 'button.background.primary',
   backgroundColor: 'button.background.outline',
-  ':focus-visible': {
+  '&:focus': {
     boxShadow: 'focus.color',
   },
   '&.warning': {
     color: 'warning',
     borderColor: 'warning',
-    ':focus-visible': {
+    '&:focus': {
       boxShadow: 'focus.warning',
     },
   },

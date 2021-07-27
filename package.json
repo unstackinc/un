@@ -1,6 +1,6 @@
 {
   "name": "un",
-  "version": "0.21.1-alpha",
+  "version": "0.21.2-alpha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -52,6 +52,7 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
     "@emotion/babel-plugin": "^11.3.0",
+    "@semantic-release/git": "^9.0.0",
     "@storybook/addon-actions": "^6.3.5",
     "@storybook/addon-docs": "^6.3.5",
     "@storybook/addon-essentials": "^6.3.5",
@@ -67,6 +68,35 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-mdx": "^1.13.0",
     "eslint-plugin-react": "^7.24.0",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.1",
+    "semantic-release": "^17.4.4"
+  },
+  "release": {
+    "branches": [
+      "master",
+      "next",
+      {
+        "name": "pre/rc",
+        "channel": "pre/rc",
+        "prerelease": "rc"
+      },
+      {
+        "name": "beta",
+        "channel": "beta",
+        "prerelease": "beta"
+      },
+      {
+        "name": "alpha",
+        "channel": "alpha",
+        "prerelease": "alpha"
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      "@semantic-release/git"
+    ],
+    "private": true
   }
 }

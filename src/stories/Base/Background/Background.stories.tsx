@@ -4,7 +4,6 @@ import * as React from 'react';
 import { Meta } from '@storybook/react';
 
 import { Background } from './Background';
-import './Background.css';
 
 export default {
   title: 'Base/Background',

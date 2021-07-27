@@ -97,9 +97,6 @@ export const OptionStyles = css`
 export const FullStyles = css`
   max-width: 100%;
   width: 100%;
-  svg {
-    transform: translateX(-100%);
-  }
 `;
 
 export const WarningStyles = css`

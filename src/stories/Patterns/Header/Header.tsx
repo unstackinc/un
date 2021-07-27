@@ -17,15 +17,16 @@ type Props = InferProps<typeof Types>;
 
 export const Header = ({ children, end, padding, start, ...props }: Props) => {
   return (
-    <header css={Styles} {...props}>
-      <div
-        css={[
-          ContainerStyles,
-          css`
-            padding: 0 ${padding};
-          `,
-        ]}
-      >
+    <header
+      css={[
+        Styles,
+        css`
+          padding: 0 ${padding};
+        `,
+      ]}
+      {...props}
+    >
+      <div css={ContainerStyles}>
         <span>{start}</span>
         <span
           css={css`

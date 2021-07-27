@@ -73,6 +73,7 @@ const theme = {
   ...typography,
   buttons,
   tags,
+  styles,
 };
 
 export default theme;

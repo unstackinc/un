@@ -14,6 +14,8 @@ the watchman waketh but in vain.”
 
 # Unstack Design System
 
+![Cover](cover.png)
+
 ## Contents
 
 - [Development](#development)
@@ -23,17 +25,17 @@ the watchman waketh but in vain.”
 
 ## Development
 
-Prerequisites: An installation of [Yarn](https://yarnpkg.com/getting-started/install/).
+Prerequisites: A working installation of [npm](https://nodejs.org/en/download/).
 
 ```bash
 # install packages
-yarn
+npm i
 
 # run storybook
-yarn storybook
+npm run storybook
 
 # build storybook
-yarn build-storybook
+npm run build-storybook
 ```
 
 ## Contributing

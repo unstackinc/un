@@ -35,6 +35,10 @@ import {
   H2,
   P2,
   Logo,
+  Tabs,
+  TabList,
+  TabPanels,
+  TabPanel,
 } from '../..';
 import { Layout } from './Layout';
 import theme from '../../../theme';
@@ -211,30 +215,58 @@ const Template = (args) => {
         </Nav>
       </Sidemenu>
       <div>
-        <Header
-          start={
-            <>
-              <H2>Website</H2>
-            </>
-          }
-          end={
-            <>
-              <Search
-                id="search"
-                name="search"
-                placeholder="Search pages by name"
-              />
-              <Button before={<IoAdd />}>New page</Button>
-            </>
-          }
-          padding="5vw"
-        />
-        <Main>
-          <Card title="Pages" subtitle="Use your website to inform and excite.">
-            Test
-          </Card>
-          <Card>Test</Card>
-        </Main>
+        <Tabs>
+          <Header
+            start={
+              <>
+                <H2 display>Website</H2>
+              </>
+            }
+            end={
+              <>
+                <Search
+                  id="search"
+                  name="search"
+                  placeholder="Search pages by name"
+                />
+                <Button before={<IoAdd />}>New page</Button>
+              </>
+            }
+            tabs={<TabList tabs={['Page 1', 'Page 2', 'Page 3']} />}
+            padding="5vw"
+          />
+          <Main>
+            <TabPanels>
+              <TabPanel>
+                <Card
+                  title="Pages"
+                  subtitle="Use your website to inform and excite."
+                >
+                  Test
+                </Card>
+                <Card>Test</Card>
+              </TabPanel>
+              <TabPanel>
+                <Card>Test</Card>
+                <Card
+                  title="Pages"
+                  subtitle="Use your website to inform and excite."
+                >
+                  Test
+                </Card>
+              </TabPanel>
+              <TabPanel>
+                <Card>Page 3</Card>
+                <Card
+                  title="Page 3"
+                  subtitle="Use your website to inform and excite."
+                >
+                  Test
+                </Card>
+              </TabPanel>
+            </TabPanels>
+          </Main>
+        </Tabs>
       </div>
     </Layout>
   );

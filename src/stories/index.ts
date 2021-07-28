@@ -14,6 +14,7 @@ export * from './Components/Profile/Profile';
 export * from './Components/Radio/Radio';
 export * from './Components/Search/Search';
 export * from './Components/Select/Select';
+export * from './Components/Tabs/Tabs';
 export * from './Components/Tag/Tag';
 export * from './Components/Textarea/Textarea';
 export * from './Components/Textbox/Textbox';

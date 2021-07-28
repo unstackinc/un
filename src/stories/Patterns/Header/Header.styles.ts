@@ -17,10 +17,10 @@ const {
 
 export const Styles = css`
   width: 100%;
-  height: 4rem;
+  height: 6rem;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   padding: 0;
   box-sizing: border-box;
@@ -34,6 +34,23 @@ export const Styles = css`
 `;
 
 export const ContainerStyles = css`
+  max-width: ${sizes.wide};
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: ${margin.sm};
+  }
+`;
+
+export const TabsStyles = css`
   max-width: ${sizes.wide};
   width: 100%;
   margin: 0 auto;

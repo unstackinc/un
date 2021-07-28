@@ -1,6 +1,6 @@
 {
   "name": "un",
-  "version": "0.21.4-alpha",
+  "version": "0.22.0-alpha",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -78,19 +78,12 @@
       "master",
       "next",
       {
-        "name": "pre/rc",
-        "channel": "pre/rc",
-        "prerelease": "rc"
-      },
-      {
         "name": "beta",
-        "channel": "beta",
-        "prerelease": "beta"
+        "prerelease": true
       },
       {
         "name": "alpha",
-        "channel": "alpha",
-        "prerelease": "alpha"
+        "prerelease": true
       }
     ],
     "plugins": [

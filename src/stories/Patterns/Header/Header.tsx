@@ -4,18 +4,26 @@ import * as React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import { css } from '@emotion/react';
 
-import { Styles, ContainerStyles } from './Header.styles';
+import { Styles, ContainerStyles, TabsStyles } from './Header.styles';
 
 const Types = {
   children: PropTypes.node,
   end: PropTypes.node,
   padding: PropTypes.number,
   start: PropTypes.node,
+  tabs: PropTypes.node,
 };
 
 type Props = InferProps<typeof Types>;
 
-export const Header = ({ children, end, padding, start, ...props }: Props) => {
+export const Header = ({
+  children,
+  end,
+  padding,
+  start,
+  tabs,
+  ...props
+}: Props) => {
   return (
     <header
       css={[
@@ -37,6 +45,7 @@ export const Header = ({ children, end, padding, start, ...props }: Props) => {
         </span>
         <span>{end}</span>
       </div>
+      <div css={TabsStyles}>{tabs}</div>
     </header>
   );
 };

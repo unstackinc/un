@@ -26,6 +26,66 @@ const palette = {
   },
 };
 
+const button = {
+  background: {
+    primary: palette.primary,
+    secondary: palette.greyLight,
+    tertiary: palette.transparent,
+    tertiaryHover: palette[5],
+    outline: palette.transparent,
+    disabled: palette.disabled,
+  },
+};
+
+const input = {
+  background: {
+    default: palette.whiteOff,
+    light: palette.white,
+    focus: palette.white,
+    disabled: palette.disabled,
+  },
+  border: {
+    default: palette.border,
+    focus: palette.blue,
+  },
+};
+
+const tag = {
+  default: {
+    purple: palette.primary,
+    yellow: palette.yellow,
+    green: palette.green,
+  },
+  outline: {
+    background: palette.transparent,
+    default: palette.greyLight,
+    blue: palette.blue,
+  },
+};
+
+const toggle = {
+  background: {
+    default: palette.border,
+    hover: palette.disabled,
+    active: palette.white,
+    disabled: palette.disabled,
+  },
+  border: {
+    default: palette.toggle,
+    focus: `${palette.blue}88`,
+    active: palette.blue,
+  },
+};
+
+const text = {
+  default: palette.grey,
+  secondary: palette.greyLight,
+  bold: palette.greyDark,
+  link: palette.blue,
+  reversed: palette.white,
+  primary: palette.primary,
+};
+
 export const colors = {
   colors: {
     background: palette.white,
@@ -35,8 +95,6 @@ export const colors = {
     accent: palette.blue,
     highlight: palette.yellow,
     muted: palette.border,
-    currentColor: 'currentColor',
-
     sidebar: palette.greyDark,
     sidemenu: palette.whiteOff,
     overlay: `${palette.greyDark}CC`,
@@ -44,61 +102,11 @@ export const colors = {
     border: palette.border,
     disabled: palette.disabled,
     warning: palette.red,
-    button: {
-      background: {
-        primary: palette.primary,
-        secondary: palette.greyLight,
-        tertiary: palette.transparent,
-        tertiaryHover: palette[5],
-        outline: palette.transparent,
-        disabled: palette.disabled,
-      },
-    },
-    tag: {
-      default: {
-        purple: palette.primary,
-        yellow: palette.yellow,
-        green: palette.green,
-      },
-      outline: {
-        background: palette.transparent,
-        default: palette.greyLight,
-        blue: palette.blue,
-      },
-    },
-    input: {
-      background: {
-        default: palette.whiteOff,
-        light: palette.white,
-        focus: palette.white,
-        disabled: palette.disabled,
-      },
-      border: {
-        default: palette.border,
-        focus: palette.blue,
-      },
-    },
-    toggle: {
-      background: {
-        default: palette.border,
-        hover: palette.disabled,
-        active: palette.white,
-        disabled: palette.disabled,
-      },
-      border: {
-        default: palette.toggle,
-        focus: `${palette.blue}88`,
-        active: palette.blue,
-      },
-    },
-    text: {
-      default: palette.grey,
-      secondary: palette.greyLight,
-      bold: palette.greyDark,
-      link: palette.blue,
-      reversed: palette.white,
-      primary: palette.primary,
-    },
+    button: button,
+    input: input,
+    tag: tag,
+    toggle: toggle,
+    text: text,
   },
 };
 

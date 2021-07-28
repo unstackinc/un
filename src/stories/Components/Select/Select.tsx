@@ -1,6 +1,7 @@
 // Select.tsx
 
 import * as React from 'react';
+import { useState } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 
 import {
@@ -34,6 +35,7 @@ const Types = {
   id: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string,
+  onChange: PropTypes.any,
   onClick: PropTypes.any,
   options: PropTypes.arrayOf(OptionTypes).isRequired,
   placeholder: PropTypes.string,
@@ -51,6 +53,7 @@ export const Select = ({
   id,
   label,
   name,
+  onChange,
   onClick,
   options,
   placeholder,
@@ -59,8 +62,15 @@ export const Select = ({
   warningText,
   ...props
 }: Props) => {
+  let [initialValue, setInitialValue] = useState(value);
+
   return (
-    <ListboxInput css={[full && FullStyles]} {...props}>
+    <ListboxInput
+      value={initialValue}
+      onChange={(initialValue) => setInitialValue(initialValue)}
+      css={[full && FullStyles]}
+      {...props}
+    >
       <Label
         id={id}
         label={label}
@@ -80,7 +90,7 @@ export const Select = ({
           ]}
           placeholder={placeholder}
           disabled={disabled}
-        ></ListboxButton>
+        />
         <ListboxPopover>
           <ListboxList css={ListStyles}>
             {options.map((option, index) => {

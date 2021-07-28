@@ -16,6 +16,7 @@ const Types = {
   indeterminate: PropTypes.bool,
   label: PropTypes.string,
   name: PropTypes.string,
+  onChange: PropTypes.any,
   onClick: PropTypes.any,
   props: PropTypes.any,
   value: PropTypes.string,
@@ -32,6 +33,7 @@ export const Checkbox = forwardRef(
       indeterminate,
       label,
       name,
+      onChange,
       onClick,
       value,
       props,
@@ -68,6 +70,8 @@ export const Checkbox = forwardRef(
           name={name}
           value={value}
           disabled={disabled}
+          onChange={onChange}
+          onClick={onClick}
           {...props}
         />
       </Label>
@@ -77,6 +81,7 @@ export const Checkbox = forwardRef(
 
 Checkbox.defaultProps = {
   disabled: false,
+  onChange: undefined,
   onClick: undefined,
 };
 

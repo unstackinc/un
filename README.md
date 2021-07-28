@@ -45,9 +45,9 @@ This project uses [Conventional Commits](https://www.conventionalcommits.org/en/
 ## Resources
 
 - [Storybook docs](https://storybook.js.org/docs/react/get-started/introduction)
+- [Reach UI docs](https://reach.tech/)
 - [Theme UI docs](https://theme-ui.com/getting-started)
 - [Emotion docs](https://emotion.sh/docs/introduction)
-- [Reach UI docs](https://reach.tech/)
 - [React Spring docs](https://react-spring.io/basics)
 
 ## License

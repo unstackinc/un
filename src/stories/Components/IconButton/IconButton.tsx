@@ -10,6 +10,7 @@ const Types = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string,
   disabled: PropTypes.bool,
+  onChange: PropTypes.any,
   onClick: PropTypes.any,
   variant: PropTypes.oneOf(['small', 'medium', 'large']),
 };
@@ -20,6 +21,7 @@ export const IconButton = ({
   children,
   color,
   disabled,
+  onChange,
   onClick,
   variant,
   ...props
@@ -37,6 +39,7 @@ export const IconButton = ({
           }
         `,
       ]}
+      onChange={onChange}
       onClick={onClick}
       {...props}
     >
@@ -47,6 +50,7 @@ export const IconButton = ({
 
 IconButton.defaultProps = {
   disabled: false,
+  onChange: undefined,
   onClick: undefined,
   variant: 'small',
 };

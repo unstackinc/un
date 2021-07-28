@@ -21,6 +21,7 @@ const Types = {
   disabled: PropTypes.bool,
   full: PropTypes.bool,
   large: PropTypes.bool,
+  onChange: PropTypes.any,
   onClick: PropTypes.any,
   ref: PropTypes.any,
   variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'outline']),
@@ -38,6 +39,7 @@ export const Button = ({
   disabled,
   full,
   large,
+  onChange,
   onClick,
   ref,
   variant,
@@ -61,6 +63,7 @@ export const Button = ({
           color: ${color};
         `,
       ]}
+      onChange={onChange}
       onClick={onClick}
       {...props}
     >
@@ -73,6 +76,7 @@ export const Button = ({
 
 Button.defaultProps = {
   disabled: false,
+  onChange: undefined,
   onClick: undefined,
   variant: 'primary',
 };

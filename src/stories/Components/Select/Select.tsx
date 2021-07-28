@@ -1,7 +1,6 @@
 // Select.tsx
 
 import * as React from 'react';
-import { useState } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 
 import {
@@ -62,12 +61,11 @@ export const Select = ({
   warningText,
   ...props
 }: Props) => {
-  let [initialValue, setInitialValue] = useState(value);
-
   return (
     <ListboxInput
-      value={initialValue}
-      onChange={(initialValue) => setInitialValue(initialValue)}
+      value={value}
+      onChange={onChange}
+      onClick={onClick}
       css={[full && FullStyles]}
       {...props}
     >
@@ -115,6 +113,7 @@ export const Select = ({
 
 Select.defaultProps = {
   disabled: false,
+  onChange: undefined,
   onClick: undefined,
   placeholder: 'Placeholder',
   warning: false,

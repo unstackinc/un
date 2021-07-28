@@ -13,6 +13,7 @@ const Types = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
+  onChange: PropTypes.any,
   onClick: PropTypes.any,
   value: PropTypes.string.isRequired,
 };
@@ -26,6 +27,7 @@ export const Radio = ({
   id,
   label,
   name,
+  onChange,
   onClick,
   value,
   ...props
@@ -47,6 +49,8 @@ export const Radio = ({
         name={name}
         value={value}
         disabled={disabled}
+        onChange={onChange}
+        onClick={onClick}
         {...props}
       />
     </Label>
@@ -55,6 +59,7 @@ export const Radio = ({
 
 Radio.defaultProps = {
   disabled: false,
+  onChange: undefined,
   onClick: undefined,
 };
 

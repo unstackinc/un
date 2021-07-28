@@ -13,6 +13,7 @@ const Types = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
+  onChange: PropTypes.any,
   onClick: PropTypes.any,
   placeholder: PropTypes.string.isRequired,
   warning: PropTypes.bool,
@@ -28,6 +29,7 @@ export const Textarea = ({
   id,
   label,
   name,
+  onChange,
   onClick,
   placeholder,
   warning,
@@ -49,6 +51,8 @@ export const Textarea = ({
         placeholder={placeholder}
         disabled={disabled}
         css={[Styles, full && FullStyles, warning && WarningStyles]}
+        onChange={onChange}
+        onClick={onClick}
         {...props}
       ></textarea>
     </Label>
@@ -57,6 +61,7 @@ export const Textarea = ({
 
 Textarea.defaultProps = {
   disabled: false,
+  onChange: undefined,
   onClick: undefined,
   placeholder: 'Placeholder',
   warning: false,

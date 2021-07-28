@@ -13,6 +13,7 @@ const Types = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
+  onChange: PropTypes.any,
   onClick: PropTypes.any,
   placeholder: PropTypes.string.isRequired,
   warning: PropTypes.bool,
@@ -28,6 +29,7 @@ export const Textbox = ({
   id,
   name,
   label,
+  onChange,
   onClick,
   placeholder,
   warning,
@@ -50,6 +52,8 @@ export const Textbox = ({
         placeholder={placeholder}
         disabled={disabled}
         css={[Styles, full && FullStyles, warning && WarningStyles]}
+        onChange={onChange}
+        onClick={onClick}
         {...props}
       ></input>
     </Label>
@@ -58,6 +62,7 @@ export const Textbox = ({
 
 Textbox.defaultProps = {
   disabled: false,
+  onChange: undefined,
   onClick: undefined,
   placeholder: 'Placeholder',
   warning: false,

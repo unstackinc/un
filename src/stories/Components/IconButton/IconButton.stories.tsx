@@ -10,7 +10,7 @@ export default {
   title: 'Components/IconButton',
   component: IconButton,
   argTypes: {
-    variant: {
+    size: {
       options: ['small', 'medium', 'large'],
       control: { type: 'radio' },
     },
@@ -27,21 +27,21 @@ const Template = (args) => <IconButton {...args} />;
 
 export const Small = Template.bind({});
 Small.args = {
-  variant: 'small',
+  size: 'small',
   disabled: false,
   children: <IoAdd />,
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  variant: 'medium',
+  size: 'medium',
   disabled: false,
   children: <IoAdd />,
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  variant: 'large',
+  size: 'large',
   disabled: false,
   children: <IoAdd />,
 };

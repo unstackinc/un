@@ -11,7 +11,7 @@ export default {
   title: 'Components/Logo',
   component: Logo,
   argTypes: {
-    variant: {
+    size: {
       options: ['small', 'medium', 'large', 'extralarge'],
       control: { type: 'radio' },
     },
@@ -22,24 +22,24 @@ const Template = (args) => <Logo {...args} />;
 
 export const Small = Template.bind({});
 Small.args = {
-  variant: 'small',
+  size: 'small',
   children: <img src={LogoPicture} />,
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  variant: 'medium',
+  size: 'medium',
   children: <img src={LogoPicture} />,
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  variant: 'large',
+  size: 'large',
   children: <img src={LogoPicture} />,
 };
 
 export const ExtraLarge = Template.bind({});
 ExtraLarge.args = {
-  variant: 'extralarge',
+  size: 'extralarge',
   children: <img src={LogoPicture} />,
 };

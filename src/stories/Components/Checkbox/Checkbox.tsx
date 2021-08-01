@@ -16,8 +16,8 @@ const Types = {
   indeterminate: PropTypes.bool,
   label: PropTypes.string,
   name: PropTypes.string,
-  onChange: PropTypes.any,
-  onClick: PropTypes.any,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
   props: PropTypes.any,
   value: PropTypes.string,
 };
@@ -88,7 +88,7 @@ Checkbox.defaultProps = {
 Checkbox.propTypes = Types;
 
 const IndeterminateTypes = {
-  indeterminate: PropTypes.any,
+  indeterminate: PropTypes.bool,
 };
 
 type IndeterminateProps = InferProps<typeof IndeterminateTypes>;

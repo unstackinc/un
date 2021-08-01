@@ -15,9 +15,6 @@ const Template = (args) => {
 };
 
 export const Example = Template.bind({});
-Example.args = {
-  end: <></>,
-};
 
 Example.parameters = {
   layout: 'fullscreen',

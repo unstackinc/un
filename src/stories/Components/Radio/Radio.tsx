@@ -7,21 +7,19 @@ import { Label } from '../../';
 import { Styles } from './Radio.styles';
 
 const Types = {
-  checked: PropTypes.bool,
   disabled: PropTypes.bool,
   full: PropTypes.bool,
   id: PropTypes.string.isRequired,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.any,
-  onClick: PropTypes.any,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
   value: PropTypes.string.isRequired,
 };
 
 type Props = InferProps<typeof Types>;
 
 export const Radio = ({
-  checked,
   disabled,
   full,
   id,

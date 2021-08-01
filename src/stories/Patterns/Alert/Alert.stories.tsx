@@ -6,8 +6,7 @@ import { Meta } from '@storybook/react';
 import { css } from '@emotion/react';
 
 import { Alert } from './Alert';
-import { Button, H0, P1, P2 } from '../..';
-import theme from '../../../theme';
+import { Button, H0, P1 } from '../..';
 
 export default {
   title: 'Patterns/Alert',

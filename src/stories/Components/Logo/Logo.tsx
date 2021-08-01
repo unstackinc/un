@@ -12,19 +12,19 @@ import {
 
 const Types = {
   children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(['small', 'medium', 'large', 'extralarge']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'extralarge']),
 };
 
 type Props = InferProps<typeof Types>;
 
-export const Logo = ({ children, variant, ...props }: Props) => {
+export const Logo = ({ children, size, ...props }: Props) => {
   return (
     <div
       css={[
         Styles,
-        variant === 'medium' && MediumStyles,
-        variant === 'large' && LargeStyles,
-        variant === 'extralarge' && ExtraLargeStyles,
+        size === 'medium' && MediumStyles,
+        size === 'large' && LargeStyles,
+        size === 'extralarge' && ExtraLargeStyles,
       ]}
       {...props}
     >
@@ -34,7 +34,7 @@ export const Logo = ({ children, variant, ...props }: Props) => {
 };
 
 Logo.defaultProps = {
-  variant: 'medium',
+  size: 'medium',
 };
 
 Logo.propTypes = Types;

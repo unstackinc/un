@@ -1,17 +1,3 @@
-<p align="center">
-<em>(A Song of degrees for Solomon.)</em>
-<br>
-<br>
-“Except the LORD build the house,
-<br>
-they labour in vain that build it: except the LORD keep the city,
-<br>
-the watchman waketh but in vain.” 
-<br>
-<br>
-<strong>Psalm 127:1</strong>
-</p>
-
 # Unstack Design System
 
 ![Cover](cover.png)
@@ -44,6 +30,7 @@ This project uses [Conventional Commits](https://www.conventionalcommits.org/en/
 
 ## Resources
 
+- [Unstack Design System docs](https://unstack.gitbook.io/unds/)
 - [Storybook docs](https://storybook.js.org/docs/react/get-started/introduction)
 - [Reach UI docs](https://reach.tech/)
 - [Theme UI docs](https://theme-ui.com/getting-started)

@@ -21,7 +21,7 @@ const Types = {
   actions: PropTypes.arrayOf(PropTypes.node),
   aria: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  setShowModal: PropTypes.any,
+  setShowModal: PropTypes.func,
   showModal: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };

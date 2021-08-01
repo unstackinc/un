@@ -10,9 +10,9 @@ const Types = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string,
   disabled: PropTypes.bool,
-  onChange: PropTypes.any,
-  onClick: PropTypes.any,
-  variant: PropTypes.oneOf(['small', 'medium', 'large']),
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 type Props = InferProps<typeof Types>;
@@ -23,7 +23,7 @@ export const IconButton = ({
   disabled,
   onChange,
   onClick,
-  variant,
+  size,
   ...props
 }: Props) => {
   return (
@@ -31,8 +31,8 @@ export const IconButton = ({
       disabled={disabled}
       css={[
         Styles,
-        variant === 'medium' && MediumStyles,
-        variant === 'large' && LargeStyles,
+        size === 'medium' && MediumStyles,
+        size === 'large' && LargeStyles,
         css`
           svg {
             stroke: ${color};
@@ -52,7 +52,7 @@ IconButton.defaultProps = {
   disabled: false,
   onChange: undefined,
   onClick: undefined,
-  variant: 'small',
+  size: 'small',
 };
 
 IconButton.propTypes = Types;

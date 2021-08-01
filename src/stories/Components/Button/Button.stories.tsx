@@ -19,8 +19,9 @@ export default {
     background: {
       control: { type: 'color' },
     },
-    large: {
-      control: { type: 'boolean' },
+    size: {
+      options: ['small', 'default', 'large'],
+      control: { type: 'radio' },
     },
     full: {
       control: { type: 'boolean' },
@@ -39,7 +40,7 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  large: false,
+  size: 'default',
   full: false,
   warning: false,
   disabled: false,
@@ -49,7 +50,7 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: 'secondary',
-  large: false,
+  size: 'default',
   full: false,
   warning: false,
   disabled: false,
@@ -59,7 +60,7 @@ Secondary.args = {
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   variant: 'tertiary',
-  large: false,
+  size: 'default',
   full: false,
   warning: false,
   disabled: false,
@@ -69,7 +70,16 @@ Tertiary.args = {
 export const Outline = Template.bind({});
 Outline.args = {
   variant: 'outline',
-  large: false,
+  size: 'default',
+  full: false,
+  warning: false,
+  disabled: false,
+  children: 'Button',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
   full: false,
   warning: false,
   disabled: false,
@@ -78,7 +88,7 @@ Outline.args = {
 
 export const Large = Template.bind({});
 Large.args = {
-  large: true,
+  size: 'large',
   full: false,
   warning: false,
   disabled: false,
@@ -87,7 +97,7 @@ Large.args = {
 
 export const Full = Template.bind({});
 Full.args = {
-  large: true,
+  size: 'default'
   full: true,
   warning: false,
   disabled: false,

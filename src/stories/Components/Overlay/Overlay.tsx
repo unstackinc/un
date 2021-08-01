@@ -9,9 +9,9 @@ import { Styles } from './Overlay.styles';
 
 const Types = {
   background: PropTypes.string,
-  onChange: PropTypes.any,
-  onClick: PropTypes.any,
-  setShowOverlay: PropTypes.any,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  setShowOverlay: PropTypes.func,
   showOverlay: PropTypes.bool,
 };
 

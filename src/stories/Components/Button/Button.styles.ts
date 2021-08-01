@@ -63,6 +63,12 @@ export const OutlineVariant = css`
   border-color: currentColor;
 `;
 
+export const SmallStyles = css`
+  ${fontSizes[0]};
+  padding: ${padding.xxs} ${padding.xs};
+  gap: ${margin.xxs};
+`;
+
 export const LargeStyles = css`
   ${fontSizes[2]};
   padding: ${padding.xs} ${padding.md};

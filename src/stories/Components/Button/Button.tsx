@@ -8,6 +8,7 @@ import {
   Styles,
   TertiaryVariant,
   OutlineVariant,
+  SmallStyles,
   LargeStyles,
   FullStyles,
 } from './Button.styles';
@@ -20,10 +21,9 @@ const Types = {
   color: PropTypes.string,
   disabled: PropTypes.bool,
   full: PropTypes.bool,
-  large: PropTypes.bool,
-  onChange: PropTypes.any,
-  onClick: PropTypes.any,
-  ref: PropTypes.any,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  size: PropTypes.oneOf(['small', 'default', 'large']),
   variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'outline']),
   warning: PropTypes.bool,
 };
@@ -38,23 +38,22 @@ export const Button = ({
   color,
   disabled,
   full,
-  large,
   onChange,
   onClick,
-  ref,
+  size,
   variant,
   warning,
   ...props
 }: Props) => {
   return (
     <button
-      ref={ref}
       disabled={disabled}
       className={`${warning && 'warning'}`}
       sx={{ variant: `buttons.${variant}` }}
       css={[
         Styles,
-        large && LargeStyles,
+        size === 'small' && SmallStyles,
+        size === 'large' && LargeStyles,
         full && FullStyles,
         variant === 'tertiary' && TertiaryVariant,
         variant === 'outline' && OutlineVariant,
@@ -78,6 +77,7 @@ Button.defaultProps = {
   disabled: false,
   onChange: undefined,
   onClick: undefined,
+  size: 'default',
   variant: 'primary',
 };
 

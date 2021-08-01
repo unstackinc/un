@@ -21,7 +21,7 @@ const Types = {
   actions: PropTypes.arrayOf(PropTypes.node),
   aria: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  setShowDrawer: PropTypes.any,
+  setShowDrawer: PropTypes.func,
   showDrawer: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };

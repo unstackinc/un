@@ -16,7 +16,7 @@ const Types = {
   aria: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   leastDestructiveRef: PropTypes.any.isRequired,
-  setShowAlert: PropTypes.any,
+  setShowAlert: PropTypes.func,
   showAlert: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };

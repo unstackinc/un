@@ -23,7 +23,7 @@ const Types = {
   full: PropTypes.bool,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
-  size: PropTypes.oneOf(['small', 'default', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'outline']),
   warning: PropTypes.bool,
 };
@@ -77,7 +77,7 @@ Button.defaultProps = {
   disabled: false,
   onChange: undefined,
   onClick: undefined,
-  size: 'default',
+  size: 'medium',
   variant: 'primary',
 };
 

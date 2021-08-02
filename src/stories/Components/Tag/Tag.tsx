@@ -10,7 +10,7 @@ const Types = {
   background: PropTypes.string,
   children: PropTypes.node.isRequired,
   color: PropTypes.string,
-  small: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   variant: PropTypes.oneOf([
     'primary',
     'yellow',
@@ -26,7 +26,7 @@ export const Tag = ({
   background,
   children,
   color,
-  small,
+  size,
   variant,
   ...props
 }: Props) => {
@@ -37,7 +37,7 @@ export const Tag = ({
         Styles,
         variant === 'outline' && OutlineVariant,
         variant === 'outlineBlue' && OutlineVariant,
-        small && SmallStyles,
+        size === 'small' && SmallStyles,
         css`
           background-color: ${background};
           color: ${color};
@@ -51,6 +51,7 @@ export const Tag = ({
 };
 
 Tag.defaultProps = {
+  size: 'medium',
   variant: 'primary',
 };
 

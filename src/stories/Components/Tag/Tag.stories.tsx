@@ -19,8 +19,9 @@ export default {
     background: {
       control: { type: 'color' },
     },
-    small: {
-      control: { type: 'boolean' },
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'radio' },
     },
   },
 } as Meta;
@@ -30,13 +31,13 @@ const Template = (args) => <Tag {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  small: false,
+  size: 'medium',
   children: 'Tag',
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
   variant: 'outline',
-  small: false,
+  size: 'medium',
   children: 'Tag',
 };

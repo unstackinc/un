@@ -20,7 +20,7 @@ export default {
       control: { type: 'color' },
     },
     size: {
-      options: ['small', 'default', 'large'],
+      options: ['small', 'medium', 'large'],
       control: { type: 'radio' },
     },
     full: {
@@ -40,7 +40,7 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  size: 'default',
+  size: 'medium',
   full: false,
   warning: false,
   disabled: false,
@@ -50,7 +50,7 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: 'secondary',
-  size: 'default',
+  size: 'medium',
   full: false,
   warning: false,
   disabled: false,
@@ -60,7 +60,7 @@ Secondary.args = {
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   variant: 'tertiary',
-  size: 'default',
+  size: 'medium',
   full: false,
   warning: false,
   disabled: false,
@@ -70,7 +70,7 @@ Tertiary.args = {
 export const Outline = Template.bind({});
 Outline.args = {
   variant: 'outline',
-  size: 'default',
+  size: 'medium',
   full: false,
   warning: false,
   disabled: false,
@@ -97,7 +97,7 @@ Large.args = {
 
 export const Full = Template.bind({});
 Full.args = {
-  size: 'default'
+  size: 'medium',
   full: true,
   warning: false,
   disabled: false,

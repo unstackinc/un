@@ -122,7 +122,7 @@ export const NavSection = ({
         >
           {icon}
           {label}
-          {tag && <Tag small>{tag}</Tag>}
+          {tag && <Tag size="small">{tag}</Tag>}
         </NavLink>
       ) : (
         <div
@@ -132,7 +132,7 @@ export const NavSection = ({
         >
           {icon}
           {label}
-          {tag && <Tag small>{tag}</Tag>}
+          {tag && <Tag size="small">{tag}</Tag>}
         </div>
       )}
 
@@ -154,7 +154,7 @@ export const NavSection = ({
                   key={`${link.toString()}-${index}`}
                 >
                   {name}
-                  {tag && <Tag small>{tag}</Tag>}
+                  {tag && <Tag size="small">{tag}</Tag>}
                 </NavLink>
               );
             })}

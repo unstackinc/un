@@ -10,7 +10,7 @@ export default {
   component: Tag,
   argTypes: {
     variant: {
-      options: ['primary', 'yellow', 'green', 'outline', 'outlineBlue'],
+      options: ['info', 'danger', 'warning', 'success'],
       control: { type: 'radio' },
     },
     color: {
@@ -28,16 +28,9 @@ export default {
 
 const Template = (args) => <Tag {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  variant: 'primary',
-  size: 'medium',
-  children: 'Tag',
-};
-
-export const Outline = Template.bind({});
-Outline.args = {
-  variant: 'outline',
+export const Example = Template.bind({});
+Example.args = {
+  variant: 'info',
   size: 'medium',
   children: 'Tag',
 };

@@ -51,16 +51,10 @@ const input = {
 };
 
 const tag = {
-  default: {
-    purple: palette.primary,
-    yellow: palette.yellow,
-    green: palette.green,
-  },
-  outline: {
-    background: palette.transparent,
-    default: palette.greyLight,
-    blue: palette.blue,
-  },
+  danger: palette.red,
+  info: palette.blue,
+  warning: palette.yellow,
+  success: palette.green,
 };
 
 const toggle = {

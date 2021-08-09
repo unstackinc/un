@@ -1,36 +1,30 @@
 // Tag.variants.ts
 
-const PrimaryVariant = {
+const InfoVariant = {
   color: 'text.reversed',
-  backgroundColor: 'tag.default.purple',
+  backgroundColor: 'tag.info',
 };
 
-const YellowVariant = {
+const DangerVariant = {
   color: 'text.reversed',
-  backgroundColor: 'tag.default.yellow',
+  backgroundColor: 'tag.danger',
 };
 
-const GreenVariant = {
+const WarningVariant = {
   color: 'text.reversed',
-  backgroundColor: 'tag.default.green',
+  backgroundColor: 'tag.warning',
 };
 
-const OutlineVariant = {
-  color: 'tag.outline.default',
-  backgroundColor: 'tag.outline.background',
-};
-
-const OutlineBlueVariant = {
-  color: 'tag.outline.blue',
-  backgroundColor: 'tag.outline.background',
+const SuccessVariant = {
+  color: 'text.reversed',
+  backgroundColor: 'tag.success',
 };
 
 const tags = {
-  primary: PrimaryVariant,
-  yellow: YellowVariant,
-  green: GreenVariant,
-  outline: OutlineVariant,
-  outlineBlue: OutlineBlueVariant,
+  info: InfoVariant,
+  danger: DangerVariant,
+  warning: WarningVariant,
+  success: SuccessVariant,
 };
 
 export default tags;

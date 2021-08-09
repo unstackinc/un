@@ -4,20 +4,14 @@ import * as React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import { css } from '@emotion/react';
 
-import { Styles, OutlineVariant, SmallStyles } from './Tag.styles';
+import { Styles, SmallStyles } from './Tag.styles';
 
 const Types = {
   background: PropTypes.string,
   children: PropTypes.node.isRequired,
   color: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  variant: PropTypes.oneOf([
-    'primary',
-    'yellow',
-    'green',
-    'outline',
-    'outlineBlue',
-  ]),
+  variant: PropTypes.oneOf(['info', 'danger', 'warning', 'success']),
 };
 
 type Props = InferProps<typeof Types>;
@@ -35,8 +29,6 @@ export const Tag = ({
       sx={{ variant: `tags.${variant}` }}
       css={[
         Styles,
-        variant === 'outline' && OutlineVariant,
-        variant === 'outlineBlue' && OutlineVariant,
         size === 'small' && SmallStyles,
         css`
           background-color: ${background};

@@ -15,11 +15,6 @@ export const Styles = css`
   display: inline-block;
 `;
 
-export const OutlineVariant = css`
-  outline: 2px solid currentColor;
-  outline-offset: -2px;
-`;
-
 export const SmallStyles = css`
   padding: ${padding.xxxs} ${padding.xxs};
 `;

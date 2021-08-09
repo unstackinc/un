@@ -3,13 +3,6 @@
 import * as React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 
-import {
-  ListboxInput,
-  ListboxButton,
-  ListboxPopover,
-  ListboxList,
-  ListboxOption,
-} from '@reach/listbox';
 import { IoChevronDown } from 'react-icons/io5';
 
 import { Label } from '../..';
@@ -62,52 +55,43 @@ export const Select = ({
   ...props
 }: Props) => {
   return (
-    <ListboxInput
-      value={value}
-      onChange={onChange}
-      onClick={onClick}
-      css={[full && FullStyles]}
-      {...props}
+    <Label
+      id={id}
+      label={label}
+      disabled={disabled}
+      full={full}
+      helpText={helpText}
+      warningText={warningText}
     >
-      <Label
+      <select
         id={id}
-        label={label}
+        name={name}
+        css={[
+          Styles,
+          full && FullStyles,
+          warning && WarningStyles,
+          disabled && DisabledStyles,
+        ]}
+        placeholder={placeholder}
         disabled={disabled}
-        full={full}
-        helpText={helpText}
-        warningText={warningText}
+        onChange={onChange}
+        onClick={onClick}
+        {...props}
       >
-        <ListboxButton
-          as="button"
-          arrow={<IoChevronDown />}
-          css={[
-            Styles,
-            full && FullStyles,
-            warning && WarningStyles,
-            disabled && DisabledStyles,
-          ]}
-          placeholder={placeholder}
-          disabled={disabled}
-        />
-        <ListboxPopover>
-          <ListboxList css={ListStyles}>
-            {options.map((option, index) => {
-              const { name, value } = option;
-              return (
-                <ListboxOption
-                  css={OptionStyles}
-                  key={`${option.toString()}-${index}`}
-                  label={name}
-                  value={value}
-                >
-                  {name}
-                </ListboxOption>
-              );
-            })}
-          </ListboxList>
-        </ListboxPopover>
-      </Label>
-    </ListboxInput>
+        {options.map((option, index) => {
+          const { name, value } = option;
+          return (
+            <option
+              css={OptionStyles}
+              key={`${option.toString()}-${index}`}
+              value={value}
+            >
+              {name}
+            </option>
+          );
+        })}
+      </select>
+    </Label>
   );
 };
 

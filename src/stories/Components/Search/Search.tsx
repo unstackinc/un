@@ -22,6 +22,7 @@ const Types = {
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string,
   warning: PropTypes.bool,
   warningText: PropTypes.string,
 };
@@ -38,6 +39,7 @@ export const Search = ({
   onChange,
   onClick,
   placeholder,
+  value,
   warning,
   warningText,
   ...props
@@ -52,6 +54,7 @@ export const Search = ({
         placeholder={placeholder}
         disabled={disabled}
         css={[InputStyles, full && FullStyles, warning && WarningStyles]}
+        value={value}
         onChange={onChange}
         onClick={onClick}
         {...props}

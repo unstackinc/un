@@ -9,7 +9,7 @@ import { Styles, ContainerStyles, TabsStyles } from './Header.styles';
 const Types = {
   children: PropTypes.node,
   end: PropTypes.node,
-  padding: PropTypes.number,
+  padding: PropTypes.string,
   start: PropTypes.node,
   tabs: PropTypes.node,
 };

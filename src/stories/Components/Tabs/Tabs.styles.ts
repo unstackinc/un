@@ -19,6 +19,7 @@ const {
 export const TabListStyles = css`
   display: flex;
   flex-direction: row;
+  gap: ${margin.sm};
   margin-bottom: -1px;
 `;
 
@@ -30,7 +31,7 @@ export const TabStyles = css`
   font-weight: ${fontWeights[1]};
   white-space: nowrap;
   border: 2px solid ${colors.button.background.tertiary};
-  padding: ${padding.xs} ${padding.sm};
+  padding: ${padding.xs} 0;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;

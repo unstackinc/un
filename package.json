@@ -1,6 +1,6 @@
 {
   "name": "@unstack/unds",
-  "version": "0.25.1-beta",
+  "version": "0.25.2-beta",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {

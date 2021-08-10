@@ -12,4 +12,4 @@ export default {
 
 const Template = (args) => <Pagination {...args}></Pagination>;
 
-export const Default = Template.bind({});
+export const Example = Template.bind({});

@@ -17,7 +17,8 @@ import { Tag } from '../../';
 import {
   Styles,
   BodyStyles,
-  EndStyles,
+  BeforeStyles,
+  AfterStyles,
   SectionStyles,
   PanelStyles,
   NavLinkStyles,
@@ -27,18 +28,20 @@ import {
 } from './Nav.styles';
 
 const Types = {
+  after: PropTypes.node,
+  before: PropTypes.node,
   children: PropTypes.node.isRequired,
-  end: PropTypes.node,
 };
 
 type Props = InferProps<typeof Types>;
 
-export const Nav = ({ children, end, ...props }: Props) => {
+export const Nav = ({ after, before, children, ...props }: Props) => {
   return (
     <nav css={Styles} {...props}>
       <Router>
+        <div css={BeforeStyles}>{before}</div>
         <div css={BodyStyles}>{children}</div>
-        <div css={EndStyles}>{end}</div>
+        <div css={AfterStyles}>{after}</div>
       </Router>
     </nav>
   );

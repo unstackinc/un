@@ -113,7 +113,6 @@ const GetTable = ({ ...props }) => {
     useRowSelect,
     (hooks) => {
       hooks.visibleColumns.push((columns) => [
-        // Let's make a column for selection
         {
           id: 'selection',
           Header: ({ getToggleAllPageRowsSelectedProps }) => (
@@ -147,7 +146,6 @@ const GetTable = ({ ...props }) => {
           }}
         ></Select>,
         <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={globalFilter}
           setGlobalFilter={setGlobalFilter}
         />,

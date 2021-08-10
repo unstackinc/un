@@ -43,7 +43,17 @@ export const BodyStyles = css`
   gap: ${margin.xs};
 `;
 
-export const EndStyles = css`
+export const BeforeStyles = css`
+  width: 100%;
+  padding: ${padding.md};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: ${margin.xs};
+`;
+
+export const AfterStyles = css`
   width: 100%;
   padding: ${padding.md};
   display: flex;

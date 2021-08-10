@@ -10,7 +10,6 @@ import { Styles, InputStyles, FullStyles } from './FileUpload.styles';
 
 const Types = {
   accept: PropTypes.string,
-  children: PropTypes.node.isRequired,
   full: PropTypes.bool,
   maxFiles: PropTypes.number,
   onDrop: PropTypes.func,
@@ -21,7 +20,6 @@ type Props = InferProps<typeof Types>;
 
 export const FileUpload = ({
   accept,
-  children,
   full,
   maxFiles,
   onDrop,
@@ -47,8 +45,8 @@ export const FileUpload = ({
 FileUpload.defaultProps = {
   accept: '*',
   maxFiles: 1,
-  onDrop: () => {},
-  validator: () => {},
+  onDrop: undefined,
+  validator: undefined,
 };
 
 FileUpload.propTypes = Types;

@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { Meta } from '@storybook/react';
-import { css } from '@emotion/react';
 
 import {
   IoStar,
@@ -22,19 +21,15 @@ import {
 import {
   Button,
   Sidemenu,
-  Sidebar,
   Nav,
   NavSection,
   Header,
-  IconButton,
   Profile,
   Dropdown,
   Main,
   Card,
   Search,
   H2,
-  P2,
-  Logo,
   Tabs,
   TabList,
   TabPanels,
@@ -62,7 +57,7 @@ const Template = (args) => {
       <Sidemenu>
         <Header padding={padding.md}></Header>
         <Nav
-          end={
+          after={
             <>
               <Dropdown
                 button={<NavSection icon={<IoHelpCircle />} label="Help" />}

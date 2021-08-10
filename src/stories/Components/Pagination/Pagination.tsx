@@ -15,7 +15,7 @@ import { Styles } from './Pagination.styles';
 
 const Types = {
   breakLabel: PropTypes.node,
-  onPageChange: PropTypes.func,
+  onPageChange: PropTypes.func.isRequired,
   pageCount: PropTypes.number.isRequired,
 };
 
@@ -51,6 +51,12 @@ export const Pagination = ({
       />
     </div>
   );
+};
+
+Pagination.defaultProps = {
+  breakLabel: '...',
+  onPageChange: undefined,
+  pageCount: 10,
 };
 
 Pagination.propTypes = Types;

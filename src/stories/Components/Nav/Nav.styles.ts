@@ -16,6 +16,8 @@ export const Styles = css`
   top: 0;
   left: 0;
   flex-direction: column;
+  flex-grow: 1;
+  position: relative;
   overflow-y: scroll;
   scrollbar-width: none;
   ::-webkit-scrollbar {
@@ -31,11 +33,16 @@ export const BodyStyles = css`
   justify-content: flex-start;
   align-items: flex-start;
   gap: ${margin.xs};
-  overflow-y: scroll;
-  scrollbar-width: none;
-  ::-webkit-scrollbar {
-    width: 0;
-  }
+`;
+
+export const EndStyles = css`
+  width: 100%;
+  padding: ${padding.md};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: ${margin.xs};
 `;
 
 export const SectionStyles = css`

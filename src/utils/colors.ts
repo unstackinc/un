@@ -51,6 +51,7 @@ const input = {
 };
 
 const tag = {
+  primary: palette.primary,
   danger: palette.red,
   info: palette.blue,
   warning: palette.yellow,

@@ -11,7 +11,7 @@ const Types = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  variant: PropTypes.oneOf(['info', 'danger', 'warning', 'success']),
+  variant: PropTypes.oneOf(['primary', 'info', 'danger', 'warning', 'success']),
 };
 
 type Props = InferProps<typeof Types>;

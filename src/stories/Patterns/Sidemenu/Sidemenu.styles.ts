@@ -51,6 +51,9 @@ export const HeadingStyles = css`
 `;
 
 export const BodyStyles = css`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   scrollbar-width: none;
   ::-webkit-scrollbar {
     width: 0;

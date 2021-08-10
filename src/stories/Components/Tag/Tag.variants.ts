@@ -1,5 +1,10 @@
 // Tag.variants.ts
 
+const PrimaryVariant = {
+  color: 'text.reversed',
+  backgroundColor: 'tag.primary',
+};
+
 const InfoVariant = {
   color: 'text.reversed',
   backgroundColor: 'tag.info',
@@ -21,6 +26,7 @@ const SuccessVariant = {
 };
 
 const tags = {
+  primary: PrimaryVariant,
   info: InfoVariant,
   danger: DangerVariant,
   warning: WarningVariant,

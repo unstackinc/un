@@ -17,6 +17,7 @@ import { Tag } from '../../';
 import {
   Styles,
   BodyStyles,
+  EndStyles,
   SectionStyles,
   PanelStyles,
   NavLinkStyles,
@@ -27,15 +28,17 @@ import {
 
 const Types = {
   children: PropTypes.node.isRequired,
+  end: PropTypes.node,
 };
 
 type Props = InferProps<typeof Types>;
 
-export const Nav = ({ children, ...props }: Props) => {
+export const Nav = ({ children, end, ...props }: Props) => {
   return (
     <nav css={Styles} {...props}>
       <Router>
         <div css={BodyStyles}>{children}</div>
+        <div css={EndStyles}>{end}</div>
       </Router>
     </nav>
   );

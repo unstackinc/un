@@ -58,52 +58,38 @@ export default {
 
 const Template = (args) => {
   return (
-    <Layout sidebar {...args}>
-      <Sidebar
-        start={
-          <Logo>
-            <img src={LogoPicture} />
-          </Logo>
-        }
-        end={
-          <>
-            <Dropdown
-              button={
-                <IconButton>
-                  <IoPerson />
-                </IconButton>
-              }
-              options={[
-                {
-                  before: (
-                    <Profile>
-                      <img src={ProfilePicture} />
-                    </Profile>
-                  ),
-                  name: 'email@example.com',
-                },
-                { before: <IoSettingsSharp />, name: 'Account settings' },
-                { space: true },
-                { before: <IoExit />, name: 'Logout' },
-              ]}
-            />
-            <Dropdown
-              button={
-                <IconButton>
-                  <IoHelpCircle />
-                </IconButton>
-              }
-              options={[
-                { before: <IoOpen />, name: 'Slack commnunity' },
-                { before: <IoOpen />, name: 'Help docs' },
-              ]}
-            />
-          </>
-        }
-      ></Sidebar>
+    <Layout {...args}>
       <Sidemenu>
         <Header padding={padding.md}></Header>
-        <Nav>
+        <Nav
+          end={
+            <>
+              <Dropdown
+                button={<NavSection icon={<IoHelpCircle />} label="Help" />}
+                options={[
+                  { before: <IoOpen />, name: 'Slack commnunity' },
+                  { before: <IoOpen />, name: 'Help docs' },
+                ]}
+              />
+              <Dropdown
+                button={<NavSection icon={<IoPerson />} label="Account" />}
+                options={[
+                  {
+                    before: (
+                      <Profile>
+                        <img src={ProfilePicture} />
+                      </Profile>
+                    ),
+                    name: 'email@example.com',
+                  },
+                  { before: <IoSettingsSharp />, name: 'Account settings' },
+                  { space: true },
+                  { before: <IoExit />, name: 'Logout' },
+                ]}
+              />
+            </>
+          }
+        >
           <NavSection
             icon={<IoStar />}
             label="Quickstart"

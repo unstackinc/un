@@ -58,6 +58,7 @@ export const ButtonStyles = css`
   border: none;
   background: none;
   appearance: none;
+  width: 100%;
 `;
 
 export const TransitionStyles = css`

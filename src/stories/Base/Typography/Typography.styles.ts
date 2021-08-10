@@ -2,9 +2,9 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
-const { colors, fonts, fontWeights, margin } = theme;
+const { colors, fonts, fontSizes, fontWeights, margin } = theme;
 
 export const DisplayStyles = css`
   margin: 0;

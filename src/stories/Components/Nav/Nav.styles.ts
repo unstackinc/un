@@ -2,10 +2,18 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
-const { margin, padding, fonts, fontWeights, colors, radii, transitions } =
-  theme;
+const {
+  margin,
+  padding,
+  fonts,
+  fontSizes,
+  fontWeights,
+  colors,
+  radii,
+  transitions,
+} = theme;
 
 export const Styles = css`
   width: 16rem;

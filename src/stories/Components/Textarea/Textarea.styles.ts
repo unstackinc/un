@@ -2,10 +2,18 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
-const { colors, fonts, fontWeights, padding, radii, shadows, transitions } =
-  theme;
+const {
+  colors,
+  fonts,
+  fontSizes,
+  fontWeights,
+  padding,
+  radii,
+  shadows,
+  transitions,
+} = theme;
 
 export const Styles = css`
   background-color: ${colors.input.background.default};

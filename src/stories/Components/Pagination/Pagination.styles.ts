@@ -2,10 +2,18 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
-const { colors, fonts, fontWeights, margin, opacities, padding, shadows } =
-  theme;
+const {
+  colors,
+  fonts,
+  fontSizes,
+  fontWeights,
+  margin,
+  opacities,
+  padding,
+  shadows,
+} = theme;
 
 export const Styles = css`
   margin-top: ${margin.sm};

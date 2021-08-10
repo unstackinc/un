@@ -2,13 +2,13 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
 const {
   colors,
   fonts,
+  fontSizes,
   fontWeights,
-  opacities,
   padding,
   margin,
   radii,

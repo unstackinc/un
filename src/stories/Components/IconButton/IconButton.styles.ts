@@ -2,9 +2,17 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
-const { colors, opacities, fonts, fontWeights, shadows, transitions } = theme;
+const {
+  colors,
+  opacities,
+  fonts,
+  fontSizes,
+  fontWeights,
+  shadows,
+  transitions,
+} = theme;
 
 export const Styles = css`
   appearance: none;

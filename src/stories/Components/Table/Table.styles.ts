@@ -2,9 +2,9 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
-const { colors, fonts, margin } = theme;
+const { colors, fonts } = theme;
 
 export const Styles = css`
   font-family: ${fonts.body};

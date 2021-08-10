@@ -2,18 +2,9 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
-const {
-  margin,
-  padding,
-  fonts,
-  fontWeights,
-  colors,
-  radii,
-  transitions,
-  breakpoints,
-} = theme;
+const { colors } = theme;
 
 export const Styles = css`
   width: 100%;

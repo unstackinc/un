@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 
-import { IoAdd } from 'react-icons/io5';
 import { FileUpload } from './FileUpload';
 
 export default {
@@ -19,4 +18,6 @@ export default {
 const Template = (args) => <FileUpload {...args} />;
 
 export const Example = Template.bind({});
-Example.args = {};
+Example.args = {
+  full: false,
+};

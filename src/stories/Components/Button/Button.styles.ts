@@ -2,7 +2,7 @@
 
 import { css } from '@emotion/react';
 
-import theme, { fontSizes } from '../../../theme';
+import theme from '../../../theme';
 
 const {
   colors,
@@ -10,6 +10,7 @@ const {
   margin,
   padding,
   fonts,
+  fontSizes,
   fontWeights,
   shadows,
   transitions,

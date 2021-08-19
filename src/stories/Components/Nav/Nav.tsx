@@ -39,9 +39,9 @@ export const Nav = ({ after, before, children, ...props }: Props) => {
   return (
     <nav css={Styles} {...props}>
       <Router>
-        <div css={BeforeStyles}>{before}</div>
+        {before && <div css={BeforeStyles}>{before}</div>}
         <div css={BodyStyles}>{children}</div>
-        <div css={AfterStyles}>{after}</div>
+        {after && <div css={AfterStyles}>{after}</div>}
       </Router>
     </nav>
   );

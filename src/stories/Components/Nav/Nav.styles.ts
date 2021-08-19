@@ -18,7 +18,6 @@ const {
 export const Styles = css`
   width: 16rem;
   max-width: 100%;
-  height: 100%;
   overflow-y: scroll;
   display: flex;
   top: 0;

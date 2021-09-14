@@ -106,10 +106,13 @@ export const NavLinkStyles = css`
     }
   }
   svg {
-    opacity: 0.5;
     width: 1em;
     height: 1em;
-    transition: opacity ${transitions[0]}, color ${transitions[0]};
+    transition: color ${transitions[0]};
+    path {
+      fill: ${colors.text.secondary};
+      transition: fill ${transitions[0]};
+    }
   }
 `;
 
@@ -137,8 +140,9 @@ export const IconStyles = css`
   font-weight: ${fontWeights[1]};
   color: ${colors.text.default};
   &.open svg {
-    color: ${colors.primary};
-    opacity: 1;
+    path {
+      fill: ${colors.primary};
+    }
   }
 `;
 

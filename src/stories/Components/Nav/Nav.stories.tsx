@@ -3,16 +3,7 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 
-import {
-  IoStar,
-  IoHome,
-  IoPieChart,
-  IoPeople,
-  IoExtensionPuzzle,
-  IoTerminal,
-  IoSettingsSharp,
-} from 'react-icons/io5';
-
+import { Icon } from '../..';
 import { Nav, NavSection } from './Nav';
 
 export default {
@@ -24,74 +15,107 @@ const Template = (args) => {
   return (
     <Nav {...args}>
       <NavSection
-        icon={<IoStar />}
+        icon={<Icon variant="star" />}
         label="Quickstart"
         to="quickstart"
         tag="3"
-      ></NavSection>
+      />
       <NavSection
-        icon={<IoHome />}
-        label="Home"
+        icon={<Icon variant="chart" />}
+        label="Insights"
         links={[
           {
-            name: 'Pages',
-            to: 'pages',
+            name: 'Traffic',
+            to: 'traffic',
           },
           {
-            name: 'Blog posts',
-            to: 'blog',
+            name: 'A/B Tests',
+            to: 'tests',
           },
           {
-            name: 'Data tables',
-            to: 'data',
+            name: 'Conversions',
+            to: 'conversions',
           },
           {
-            name: 'Media',
-            to: 'media',
+            name: 'Sources',
+            to: 'sources',
+          },
+          {
+            name: 'SEO',
+            to: 'seo',
+          },
+        ]}
+      />
+      <NavSection
+        icon={<Icon variant="bag" />}
+        label="Storefront"
+        links={[
+          {
+            name: 'Products',
+            to: 'products',
+          },
+          {
+            name: 'Collections',
+            to: 'collections',
+          },
+          {
+            name: 'Variants',
+            to: 'variants',
+          },
+          {
+            name: 'Templates',
+            to: 'templates',
           },
         ]}
         push
       />
       <NavSection
-        icon={<IoPieChart />}
-        label="Insights"
+        icon={<Icon variant="page" />}
+        label="Content"
         links={[
           {
-            name: 'Reports',
-            to: 'reports',
+            name: 'Website',
+            to: 'website',
           },
           {
-            name: 'Research',
-            to: 'research',
+            name: 'Landing pages',
+            to: 'landing',
           },
-        ]}
-      />
-      <NavSection
-        label="Contacts"
-        icon={<IoPeople />}
-        links={[
           {
-            name: 'People',
-            to: 'people',
-            tag: '11,716',
+            name: 'Dynamic pages',
+            to: 'dynamic',
+          },
+          {
+            name: 'Blog',
+            to: 'blog',
           },
           {
             name: 'Forms',
             to: 'forms',
           },
           {
-            name: 'Payments',
-            to: 'payments',
+            name: 'Media',
+            to: 'media',
+          },
+          {
+            name: 'Database',
+            to: 'database',
           },
         ]}
+        push
       />
       <NavSection
-        icon={<IoExtensionPuzzle />}
+        label="Contacts"
+        icon={<Icon variant="people" />}
+        to="contacts"
+      />
+      <NavSection
+        icon={<Icon variant="puzzle" />}
         label="Design"
         links={[
           {
-            name: 'Branding',
-            to: 'branding',
+            name: 'Header & Footer',
+            to: 'header-footer',
           },
           {
             name: 'Style Guide',
@@ -104,13 +128,13 @@ const Template = (args) => {
         ]}
       />
       <NavSection
-        icon={<IoTerminal />}
+        icon={<Icon variant="console" />}
         label="Components"
         to="components"
         push
       />
       <NavSection
-        icon={<IoSettingsSharp />}
+        icon={<Icon variant="settings" />}
         label="Settings"
         links={[
           {
@@ -118,16 +142,12 @@ const Template = (args) => {
             to: 'general',
           },
           {
-            name: 'Users',
-            to: 'users',
+            name: 'Payments',
+            to: 'payments',
           },
           {
             name: 'Integrations',
             to: 'integrations',
-          },
-          {
-            name: 'Billing',
-            to: 'billing',
           },
         ]}
       />

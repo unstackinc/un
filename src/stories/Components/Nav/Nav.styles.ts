@@ -106,8 +106,8 @@ export const NavLinkStyles = css`
     }
   }
   svg {
-    width: 1em;
-    height: 1em;
+    width: 1.25em;
+    height: 1.25em;
     transition: color ${transitions[0]};
     path {
       fill: ${colors.text.secondary};

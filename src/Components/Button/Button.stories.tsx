@@ -1,9 +1,9 @@
 // Button.stories.tsx
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+// import * as React from 'react';
+// import { Meta } from '@storybook/react';
 
-import { Button } from './Button';
+import Button from '.';
 
 export default {
   title: 'Components/Button',
@@ -32,6 +32,7 @@ export default {
     disabled: {
       control: { type: 'boolean' },
     },
+    onClick: { action: 'clicked' },
   },
 } as Meta;
 

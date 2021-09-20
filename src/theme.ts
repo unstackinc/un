@@ -13,7 +13,7 @@ import {
   transitions,
   typography,
 } from './utils';
-import buttons from './stories/Components/Button/Button.variants';
+import buttons from './Components/Button/Button.variants';
 import tags from './stories/Components/Tag/Tag.variants';
 
 const theme = {

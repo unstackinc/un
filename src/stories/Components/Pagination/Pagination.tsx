@@ -1,7 +1,4 @@
-// Pagination.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 import ReactPaginate from 'react-paginate';
 
 import { IoCaretBack, IoCaretForward } from 'react-icons/io5';
@@ -9,24 +6,18 @@ import { IoCaretBack, IoCaretForward } from 'react-icons/io5';
 import { IconButton } from '../..';
 import { Styles } from './Pagination.styles';
 
-/*
- * Pagination
- */
-
-const Types = {
-  breakLabel: PropTypes.node,
-  onPageChange: PropTypes.func.isRequired,
-  pageCount: PropTypes.number.isRequired,
+export type PaginationProps = {
+  breakLabel?: ReactNode;
+  onPageChange: any;
+  pageCount: number;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Pagination = ({
   breakLabel,
   onPageChange,
   pageCount,
   ...props
-}: Props) => {
+}: PaginationProps) => {
   return (
     <div css={Styles}>
       <ReactPaginate
@@ -55,10 +46,8 @@ export const Pagination = ({
 
 Pagination.defaultProps = {
   breakLabel: '...',
-  onPageChange: undefined,
+  onPageChange: () => {},
   pageCount: 10,
 };
-
-Pagination.propTypes = Types;
 
 export default Pagination;

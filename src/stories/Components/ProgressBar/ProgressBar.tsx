@@ -1,19 +1,13 @@
-// ProgressBar.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import { css } from '@emotion/react';
 
 import { Styles, FullStyles } from './ProgressBar.styles';
 
-const Types = {
-  full: PropTypes.bool,
-  progress: PropTypes.number.isRequired,
+type ProgressBarProps = {
+  full?: boolean;
+  progress: number;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const ProgressBar = ({ full, progress, ...props }: Props) => {
+export const ProgressBar = ({ full, progress, ...props }: ProgressBarProps) => {
   return (
     <div
       css={[
@@ -34,7 +28,5 @@ ProgressBar.defaultProps = {
   full: false,
   progress: 0,
 };
-
-ProgressBar.propTypes = Types;
 
 export default ProgressBar;

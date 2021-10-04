@@ -1,5 +1,3 @@
-// typography.ts
-
 import { fluid } from './fluid';
 
 const base = 0.64;

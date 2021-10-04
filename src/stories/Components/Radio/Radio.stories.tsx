@@ -1,10 +1,7 @@
-// Radio.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { Label } from '../../';
-import { Radio } from './Radio';
+import { Radio, RadioProps } from './Radio';
 
 export default {
   title: 'Components/Radio',
@@ -16,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => (
+const Template: Story<RadioProps> = (args) => (
   <Radio name="option" id="option-1" value="option-1" {...args} />
 );
 
@@ -27,7 +24,7 @@ Default.args = {
   disabled: false,
 };
 
-const GroupTemplate = (args) => (
+const GroupTemplate: Story<RadioProps> = (args) => (
   <Label id="group">
     <Radio
       label="Option 1"

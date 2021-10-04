@@ -1,7 +1,4 @@
-// Layout.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import {
   IoStar,
@@ -35,7 +32,7 @@ import {
   TabPanels,
   TabPanel,
 } from '../..';
-import { Layout } from './Layout';
+import { Layout, LayoutProps } from './Layout';
 import theme from '../../../theme';
 
 const { padding } = theme;
@@ -51,7 +48,7 @@ export default {
   component: Layout,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<LayoutProps> = (args) => {
   return (
     <Layout {...args}>
       <Sidemenu>

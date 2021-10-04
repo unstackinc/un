@@ -1,5 +1,3 @@
-// space.ts
-
 export const space = {
   margin: {
     xxs: '.25rem',

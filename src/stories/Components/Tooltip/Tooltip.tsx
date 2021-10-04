@@ -1,28 +1,20 @@
-// Tooltip.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
+import { ReactNode } from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import { Styles } from './Tooltip.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
-  content: PropTypes.node.isRequired,
+export type TooltipProps = {
+  children: ReactNode;
+  content: ReactNode;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Tooltip = ({ children, content, ...props }: Props) => {
+export const Tooltip = ({ children, content, ...props }: TooltipProps) => {
   return (
     <Tippy content={content} css={Styles} {...props}>
       <span tabIndex={0}>{children}</span>
     </Tippy>
   );
 };
-
-Tooltip.propTypes = Types;
 
 export default Tooltip;

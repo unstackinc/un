@@ -1,16 +1,13 @@
-// Main.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Main } from './Main';
+import { Main, MainProps } from './Main';
 
 export default {
   title: 'Patterns/Main',
   component: Main,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<MainProps> = (args) => {
   return <Main {...args} />;
 };
 

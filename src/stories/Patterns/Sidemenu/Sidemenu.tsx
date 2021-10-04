@@ -1,7 +1,4 @@
-// Sidemenu.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 
 import {
   Styles,
@@ -10,15 +7,13 @@ import {
   FooterStyles,
 } from './Sidemenu.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
-  footer: PropTypes.node,
-  heading: PropTypes.node,
+export type Sidemenu = {
+  children: ReactNode;
+  footer?: ReactNode;
+  heading?: ReactNode;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Sidemenu = ({ children, ...props }: Props) => {
+export const Sidemenu = ({ children, ...props }: Sidemenu) => {
   return (
     <aside css={Styles} {...props}>
       <div css={HeadingStyles}></div>
@@ -31,7 +26,5 @@ export const Sidemenu = ({ children, ...props }: Props) => {
 Sidemenu.defaultProps = {
   title: 'Title',
 };
-
-Sidemenu.propTypes = Types;
 
 export default Sidemenu;

@@ -1,8 +1,3 @@
-// Search.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
 import { IoSearch } from 'react-icons/io5';
 
 import {
@@ -12,22 +7,20 @@ import {
   WarningStyles,
 } from './Search.styles';
 
-const Types = {
-  disabled: PropTypes.bool,
-  full: PropTypes.bool,
-  helpText: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  placeholder: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  warning: PropTypes.bool,
-  warningText: PropTypes.string,
+type SearchProps = {
+  disabled?: boolean;
+  full?: boolean;
+  helpText?: string;
+  id: string;
+  label?: string;
+  name: string;
+  onChange?: any;
+  onClick?: any;
+  placeholder: string;
+  value?: string;
+  warning?: boolean;
+  warningText?: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Search = ({
   disabled,
@@ -43,7 +36,7 @@ export const Search = ({
   warning,
   warningText,
   ...props
-}: Props) => {
+}: SearchProps) => {
   return (
     <label id={id} css={[Styles, full && FullStyles]}>
       <IoSearch />
@@ -70,7 +63,5 @@ Search.defaultProps = {
   placeholder: 'Placeholder',
   warning: false,
 };
-
-Search.propTypes = Types;
 
 export default Search;

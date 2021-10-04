@@ -20,5 +20,5 @@
     "resolveJsonModule": true
   },
   "exclude": ["node_modules"],
-  "include": ["@types/**/*.*", "src/**/*.*"]
+  "include": ["emotion-env.d.ts", "@types/**/*.*", "src/**/*.*"]
 }

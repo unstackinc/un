@@ -1,9 +1,6 @@
-// Textbox.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Textbox } from './Textbox';
+import { Textbox, TextboxProps } from './Textbox';
 
 export default {
   title: 'Components/Textbox',
@@ -21,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Textbox {...args} />;
+const Template: Story<TextboxProps> = (args) => <Textbox {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

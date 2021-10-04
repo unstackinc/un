@@ -1,7 +1,4 @@
-// Paragraph.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 
 import {
   LabelContainerStyles,
@@ -14,22 +11,20 @@ import {
   WarningTextStyles,
 } from './Typography.styles';
 
-const Types = {
-  after: PropTypes.bool,
-  before: PropTypes.bool,
-  control: PropTypes.node,
-  children: PropTypes.node,
-  css: PropTypes.any,
-  disabled: PropTypes.bool,
-  full: PropTypes.bool,
-  helpText: PropTypes.string,
-  id: PropTypes.string,
-  inline: PropTypes.bool,
-  label: PropTypes.string,
-  warningText: PropTypes.string,
+export type LabelProps = {
+  after?: boolean;
+  before?: boolean;
+  control?: ReactNode;
+  children?: ReactNode;
+  css?: any;
+  disabled?: boolean;
+  full?: boolean;
+  helpText?: string;
+  id?: string;
+  inline?: boolean;
+  label?: string;
+  warningText?: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Label = ({
   after,
@@ -45,7 +40,7 @@ export const Label = ({
   label,
   warningText,
   ...props
-}: Props) => {
+}: LabelProps) => {
   return (
     <div css={[LabelContainerStyles, full && FullStyles, css]} {...props}>
       <label
@@ -93,4 +88,4 @@ Label.defaultProps = {
   inline: false,
 };
 
-Label.propTypes = Types;
+export default Label;

@@ -1,7 +1,4 @@
-// Button.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import {
@@ -13,22 +10,20 @@ import {
   FullStyles,
 } from './Button.styles';
 
-const Types = {
-  after: PropTypes.node,
-  background: PropTypes.string,
-  before: PropTypes.node,
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string,
-  disabled: PropTypes.bool,
-  full: PropTypes.bool,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'outline']),
-  warning: PropTypes.bool,
+export type ButtonProps = {
+  after?: ReactNode;
+  background?: string;
+  before?: ReactNode;
+  children: ReactNode;
+  color?: string;
+  disabled?: boolean;
+  full?: boolean;
+  onChange?: any;
+  onClick?: any;
+  size?: 'small' | 'medium' | 'large';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'outline';
+  warning?: boolean;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Button = ({
   after,
@@ -44,7 +39,7 @@ export const Button = ({
   variant,
   warning,
   ...props
-}: Props) => {
+}: ButtonProps) => {
   return (
     <button
       disabled={disabled}
@@ -80,7 +75,5 @@ Button.defaultProps = {
   size: 'medium',
   variant: 'primary',
 };
-
-Button.propTypes = Types;
 
 export default Button;

@@ -1,5 +1,3 @@
-// sizes.ts
-
 export const sizes = {
   default: '45rem',
   card: '20rem',

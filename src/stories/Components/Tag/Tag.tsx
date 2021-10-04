@@ -1,20 +1,15 @@
-// Tag.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import { Styles, SmallStyles } from './Tag.styles';
 
-const Types = {
-  background: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  variant: PropTypes.oneOf(['primary', 'info', 'danger', 'warning', 'success']),
+export type TagProps = {
+  background?: string;
+  children: ReactNode;
+  color?: string;
+  size?: 'small' | 'medium' | 'large';
+  variant?: 'primary' | 'info' | 'danger' | 'warning' | 'success';
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Tag = ({
   background,
@@ -23,7 +18,7 @@ export const Tag = ({
   size,
   variant,
   ...props
-}: Props) => {
+}: TagProps) => {
   return (
     <span
       sx={{ variant: `tags.${variant}` }}
@@ -46,7 +41,5 @@ Tag.defaultProps = {
   size: 'medium',
   variant: 'primary',
 };
-
-Tag.propTypes = Types;
 
 export default Tag;

@@ -1,7 +1,4 @@
-// Paragraph.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import {
@@ -16,15 +13,13 @@ import {
   P3Styles,
 } from './Typography.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string,
-  display: PropTypes.bool,
-  link: PropTypes.bool,
-  weight: PropTypes.oneOf(['normal', 'medium', 'bold']),
+export type ParagraphProps = {
+  children: ReactNode;
+  color?: string;
+  display?: boolean;
+  link?: boolean;
+  weight?: 'normal' | 'medium' | 'bold';
 };
-
-type Props = InferProps<typeof Types>;
 
 export const P3 = ({
   children,
@@ -33,7 +28,7 @@ export const P3 = ({
   link,
   weight,
   ...props
-}: Props) => {
+}: ParagraphProps) => {
   return (
     <p
       css={[
@@ -60,8 +55,6 @@ P3.defaultProps = {
   weight: 'normal',
 };
 
-P3.propTypes = Types;
-
 export const P2 = ({
   weight,
   color,
@@ -69,7 +62,7 @@ export const P2 = ({
   display,
   children,
   ...props
-}: Props) => {
+}: ParagraphProps) => {
   return (
     <p
       css={[
@@ -96,8 +89,6 @@ P2.defaultProps = {
   weight: 'normal',
 };
 
-P2.propTypes = Types;
-
 export const P1 = ({
   weight,
   color,
@@ -105,7 +96,7 @@ export const P1 = ({
   display,
   children,
   ...props
-}: Props) => {
+}: ParagraphProps) => {
   return (
     <p
       css={[
@@ -132,8 +123,6 @@ P1.defaultProps = {
   weight: 'normal',
 };
 
-P1.propTypes = Types;
-
 export const P0 = ({
   weight,
   color,
@@ -141,7 +130,7 @@ export const P0 = ({
   display,
   children,
   ...props
-}: Props) => {
+}: ParagraphProps) => {
   return (
     <p
       css={[
@@ -167,5 +156,3 @@ P0.defaultProps = {
   link: false,
   weight: 'normal',
 };
-
-P0.propTypes = Types;

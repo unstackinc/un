@@ -1,11 +1,8 @@
-// Modal.stories.tsx
-
-import * as React from 'react';
 import { useState } from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { css } from '@emotion/react';
 
-import { Modal } from './Modal';
+import { Modal, ModalProps } from './Modal';
 import { Button, H0, P1 } from '../..';
 
 export default {
@@ -13,7 +10,7 @@ export default {
   component: Modal,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<ModalProps> = (args) => {
   const [showModal, setShowModal] = useState(false);
   const open = () => setShowModal(true);
   const close = () => setShowModal(false);

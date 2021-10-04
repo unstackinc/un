@@ -1,7 +1,4 @@
-// Sidebar.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import {
   IoPerson,
@@ -12,7 +9,7 @@ import {
 } from 'react-icons/io5';
 
 import { IconButton, Profile, Dropdown } from '../../';
-import { Sidebar } from './Sidebar';
+import { Sidebar, SidebarProps } from './Sidebar';
 
 import ProfilePicture from '../../assets/profile.jpg';
 
@@ -21,7 +18,7 @@ export default {
   component: Sidebar,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<SidebarProps> = (args) => {
   return (
     <Sidebar
       end={

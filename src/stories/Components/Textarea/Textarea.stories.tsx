@@ -1,9 +1,6 @@
-// Textarea.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Textarea } from './Textarea';
+import { Textarea, TextareaProps } from './Textarea';
 
 export default {
   title: 'Components/Textarea',
@@ -21,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Textarea {...args} />;
+const Template: Story<TextareaProps> = (args) => <Textarea {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

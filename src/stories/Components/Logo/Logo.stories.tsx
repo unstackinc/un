@@ -1,9 +1,6 @@
-// Logo.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Logo } from './Logo';
+import { Logo, LogoProps } from './Logo';
 
 import LogoPicture from '../../assets/logo-dark.svg';
 
@@ -18,7 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Logo {...args} />;
+const Template: Story<LogoProps> = (args) => <Logo {...args} />;
 
 export const Small = Template.bind({});
 Small.args = {

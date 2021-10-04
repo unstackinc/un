@@ -1,5 +1,3 @@
-// Button.variants.ts
-
 export const WarningStyles = {
   color: 'text.reversed',
   backgroundColor: 'warning',

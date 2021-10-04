@@ -1,23 +1,16 @@
-// Toggle.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
 import { Label } from '../..';
 import { Styles } from './Toggle.styles';
 
-const Types = {
-  disabled: PropTypes.bool,
-  full: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  value: PropTypes.string.isRequired,
+export type ToggleProps = {
+  disabled?: boolean;
+  full?: boolean;
+  id: string;
+  label?: string;
+  name: string;
+  onChange?: any;
+  onClick?: any;
+  value: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Toggle = ({
   disabled,
@@ -29,7 +22,7 @@ export const Toggle = ({
   onClick,
   value,
   ...props
-}: Props) => {
+}: ToggleProps) => {
   return (
     <Label
       id={id}
@@ -62,7 +55,5 @@ Toggle.defaultProps = {
   onChange: undefined,
   onClick: undefined,
 };
-
-Toggle.propTypes = Types;
 
 export default Toggle;

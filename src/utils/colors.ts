@@ -1,5 +1,3 @@
-// color.ts
-
 const palette = {
   primary: '#7373E5',
   black: '#000000',

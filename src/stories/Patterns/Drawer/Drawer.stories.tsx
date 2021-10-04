@@ -1,11 +1,8 @@
-// Drawer.stories.tsx
-
-import * as React from 'react';
 import { useState } from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { css } from '@emotion/react';
 
-import { Drawer } from './Drawer';
+import { Drawer, DrawerProps } from './Drawer';
 import { Button, Textarea, Textbox, Select } from '../..';
 
 export default {
@@ -13,7 +10,7 @@ export default {
   component: Drawer,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<DrawerProps> = (args) => {
   const [showDrawer, setShowDrawer] = useState(false);
   const open = () => setShowDrawer(true);
   const close = () => setShowDrawer(false);

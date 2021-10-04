@@ -1,5 +1,3 @@
-// depth.ts
-
 export const level1 =
   '0 .25rem 1rem rgba(0, 0, 0, 0.05), 0 .125rem .25rem rgba(0, 0, 0, 0.05)';
 export const level2 =

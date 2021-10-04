@@ -1,27 +1,20 @@
-// Layout.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 
 import { Styles, SidebarStyles } from './Layout.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
-  footer: PropTypes.node,
-  heading: PropTypes.node,
-  sidebar: PropTypes.bool,
+export type LayoutProps = {
+  children: ReactNode;
+  footer?: ReactNode;
+  heading?: ReactNode;
+  sidebar?: boolean;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Layout = ({ children, sidebar, ...props }: Props) => {
+export const Layout = ({ children, sidebar, ...props }: LayoutProps) => {
   return (
     <div css={[Styles, sidebar && SidebarStyles]} {...props}>
       {children}
     </div>
   );
 };
-
-Layout.propTypes = Types;
 
 export default Layout;

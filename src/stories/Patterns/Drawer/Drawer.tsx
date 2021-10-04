@@ -1,8 +1,4 @@
-// Drawer.tsx
-
-import * as React from 'react';
-import { Fragment } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { Fragment, ReactNode } from 'react';
 import { animated, useTransition, config } from 'react-spring';
 
 import { Dialog } from '@reach/dialog';
@@ -17,16 +13,14 @@ import {
 } from './Drawer.styles';
 import { IconButton, Overlay, H3 } from '../..';
 
-const Types = {
-  actions: PropTypes.arrayOf(PropTypes.node),
-  aria: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  setShowDrawer: PropTypes.func,
-  showDrawer: PropTypes.bool,
-  title: PropTypes.string.isRequired,
+export type DrawerProps = {
+  actions?: ReactNode[];
+  aria: string;
+  children: ReactNode;
+  setShowDrawer?: any;
+  showDrawer?: boolean;
+  title: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Drawer = ({
   actions,
@@ -36,7 +30,7 @@ export const Drawer = ({
   showDrawer,
   title,
   ...props
-}: Props) => {
+}: DrawerProps) => {
   const close = () => setShowDrawer(false);
   const AnimatedDialog = animated(Dialog);
   const transitions = useTransition(showDrawer, {
@@ -102,7 +96,5 @@ Drawer.defaultProps = {
   showDrawer: false,
   title: 'Title',
 };
-
-Drawer.propTypes = Types;
 
 export default Drawer;

@@ -1,9 +1,6 @@
-// Select.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Select } from './Select';
+import { Select, SelectProps } from './Select';
 
 export default {
   title: 'Components/Select',
@@ -21,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => (
+const Template: Story<SelectProps> = (args) => (
   <Select
     options={[
       { name: 'Option 1', value: 'option1' },

@@ -1,24 +1,17 @@
-// Main.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 
 import { Styles } from './Main.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
+export type MainProps = {
+  children: ReactNode;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Main = ({ children, ...props }: Props) => {
+export const Main = ({ children, ...props }: MainProps) => {
   return (
     <main css={Styles} {...props}>
       {children}
     </main>
   );
 };
-
-Main.propTypes = Types;
 
 export default Main;

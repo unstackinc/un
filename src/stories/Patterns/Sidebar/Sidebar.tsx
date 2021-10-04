@@ -1,22 +1,17 @@
-// Sidebar.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import { Header } from '../..';
 
 import { Styles } from './Sidebar.styles';
 
-const Types = {
-  children: PropTypes.node,
-  end: PropTypes.node,
-  start: PropTypes.node,
+export type SidebarProps = {
+  children?: ReactNode;
+  end?: ReactNode;
+  start?: ReactNode;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Sidebar = ({ children, end, start, ...props }: Props) => {
+export const Sidebar = ({ children, end, start, ...props }: SidebarProps) => {
   return (
     <aside css={Styles} {...props}>
       <Header
@@ -31,7 +26,5 @@ export const Sidebar = ({ children, end, start, ...props }: Props) => {
     </aside>
   );
 };
-
-Sidebar.propTypes = Types;
 
 export default Sidebar;

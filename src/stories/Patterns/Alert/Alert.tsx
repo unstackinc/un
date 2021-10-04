@@ -1,8 +1,4 @@
-// Alert.tsx
-
-import * as React from 'react';
-import { Fragment } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { Fragment, ReactNode } from 'react';
 import { animated, useTransition } from 'react-spring';
 
 import { AlertDialog, AlertDialogLabel } from '@reach/alert-dialog';
@@ -11,17 +7,15 @@ import VisuallyHidden from '@reach/visually-hidden';
 import { Styles, BodyStyles, FooterStyles } from './Alert.styles';
 import { Overlay } from '../..';
 
-const Types = {
-  actions: PropTypes.arrayOf(PropTypes.node),
-  aria: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  leastDestructiveRef: PropTypes.any.isRequired,
-  setShowAlert: PropTypes.func,
-  showAlert: PropTypes.bool,
-  title: PropTypes.string.isRequired,
+export type AlertProps = {
+  actions?: ReactNode[];
+  aria: string;
+  children: ReactNode;
+  leastDestructiveRef: any;
+  setShowAlert?: any;
+  showAlert?: bool;
+  title: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Alert = ({
   actions,
@@ -32,7 +26,7 @@ export const Alert = ({
   showAlert,
   title,
   ...props
-}: Props) => {
+}: AlertProps) => {
   const close = () => setShowAlert(false);
   const AnimatedAlert = animated(AlertDialog);
   const transitions = useTransition(showAlert, {
@@ -90,7 +84,5 @@ Alert.defaultProps = {
   showAlert: false,
   title: 'Title',
 };
-
-Alert.propTypes = Types;
 
 export default Alert;

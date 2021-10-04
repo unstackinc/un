@@ -1,5 +1,3 @@
-// Logo.styles.ts
-
 import { css } from '@emotion/react';
 
 export const Styles = css`

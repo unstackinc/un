@@ -1,11 +1,8 @@
-// Alert.stories.tsx
-
-import * as React from 'react';
 import { useState, useRef } from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { css } from '@emotion/react';
 
-import { Alert } from './Alert';
+import { Alert, AlertProps } from './Alert';
 import { Button, H0, P1 } from '../..';
 
 export default {
@@ -13,7 +10,7 @@ export default {
   component: Alert,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<AlertProps> = (args) => {
   const [showAlert, setShowAlert] = useState(false);
   const open = () => setShowAlert(true);
   const close = () => setShowAlert(false);

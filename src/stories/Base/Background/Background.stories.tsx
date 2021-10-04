@@ -1,16 +1,13 @@
-// Background.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Background } from './Background';
+import { Background, BackgroundProps } from './Background';
 
 export default {
   title: 'Base/Background',
   component: Background,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<BackgroundProps> = (args) => {
   return <Background {...args}></Background>;
 };
 

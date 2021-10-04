@@ -1,7 +1,4 @@
-// Heading.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import {
@@ -12,15 +9,13 @@ import {
   H3Styles,
 } from './Typography.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string,
-  display: PropTypes.bool,
+export type HeadingProps = {
+  children: ReactNode;
+  color?: string;
+  display?: boolean;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const H3 = ({ children, color, display, ...props }: Props) => {
+export const H3 = ({ children, color, display, ...props }: HeadingProps) => {
   return (
     <h3
       css={[
@@ -41,9 +36,7 @@ H3.defaultProps = {
   display: false,
 };
 
-H3.propTypes = Types;
-
-export const H2 = ({ color, display, children, ...props }: Props) => {
+export const H2 = ({ color, display, children, ...props }: HeadingProps) => {
   return (
     <h2
       css={[
@@ -64,9 +57,7 @@ H2.defaultProps = {
   display: false,
 };
 
-H2.propTypes = Types;
-
-export const H1 = ({ color, display, children, ...props }: Props) => {
+export const H1 = ({ color, display, children, ...props }: HeadingProps) => {
   return (
     <h1
       css={[
@@ -87,9 +78,7 @@ H1.defaultProps = {
   display: false,
 };
 
-H1.propTypes = Types;
-
-export const H0 = ({ color, display, children, ...props }: Props) => {
+export const H0 = ({ color, display, children, ...props }: HeadingProps) => {
   return (
     <h1
       css={[
@@ -109,7 +98,5 @@ export const H0 = ({ color, display, children, ...props }: Props) => {
 H0.defaultProps = {
   display: false,
 };
-
-H0.propTypes = Types;
 
 export default H1;

@@ -1,5 +1,3 @@
-// radii.ts
-
 export const radii = {
   xs: '.25rem',
   sm: '.5rem',

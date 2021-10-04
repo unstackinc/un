@@ -1,22 +1,16 @@
-// FileUpload.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import { useDropzone } from 'react-dropzone';
 
 import { IoCloudUploadOutline } from 'react-icons/io5';
 
 import { Styles, InputStyles, FullStyles } from './FileUpload.styles';
 
-const Types = {
-  accept: PropTypes.string,
-  full: PropTypes.bool,
-  maxFiles: PropTypes.number,
-  onDrop: PropTypes.func,
-  validator: PropTypes.func,
+export type FileUploadProps = {
+  accept?: string;
+  full?: boolean;
+  maxFiles?: number;
+  onDrop?: any;
+  validator?: any;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const FileUpload = ({
   accept,
@@ -25,7 +19,7 @@ export const FileUpload = ({
   onDrop,
   validator,
   ...props
-}: Props) => {
+}: FileUploadProps) => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: accept,
     maxFiles: maxFiles,
@@ -48,7 +42,5 @@ FileUpload.defaultProps = {
   onDrop: undefined,
   validator: undefined,
 };
-
-FileUpload.propTypes = Types;
 
 export default FileUpload;

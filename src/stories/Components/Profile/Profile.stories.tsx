@@ -1,9 +1,6 @@
-// Profile.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Profile } from './Profile';
+import { Profile, ProfileProps } from './Profile';
 
 import ProfilePicture from '../../assets/profile.jpg';
 
@@ -18,7 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Profile {...args} />;
+const Template: Story<ProfileProps> = (args) => <Profile {...args} />;
 
 export const Small = Template.bind({});
 Small.args = {

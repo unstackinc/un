@@ -1,5 +1,3 @@
-// Tag.variants.ts
-
 const PrimaryVariant = {
   color: 'text.reversed',
   backgroundColor: 'tag.primary',

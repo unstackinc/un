@@ -1,12 +1,9 @@
-// Dropdown.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { IoPerson, IoSettingsSharp, IoExit } from 'react-icons/io5';
 
 import { IconButton, Profile } from '../../';
-import { Dropdown } from './Dropdown';
+import { Dropdown, DropdownProps } from './Dropdown';
 
 import ProfilePicture from '../../assets/profile.jpg';
 
@@ -15,7 +12,7 @@ export default {
   component: Dropdown,
 } as Meta;
 
-const Template = (args) => (
+const Template: Story<DropdownProps> = (args) => (
   <Dropdown
     button={
       <IconButton>

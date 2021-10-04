@@ -1,9 +1,6 @@
-// Search.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Search } from './Search';
+import { Search, SearchProps } from './Search';
 
 export default {
   title: 'Components/Search',
@@ -21,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Search {...args} />;
+const Template: Story<SearchProps> = (args) => <Search {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

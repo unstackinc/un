@@ -1,18 +1,13 @@
-// Table.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 
 import { Styles } from './Table.styles';
 
-const Types = {
-  children: PropTypes.node,
-  props: PropTypes.any,
+export type TableProps = {
+  children?: ReactNode;
+  props?: any;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Table = ({ children, ...props }: Props) => {
+export const Table = ({ children, ...props }: TableProps) => {
   return (
     <table css={Styles} {...props}>
       {children}
@@ -20,36 +15,24 @@ export const Table = ({ children, ...props }: Props) => {
   );
 };
 
-Table.propTypes = Types;
-
-export const TableHead = ({ children, ...props }: Props) => {
+export const TableHead = ({ children, ...props }: TableProps) => {
   return <thead {...props}>{children}</thead>;
 };
 
-TableHead.propTypes = Types;
-
-export const TableHeading = ({ children, ...props }: Props) => {
+export const TableHeading = ({ children, ...props }: TableProps) => {
   return <th {...props}>{children}</th>;
 };
 
-TableHeading.propTypes = Types;
-
-export const TableBody = ({ children, ...props }: Props) => {
+export const TableBody = ({ children, ...props }: TableProps) => {
   return <tbody {...props}>{children}</tbody>;
 };
 
-TableBody.propTypes = Types;
-
-export const TableRow = ({ children, ...props }: Props) => {
+export const TableRow = ({ children, ...props }: TableProps) => {
   return <tr {...props}>{children}</tr>;
 };
 
-TableRow.propTypes = Types;
-
-export const TableData = ({ children, ...props }: Props) => {
+export const TableData = ({ children, ...props }: TableProps) => {
   return <td {...props}>{children}</td>;
 };
-
-TableData.propTypes = Types;
 
 export default Table;

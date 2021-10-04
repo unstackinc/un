@@ -1,9 +1,6 @@
-// Tag.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Tag } from './Tag';
+import { Tag, TagProps } from './Tag';
 
 export default {
   title: 'Components/Tag',
@@ -26,7 +23,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Tag {...args} />;
+const Template: Story<TagProps> = (args) => <Tag {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

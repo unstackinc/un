@@ -1,6 +1,6 @@
 {
   "name": "@unstack/unds",
-  "version": "0.25.5-beta",
+  "version": "0.26.0-beta",
   "description": "Unstack Design System",
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,6 @@
     "@reach/visually-hidden": "^0.15.0",
     "@tippyjs/react": "^4.2.5",
     "namor": "^2.0.3",
-    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.4",
@@ -57,7 +56,6 @@
     "@storybook/addon-essentials": "^6.3.5",
     "@storybook/addon-links": "^6.3.5",
     "@storybook/react": "^6.3.5",
-    "@types/prop-types": "^15.7.4",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "@types/react-paginate": "^7.1.1",

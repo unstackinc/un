@@ -1,10 +1,7 @@
-// IconButton.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { IoAdd } from 'react-icons/io5';
-import { IconButton } from './IconButton';
+import { IconButton, IconButtonProps } from './IconButton';
 
 export default {
   title: 'Components/IconButton',
@@ -23,7 +20,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <IconButton {...args} />;
+const Template: Story<IconButton> = (args) => <IconButton {...args} />;
 
 export const Small = Template.bind({});
 Small.args = {

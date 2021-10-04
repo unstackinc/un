@@ -1,20 +1,15 @@
-// Header.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import { Styles, ContainerStyles, TabsStyles } from './Header.styles';
 
-const Types = {
-  children: PropTypes.node,
-  end: PropTypes.node,
-  padding: PropTypes.string,
-  start: PropTypes.node,
-  tabs: PropTypes.node,
+export type HeaderProps = {
+  children?: ReactNode;
+  end?: ReactNode;
+  padding?: string;
+  start?: ReactNode;
+  tabs?: ReactNode;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Header = ({
   children,
@@ -23,7 +18,7 @@ export const Header = ({
   start,
   tabs,
   ...props
-}: Props) => {
+}: HeaderProps) => {
   return (
     <header
       css={[
@@ -49,7 +44,5 @@ export const Header = ({
     </header>
   );
 };
-
-Header.propTypes = Types;
 
 export default Header;

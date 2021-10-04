@@ -1,7 +1,4 @@
-// Card.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 
 import { H3, P2 } from '../../';
 import { Styles, HeaderStyles, BodyStyles } from './Card.styles';
@@ -10,14 +7,12 @@ import theme from '../../../theme';
 
 const { colors } = theme;
 
-const Types = {
-  actions: PropTypes.arrayOf(PropTypes.node),
-  children: PropTypes.node.isRequired,
-  subtitle: PropTypes.string,
-  title: PropTypes.string,
+export type CardProps = {
+  actions?: ReactNode[];
+  children: ReactNode;
+  subtitle?: string;
+  title?: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Card = ({
   actions,
@@ -25,7 +20,7 @@ export const Card = ({
   subtitle,
   title,
   ...props
-}: Props) => {
+}: CardProps) => {
   return (
     <div css={Styles} {...props}>
       {(title!! || subtitle!! || actions!!) && (
@@ -45,7 +40,5 @@ export const Card = ({
     </div>
   );
 };
-
-Card.propTypes = Types;
 
 export default Card;

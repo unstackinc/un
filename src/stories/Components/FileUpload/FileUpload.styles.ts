@@ -1,5 +1,3 @@
-// FileUpload.styles.ts
-
 import { css } from '@emotion/react';
 
 import theme from '../../../theme';
@@ -43,9 +41,6 @@ export const Styles = css`
   }
   :hover {
     opacity: ${opacities[5]};
-  }
-  :active {
-    background-color: ${colors.button.background.tertiaryHover};
   }
   :focus-visible {
     outline: none;

@@ -1,8 +1,5 @@
-// Table.stories.tsx
-
-import * as React from 'react';
-import { useMemo } from 'react';
-import { Meta } from '@storybook/react';
+import { useState, useMemo } from 'react';
+import { Meta, Story } from '@storybook/react';
 import {
   useTable,
   usePagination,
@@ -22,6 +19,7 @@ import {
   TableHeading,
   TableRow,
   TableData,
+  TableProps,
 } from './Table';
 import {
   Button,
@@ -39,7 +37,7 @@ export default {
 } as Meta;
 
 function GlobalFilter({ globalFilter, setGlobalFilter }) {
-  const [value, setValue] = React.useState(globalFilter);
+  const [value, setValue] = useState(globalFilter);
   const onChange = useAsyncDebounce((value) => {
     setGlobalFilter(value || undefined);
   }, 200);
@@ -197,6 +195,6 @@ const GetTable = ({ ...props }) => {
   );
 };
 
-const Template = (args) => <GetTable {...args} />;
+const Template: Story<TableProps> = (args) => <GetTable {...args} />;
 
 export const Example = Template.bind({});

@@ -1,8 +1,4 @@
-// Tabs.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
+import { ReactNode } from 'react';
 import {
   Tabs as ReachTabs,
   TabList as ReachTabList,
@@ -13,31 +9,17 @@ import {
 
 import { TabListStyles, TabStyles, TabPanelsStyles } from './Tabs.styles';
 
-/*
- * Tabs
- */
-
-const Types = {
-  children: PropTypes.node.isRequired,
+type TabsProps = {
+  children: ReactNode;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Tabs = ({ children, ...props }: Props) => {
+export const Tabs = ({ children, ...props }: TabsProps) => {
   return <ReachTabs {...props}>{children}</ReachTabs>;
 };
 
-Tabs.propTypes = Types;
-
-/*
- * TabList
- */
-
-const TabListTypes = {
-  tabs: PropTypes.arrayOf(PropTypes.string).isRequired,
+type TabListProps = {
+  tabs: string[];
 };
-
-type TabListProps = InferProps<typeof TabListTypes>;
 
 export const TabList = ({ tabs, ...props }: TabListProps) => {
   return (
@@ -51,17 +33,9 @@ export const TabList = ({ tabs, ...props }: TabListProps) => {
   );
 };
 
-TabList.propTypes = TabListTypes;
-
-/*
- * TabPanels
- */
-
-const TabPanelsTypes = {
-  children: PropTypes.node.isRequired,
+type TabPanelsProps = {
+  children: ReactNode;
 };
-
-type TabPanelsProps = InferProps<typeof TabPanelsTypes>;
 
 export const TabPanels = ({ children, ...props }: TabPanelsProps) => {
   return (
@@ -71,22 +45,12 @@ export const TabPanels = ({ children, ...props }: TabPanelsProps) => {
   );
 };
 
-TabPanels.propTypes = TabPanelsTypes;
-
-/*
- * TabPanel
- */
-
-const TabPanelTypes = {
-  children: PropTypes.node.isRequired,
+type TabPanelProps = {
+  children: ReactNode;
 };
-
-type TabPanelProps = InferProps<typeof TabPanelTypes>;
 
 export const TabPanel = ({ children, ...props }: TabPanelProps) => {
   return <ReachTabPanel {...props}>{children}</ReachTabPanel>;
 };
-
-TabPanel.propTypes = TabPanelTypes;
 
 export default Tabs;

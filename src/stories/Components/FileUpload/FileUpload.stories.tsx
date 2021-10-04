@@ -1,9 +1,6 @@
-// FileUpload.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { FileUpload } from './FileUpload';
+import { FileUpload, FileUploadProps } from './FileUpload';
 
 export default {
   title: 'Components/FileUpload',
@@ -15,7 +12,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <FileUpload {...args} />;
+const Template: Story<FileUploadProps> = (args) => <FileUpload {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

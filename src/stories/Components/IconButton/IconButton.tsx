@@ -1,21 +1,16 @@
-// IconButton.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 
 import { Styles, MediumStyles, LargeStyles } from './IconButton.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string,
-  disabled: PropTypes.bool,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+export type IconButtonProps = {
+  children: ReactNode;
+  color?: string;
+  disabled?: boolean;
+  onChange?: any;
+  onClick?: any;
+  size?: 'small' | 'medium' | 'large';
 };
-
-type Props = InferProps<typeof Types>;
 
 export const IconButton = ({
   children,
@@ -25,7 +20,7 @@ export const IconButton = ({
   onClick,
   size,
   ...props
-}: Props) => {
+}: IconButtonProps) => {
   return (
     <button
       disabled={disabled}
@@ -54,7 +49,5 @@ IconButton.defaultProps = {
   onClick: undefined,
   size: 'small',
 };
-
-IconButton.propTypes = Types;
 
 export default IconButton;

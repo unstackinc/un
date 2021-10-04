@@ -1,17 +1,14 @@
-// Nav.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { Icon } from '../..';
-import { Nav, NavSection } from './Nav';
+import { Nav, NavSection, NavProps } from './Nav';
 
 export default {
   title: 'Components/Nav',
   component: Nav,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<NavProps> = (args) => {
   return (
     <Nav {...args}>
       <NavSection

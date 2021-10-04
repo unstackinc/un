@@ -1,4 +1,3 @@
-// shadow.ts
 import color from './colors';
 
 const { colors } = color;

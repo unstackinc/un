@@ -1,8 +1,4 @@
-// Select.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
+import { ReactNode } from 'react';
 import { IoChevronDown } from 'react-icons/io5';
 
 import { Label } from '../..';
@@ -15,28 +11,26 @@ import {
   DisabledStyles,
 } from './Select.styles';
 
-const OptionTypes = {
-  name: PropTypes.node.isRequired,
-  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
+type OptionProps = {
+  name: ReactNode;
+  value: string | number;
 };
 
-const Types = {
-  disabled: PropTypes.bool,
-  full: PropTypes.bool,
-  helpText: PropTypes.string,
-  id: PropTypes.string,
-  label: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  options: PropTypes.arrayOf(OptionTypes).isRequired,
-  placeholder: PropTypes.string,
-  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
-  warning: PropTypes.bool,
-  warningText: PropTypes.string,
+export type SelectProps = {
+  disabled?: boolean;
+  full?: boolean;
+  helpText?: string;
+  id?: string;
+  label?: string;
+  name?: string;
+  onChange?: any;
+  onClick?: any;
+  options: OptionProps[];
+  placeholder?: string;
+  value: string | number;
+  warning?: boolean;
+  warningText?: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Select = ({
   disabled,
@@ -53,7 +47,7 @@ export const Select = ({
   warning,
   warningText,
   ...props
-}: Props) => {
+}: SelectProps) => {
   return (
     <Label
       id={id}
@@ -102,7 +96,5 @@ Select.defaultProps = {
   placeholder: 'Placeholder',
   warning: false,
 };
-
-Select.propTypes = Types;
 
 export default Select;

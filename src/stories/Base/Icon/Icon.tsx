@@ -1,25 +1,17 @@
-// Icon.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
-const Types = {
-  variant: PropTypes.oneOf([
-    'bag',
-    'chart',
-    'console',
-    'home',
-    'page',
-    'people',
-    'puzzle',
-    'settings',
-    'star',
-  ]).isRequired,
+export type IconProps = {
+  variant:
+    | 'bag'
+    | 'chart'
+    | 'console'
+    | 'home'
+    | 'page'
+    | 'people'
+    | 'puzzle'
+    | 'settings'
+    | 'star';
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Icon = ({ variant }: Props) => {
+export const Icon = ({ variant }: IconProps) => {
   let icon = (
     <svg
       width="20"
@@ -234,7 +226,5 @@ export const Icon = ({ variant }: Props) => {
   }
   return icon;
 };
-
-Icon.propTypes = Types;
 
 export default Icon;

@@ -1,26 +1,19 @@
-// Textarea.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
 import { Label } from '../../';
 import { Styles, FullStyles, WarningStyles } from './Textarea.styles';
 
-const Types = {
-  disabled: PropTypes.bool,
-  full: PropTypes.bool,
-  helpText: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  placeholder: PropTypes.string.isRequired,
-  warning: PropTypes.bool,
-  warningText: PropTypes.string,
+export type TextareaProps = {
+  disabled?: boolean;
+  full?: boolean;
+  helpText?: string;
+  id: string;
+  label?: string;
+  name: string;
+  onChange?: any;
+  onClick?: any;
+  placeholder: string;
+  warning?: boolean;
+  warningText?: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Textarea = ({
   disabled,
@@ -35,7 +28,7 @@ export const Textarea = ({
   warning,
   warningText,
   ...props
-}: Props) => {
+}: TextareaProps) => {
   return (
     <Label
       id={id}
@@ -66,7 +59,5 @@ Textarea.defaultProps = {
   placeholder: 'Placeholder',
   warning: false,
 };
-
-Textarea.propTypes = Types;
 
 export default Textarea;

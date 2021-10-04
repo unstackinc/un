@@ -1,16 +1,13 @@
-// Card.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Card } from './Card';
+import { Card, CardProps } from './Card';
 
 export default {
   title: 'Components/Card',
   component: Card,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<CardProps> = (args) => {
   return <Card {...args}></Card>;
 };
 

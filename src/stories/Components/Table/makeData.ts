@@ -1,6 +1,6 @@
 import namor from 'namor';
 
-const range = (len) => {
+const range = (len: any) => {
   const arr = [];
   for (let i = 0; i < len; i++) {
     arr.push(i);
@@ -17,10 +17,10 @@ const newData = () => {
   };
 };
 
-export default function makeData(...lens) {
-  const makeDataLevel = (depth = 0) => {
+export default function makeData(...lens: any[]) {
+  const makeDataLevel: any = (depth = 0) => {
     const len = lens[depth];
-    return range(len).map((d) => {
+    return range(len).map(() => {
       return {
         ...newData(),
         subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,

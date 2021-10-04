@@ -1,24 +1,17 @@
-// Background.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 
 import { Styles } from './Background.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
+export type BackgroundProps = {
+  children: ReactNode;
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Background = ({ children, ...props }: Props) => {
+export const Background = ({ children, ...props }: BackgroundProps) => {
   return (
     <div css={Styles} {...props}>
       {children}
     </div>
   );
 };
-
-Background.propTypes = Types;
 
 export default Background;

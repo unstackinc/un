@@ -1,17 +1,14 @@
-// Tabs.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { Card } from '../../';
-import { Tabs, TabList, TabPanels, TabPanel } from './Tabs';
+import { Tabs, TabList, TabPanels, TabPanel, TabsProps } from './Tabs';
 
 export default {
   title: 'Components/Tabs',
   component: Tabs,
 } as Meta;
 
-const Template = (args) => (
+const Template: Story<TabsProps> = (args) => (
   <Tabs {...args}>
     <TabList tabs={['Page 1', 'Page 2', 'Page 3']} />
     <TabPanels>

@@ -1,5 +1,3 @@
-// theme.ts
-
 import {
   borders,
   breakpoints,

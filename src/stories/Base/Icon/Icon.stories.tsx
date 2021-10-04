@@ -1,9 +1,6 @@
-// Icon.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { Icon } from './Icon';
+import { Icon, IconProps } from './Icon';
 
 export default {
   title: 'Base/Icon',
@@ -26,7 +23,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<IconProps> = (args) => {
   return <Icon {...args}></Icon>;
 };
 

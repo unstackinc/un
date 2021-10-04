@@ -1,5 +1,3 @@
-// Checkbox.styles.ts
-
 import { css } from '@emotion/react';
 
 import theme from '../../../theme';

@@ -1,9 +1,6 @@
-// ProgressBar.stories.tsx
+import { Meta, Story } from '@storybook/react';
 
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-
-import { ProgressBar } from './ProgressBar';
+import { ProgressBar, ProgressBarProps } from './ProgressBar';
 
 export default {
   title: 'Components/ProgressBar',
@@ -18,7 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <ProgressBar {...args} />;
+const Template: Story<ProgressBarProps> = (args) => <ProgressBar {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

@@ -1,10 +1,7 @@
-// Checkbox.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { Label } from '../..';
-import { Checkbox } from './Checkbox';
+import { Checkbox, CheckboxProps } from './Checkbox';
 
 export default {
   title: 'Components/Checkbox',
@@ -16,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => (
+const Template: Story<CheckboxProps> = (args) => (
   <Checkbox name="option" id="option-1" value="option-1" {...args} />
 );
 
@@ -27,7 +24,7 @@ Default.args = {
   disabled: false,
 };
 
-const GroupTemplate = (args) => (
+const GroupTemplate: Story<CheckboxProps> = (args) => (
   <Label id="group">
     <Checkbox
       label="Option 1"

@@ -1,7 +1,4 @@
-// Header.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import {
   IoPerson,
@@ -15,14 +12,14 @@ import { IconButton, Profile, Dropdown, H0 } from '../../';
 
 import ProfilePicture from '../../assets/profile.jpg';
 
-import { Header } from './Header';
+import { Header, HeaderProps } from './Header';
 
 export default {
   title: 'Patterns/Header',
   component: Header,
 } as Meta;
 
-const Template = (args) => {
+const Template: Story<HeaderProps> = (args) => {
   return <Header {...args} />;
 };
 

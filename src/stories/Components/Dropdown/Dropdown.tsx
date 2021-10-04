@@ -1,8 +1,4 @@
-// Dropdown.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
+import { ReactNode } from 'react';
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 
 import {
@@ -14,22 +10,25 @@ import {
   FullStyles,
 } from './Dropdown.styles';
 
-const ItemTypes = {
-  before: PropTypes.node,
-  name: PropTypes.string,
-  space: PropTypes.bool,
+type ItemProps = {
+  before?: ReactNode;
+  name?: string;
+  space?: boolean;
 };
 
-const Types = {
-  button: PropTypes.node.isRequired,
-  full: PropTypes.bool,
-  options: PropTypes.arrayOf(ItemTypes).isRequired,
-  value: PropTypes.string.isRequired,
+export type DropdownProps = {
+  button: ReactNode;
+  full?: boolean;
+  options: ItemProps[];
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Dropdown = ({ button, full, options, value, ...props }: Props) => {
+export const Dropdown = ({
+  button,
+  full,
+  options,
+  value,
+  ...props
+}: DropdownProps) => {
   return (
     <Menu css={[Styles, full && FullStyles]} {...props}>
       <MenuButton as="div" css={[ButtonStyles, full && FullStyles]}>
@@ -53,7 +52,5 @@ export const Dropdown = ({ button, full, options, value, ...props }: Props) => {
     </Menu>
   );
 };
-
-Dropdown.propTypes = Types;
 
 export default Dropdown;

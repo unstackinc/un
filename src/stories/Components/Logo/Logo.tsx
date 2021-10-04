@@ -1,7 +1,4 @@
-// Logo.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { ReactNode } from 'react';
 
 import {
   Styles,
@@ -10,14 +7,12 @@ import {
   ExtraLargeStyles,
 } from './Logo.styles';
 
-const Types = {
-  children: PropTypes.node.isRequired,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'extralarge']),
+export type LogoProps = {
+  children: ReactNode;
+  size?: 'small' | 'medium' | 'large' | 'extralarge';
 };
 
-type Props = InferProps<typeof Types>;
-
-export const Logo = ({ children, size, ...props }: Props) => {
+export const Logo = ({ children, size, ...props }: LogoProps) => {
   return (
     <div
       css={[
@@ -36,7 +31,5 @@ export const Logo = ({ children, size, ...props }: Props) => {
 Logo.defaultProps = {
   size: 'medium',
 };
-
-Logo.propTypes = Types;
 
 export default Logo;

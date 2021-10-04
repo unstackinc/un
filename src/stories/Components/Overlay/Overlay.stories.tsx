@@ -1,7 +1,4 @@
-// Overlay.stories.tsx
-
-import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { Overlay } from './Overlay';
 
@@ -18,7 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Overlay {...args} />;
+const Template: Story<OverlayProps> = (args) => <Overlay {...args} />;
 
 export const Default = Template.bind({});
 

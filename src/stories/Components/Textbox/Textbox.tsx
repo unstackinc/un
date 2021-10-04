@@ -1,26 +1,19 @@
-// Textbox.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
 import { Label } from '../../';
 import { Styles, FullStyles, WarningStyles } from './Textbox.styles';
 
-const Types = {
-  disabled: PropTypes.bool,
-  full: PropTypes.bool,
-  helpText: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  placeholder: PropTypes.string.isRequired,
-  warning: PropTypes.bool,
-  warningText: PropTypes.string,
+export type TextboxProps = {
+  disabled?: boolean;
+  full?: boolean;
+  helpText?: string;
+  id: string;
+  label?: string;
+  name: string;
+  onChange?: any;
+  onClick?: any;
+  placeholder: string;
+  warning?: boolean;
+  warningText?: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Textbox = ({
   disabled,
@@ -35,7 +28,7 @@ export const Textbox = ({
   warning,
   warningText,
   ...props
-}: Props) => {
+}: TextboxProps) => {
   return (
     <Label
       id={id}
@@ -67,7 +60,5 @@ Textbox.defaultProps = {
   placeholder: 'Placeholder',
   warning: false,
 };
-
-Textbox.propTypes = Types;
 
 export default Textbox;

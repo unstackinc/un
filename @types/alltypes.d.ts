@@ -1,5 +1,3 @@
-/// <reference types="@emotion/react/types/css-prop" />
-declare module 'prop-types';
 declare module 'react-paginate';
 declare module 'react-table';
 declare module '*.jpg';

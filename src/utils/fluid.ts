@@ -1,5 +1,3 @@
-// fluid.ts
-
 export const fluid = (minimumSize: number, maximumSize: number) => {
   const minWidth = 30;
   const maxWidth = 90;

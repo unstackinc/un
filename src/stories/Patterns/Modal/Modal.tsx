@@ -1,8 +1,4 @@
-// Modal.tsx
-
-import * as React from 'react';
-import { Fragment } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import { Fragment, ReactNode } from 'react';
 import { animated, useTransition, config } from 'react-spring';
 
 import { Dialog } from '@reach/dialog';
@@ -17,16 +13,14 @@ import {
 } from './Modal.styles';
 import { IconButton, Overlay, H3 } from '../..';
 
-const Types = {
-  actions: PropTypes.arrayOf(PropTypes.node),
-  aria: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  setShowModal: PropTypes.func,
-  showModal: PropTypes.bool,
-  title: PropTypes.string.isRequired,
+export type ModalProps = {
+  actions?: ReactNode[];
+  aria: string;
+  children: ReactNode;
+  setShowModal?: any;
+  showModal?: boolean;
+  title: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Modal = ({
   aria,
@@ -36,7 +30,7 @@ export const Modal = ({
   showModal,
   title,
   ...props
-}: Props) => {
+}: ModalProps) => {
   const close = () => setShowModal(false);
   const AnimatedModal = animated(Dialog);
   const transitions = useTransition(showModal, {
@@ -105,7 +99,5 @@ Modal.defaultProps = {
   showModal: false,
   title: 'Title',
 };
-
-Modal.propTypes = Types;
 
 export default Modal;

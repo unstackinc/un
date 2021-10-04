@@ -1,21 +1,15 @@
-// Overlay.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import { css } from '@emotion/react';
 import { animated, useTransition } from 'react-spring';
 
 import { Styles } from './Overlay.styles';
 
-const Types = {
-  background: PropTypes.string,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  setShowOverlay: PropTypes.func,
-  showOverlay: PropTypes.bool,
+export type OverlayProps = {
+  background?: string;
+  onChange?: any;
+  onClick?: any;
+  setShowOverlay?: any;
+  showOverlay?: boolean;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Overlay = ({
   background,
@@ -24,7 +18,7 @@ export const Overlay = ({
   setShowOverlay,
   showOverlay,
   ...props
-}: Props) => {
+}: OverlayProps) => {
   const transitions = useTransition(showOverlay, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -55,7 +49,5 @@ Overlay.defaultProps = {
   onClick: undefined,
   showOverlay: false,
 };
-
-Overlay.propTypes = Types;
 
 export default Overlay;

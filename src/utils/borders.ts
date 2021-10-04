@@ -1,5 +1,3 @@
-// borders.ts
-
 export const borders = {
   borderWidths: {
     sm: '.063rem',

@@ -1,23 +1,16 @@
-// Radio.tsx
-
-import * as React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-
 import { Label } from '../../';
 import { Styles } from './Radio.styles';
 
-const Types = {
-  disabled: PropTypes.bool,
-  full: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  value: PropTypes.string.isRequired,
+export type RadioProps = {
+  disabled?: boolean;
+  full?: boolean;
+  id: string;
+  label?: string;
+  name: string;
+  onChange?: any;
+  onClick?: any;
+  value: string;
 };
-
-type Props = InferProps<typeof Types>;
 
 export const Radio = ({
   disabled,
@@ -29,7 +22,7 @@ export const Radio = ({
   onClick,
   value,
   ...props
-}: Props) => {
+}: RadioProps) => {
   return (
     <Label
       id={id}
@@ -60,7 +53,5 @@ Radio.defaultProps = {
   onChange: undefined,
   onClick: undefined,
 };
-
-Radio.propTypes = Types;
 
 export default Radio;

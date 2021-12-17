@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
+    "outDir": "lib",
+    "target": "es5",
+    "module": "esnext",
     "jsx": "react-jsx",
+    "declaration": true,
+    "declarationDir": "lib",
     "jsxImportSource": "theme-ui",
-    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+    "lib": ["dom", "dom.iterable", "es6", "es2017", "esnext.asynciterable"],
     "moduleResolution": "node",
     "allowJs": true,
-    "noEmit": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -18,7 +20,9 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "resolveJsonModule": true
+    // "types": ["@emotion/core"]
   },
-  "exclude": ["node_modules"],
-  "include": ["emotion-env.d.ts", "@types/**/*.*", "src/**/*.*"]
+  // "exclude": ["node_modules"],
+  "include": ["@types/**/*.*", "src/**/*.*"],
+  "exclude": ["node_modules", "lib"]
 }

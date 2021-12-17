@@ -2,7 +2,7 @@
 
 import { Global, css } from '@emotion/react';
 import { ThemeProvider } from 'theme-ui';
-import theme from '../src/theme';
+import { theme } from '../src/theme';
 
 export const decorators = [
   (Story) => (

@@ -11,10 +11,10 @@ import {
   transitions,
   typography,
 } from './utils';
-import buttons from './stories/Components/Button/Button.variants';
-import tags from './stories/Components/Tag/Tag.variants';
+import buttons from './components/Button/Button.variants';
+import tags from './components/Tag/Tag.variants';
 
-const theme = {
+export const theme = {
   config: {
     useLocalStorage: false,
   },
@@ -32,5 +32,3 @@ const theme = {
   buttons,
   tags,
 };
-
-export default theme;
